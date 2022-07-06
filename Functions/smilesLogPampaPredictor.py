@@ -15,7 +15,7 @@ from rdkit.Chem import Descriptors
 
 
 def TrainModel():
-    df = read_csv("hex.csv")
+    df = read_csv("../TrainingData/hex.csv")
 
     X = df.iloc[0:, 10]
     y = df.iloc[0:, 14]

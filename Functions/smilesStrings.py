@@ -25,3 +25,5 @@ ser = "N[C@@H](C(O))C(=O)O"  # C([C@@H](C(=O)O)N)O
 val = "N[C@@H](C(C)C)C(=O)O"  # CC(C)[C@@H](C(=O)O)N
 
 # NC(CC)C(=O)O
+
+# O[C@H](C)[C@@H](N)C(=O)O

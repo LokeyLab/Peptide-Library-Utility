@@ -1,18 +1,16 @@
 # Internal
-import bonding as b
-import subunitBuilder as s
-import userInterface as ui
-import utilities as u
+from Functions import bonding as b, chemoinformatics as c, utilities as u
 
 # External
-from rdkit.Chem import MolFromSmiles
 
 
 class Peptide:
-    def __init__(self, name, exactMass, logP, smilesString):
+    def __init__(self, name, exactMass, TPSA, ALogP, predictedPapp, smilesString):
         self.name = name
         self.exactMass = exactMass
-        self.logP = logP
+        self.TPSA = TPSA
+        self.ALogP = ALogP
+        self.predictedPapp = predictedPapp
         self.smilesString = smilesString
 
 def GetSubunits(desiredSubunits, possibleSubunits):
@@ -37,7 +35,7 @@ def GenerateCyclicPeptide(desiredSubunits, possibleSubunits):
     name = GetNameOfCyclicPeptide(subunits)
     peptide = b.BondHeadToTail(subunits)
     smilesString = b.CyclizeHeadToTail(peptide)
-    molecule = MolFromSmiles(smilesString)
+    molecule = c.GetMoleculeFromSmiles(smilesString)
     exactMass = u.GetExactMass(molecule)
     logP = u.GetALogP(molecule)
     cyclicPeptideObj = Peptide(name, exactMass, logP, smilesString)

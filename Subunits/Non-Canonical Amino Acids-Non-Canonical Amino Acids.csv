@@ -1,0 +1,9 @@
+Name,Multiple Letter,Amino Group,Side Chain,Side Chain Parentheses? y/n,Carboxyl Group,L- and D-? y/n,ß-Homo-? y/n,NMe? y/n
+2-aminobutyric acid,Abu,N,C(CC),n,(=O)O,n,n,y
+4-aminobenzoic acid,Abz,N,c1ccc(cc1),n,(=O)O,n,n,y
+biphenylalanine,Bip,N,Cc1ccc(cc1)c2ccc(cc2),n,(=O)O,n,n,y
+cyclohexylalanine,Cha,N,CC1CCCCC1,y,(=O)O,y,y,y
+norleucine,Nle,N,CCCC,y,(=O)O,y,y,y
+norvaline,Nva,N,CCC,y,(=O)O,y,y,y
+ornithine,Orn,N,CCCN,y,(=O)O,y,y,y
+phenylglycine,Phg,N,c1ccccc1,y,(=O)O,y,y,y

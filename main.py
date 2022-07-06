@@ -1,22 +1,18 @@
 # Internal
-import bonding as b
-import combinatronics as c
-import subunitBuilder as s
-import peptideBuilder as pb
-import userInterface as ui
-import utilities as u
+from Functions import userInterface as ui
+
 
 
 def Main():
-    cyclicPeptides.append(ui.MainUILoop())
-    u.PrintPeptides(cyclicPeptides[0])
-    u.PeptidesToCSV(cyclicPeptides[0])
+    # X, y = pn.ReadTrainingData()
+    # df = pn.PreprocessData(X, y)
+    # model = pn.Train("TrainingData/hexData.csv")
+
+    ui.MainUILoop({})
+
 
 if __name__ == '__main__':
-    cyclicPeptides = []
-
-    while True:
-        Main()
+    Main()
 
 # References
 # Peptide Annotation

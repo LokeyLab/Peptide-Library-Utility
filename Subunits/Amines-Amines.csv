@@ -1,0 +1,112 @@
+Name,Multiple Letter,SMILES String
+butylamine,Bu,NCCCC
+ethylamine,Et,NCC
+propylamine,,NCCC
+isobutylamine,Ib,NCC(C)C
+2-methoxyethylamine,OME,NCCOC
+pentylamine (amylamine),Pnt,NCCCCC
+furfurylamine,Ffl,NCC1=CC=CO1
+hexylamine,Hex,NCCCCCC
+benzylamine,Bn,NCC1=CC=CC=C1
+3-picolylamine,P3M,NCC1=CC=CN=C1
+2-(1H-imidazol-1-yl)ethanamine,ImEt,NCCN1C=CN=C1
+cyclohexylmethylamine,CyMe,NCC1CCCCC1
+4-aminomethyltetrahydropyran,THPM,NCC1CCOCC1
+3-isopropoxypropylamine,IOP,NCCCOC(C)C
+3-(2-aminoethyl)-pyridine,P3E,NCCC1=CC=CN=C1
+4-fluorobenzylamine,4FBn,NCC1=CC=C(F)C=C1
+4-(2-aminoethyl)morpholine,MorphE,NCCN1CCOCC1
+3-phenylpropylamine,PhPr,NCCCC1=CC=CC=C1
+2-phenoxyethylamine,PhOE,NCCOC1=CC=CC=C1
+3-(1-methyl-1H-pyrazol-4-yl)-1-propanamine,MPzP,NCCCC1=CN(C)N=C1
+4-Chlorobenzylamine,4ClBn,NCC1=CC=C(Cl)C=C1
+N-(3'-aminopropyl)-2-pyrrolidinone,PyrE,NCCCN1CCCC1(=O)
+2-(4-methylpiperazine-1-yl)ethylamine,MPzE,NCCN1CCN(C)CC1
+4-phenylbutylamine,PhBu,NCCCCC1=CC=CC=C1
+"3,4-methylenedioxybenzylamine",ADPM,NCC1=CC(OCO2)=C2C=C1
+"2-amino-N,N-dimethylethanesulfonamide hydrochloride",DASE,NCCS(=O)(N(C)C)=O.[H]Cl
+[(1-isobutyl-1H-imidazol-5-yl)methyl]amine dihydrochloride,IBIM,NCC1=CN=CN1CC(C)C.[H]Cl.[H]Cl
+1-(5-isobutyl-3-isoxazolyl)methanamine,ISxM,NCC1=NOC(CC(C)C)=C1
+"1-(4-ethyl-2-methyl-1,3-thiazol-5-yl)methanamine",EMTM,NCC1=C(CC)N=C(C)S1
+[3-(4-methyl-1-piperidinyl)-3-oxopropyl]amine hydrochloride,MPAE,NCCC(N1CCC(C)CC1)=O.[H]Cl
+"2-(2-isopropyl-1,3-thiazol-4-yl)ethanamine hydrochloride",ITzE,NCC(C1=CSC(C(C)C)=N1).[H]Cl
+"[(3-phenyl-1,2,4-oxadiazol-5-yl)methyl]amine",POxM,NCC1=NC(C2=CC=CC=C2)=NO1
+[(6-pyrrolidin-1-ylpyridin-3-yl)methyl]amine,PdPM,NCC1=CC=C(N2CCCC2)N=C1
+[2-(1H-pyrazol-1-ylmethyl)benzyl]amine,MPzB,NCC1=CC=CC=C1CN2N=CC=C2
+1-[5-(4-methylphenyl)-3-isoxazolyl]methanamine,MPxM,NCC1=NOC(C2=CC=C(C)C=C2)=C1
+3-(1-methyl-1H-benzo[d]imidazol-2-yl)propan-1-amine dihydrochloride,MBIP,NCCCC1=NC2=CC=CC=C2N1C.[H]Cl.[H]Cl
+tert-butyl 4-(2-aminoethyl)piperazine-1-carboxylate,PpzE,NCCN1CCN(C(=O)OC(C)(C)C)CC1
+3-[(1-isopropylpiperidin-4-yl)oxy]propan-1-amine,IPPOP,NCCCOC1CCN(C(C)C)CC1
+2-(4-isopropylpiperazin-1-yl)ethanamine,IPPzE,NCCN1CCN(C(C)C)CC1
+1-(2-methyltetrahydrofuran-2-yl)methanamine,MThM,NCC1(C)OCCC1
+2-(6-methylpyridin-2-yl)ethanamine,PEM,NCCc1cccc(C)n1
+"3-(3,4,5-Trimethyl-1H-pyrazol-1-yl)-1-propanamine",MPzP,NCCCN1N=C(C)C(C)=C1C
+({1-[(5-methyl-2-furyl)methyl]-4-piperidinyl}methyl)amine,MFMPM,NCC1CCN(CC2=CC=C(C)O2)CC1
+(2-ethylbutyl)amine,2EtB,NCC(CC)CC
+1-(1-propylcyclobutyl)methanamine,1CypB,NCC1(CCC)CCC1
+2-(3-methoxy-4-propoxyphenyl)ethanamine,OOPE,NCCc1cc(OC)c(OCCC)cc1
+"3-(3,4-diethoxyphenyl)-1-propanamine",OOPP,NCCCC1=CC=C(OCC)C(OCC)=C1
+(2-methoxybutyl)amine hydrochloride,OMB,NCC(OC)CC.[H]Cl
+"2-(3-propoxyphenyl)ethyl]amine, salt form: HCl",OPE,NCCC1=CC=CC(OCCC)=C1.[H]Cl
+"[3-(4,5-dimethyl-1,3-thiazol-2-yl)propyl]amine dihydrochloride",MTzP,NCCCC1=NC(C)=C(C)S1.[H]Cl.[H]Cl
+"2-[4-(1,3-benzoxazol-2-yl)morpholin-2-yl]ethanamine, salt form: 2HCl",BMpE,NCCC1CN(C2=NC3=CC=CC=C3O2)CCO1.[H]Cl.[H]Cl
+[5-(4-morpholinyl)pentyl]amine dihydrochloride,MpP,NCCCCCN1CCOCC1.[H]Cl.[H]Cl
+(3-methoxybutyl)amine hydrochloride,OmB,NCCC(OC)C.[H]Cl
+"(3-methoxy-2,2-dimethylpropyl)amine hydrochloride",MOmP,NCC(C)(C)COC.[H]Cl
+(cyclobutylmethyl)amine hydrochloride,CyBM,NCC1CCC1.[H]Cl
+(tetrahydro-2H-pyran-2-ylmethyl)amine hydrochloride,2ThM,NCC1CCCCO1.[H]Cl
+[4-(tetrahydro-2-furanyl)butyl]amine hydrochloride,2FuB,NCCCCC1OCCC1.[H]Cl
+(2-fluoroethyl)amine hydrochloride,Fet,NCCF.[H]Cl
+"1-[3-(3,4-dimethoxyphenyl)-1,2,4-oxadiazol-5-yl]methanamine",DPOM,NCC1=NC(C2=CC=C(OC)C(OC)=C2)=NO1
+1-[1-(cyclopropylcarbonyl)piperidin-3-yl]methanamine,ACPM,NCC1CN(C(C2CC2)=O)CCC1
+(3-pyrrolidin-1-ylpropyl)amine,PyrP,NCCCN1CCCC1
+3-(cyclopentyloxy)-1-propanamine,OCyE,NCCCOC1CCCC1
+[2-(isopropylthio)ethyl]amine hydrochloride hydrate,SpE,NCCSC(C)C.[H]Cl.[H]O[H]
+"[3-(3,5-dimethyl-4-isoxazolyl)propyl]amine hydrochloride",DIXPA,NCCCC1=C(C)ON=C1C.[H]Cl
+3-(2-Isopropyl-imidazol-1-yl)-propylamine,,NCCCN1C=CN=C1C(C)C
+C-[1-(3-Fluoro-phenyl)-cyclopentyl]-methylamine,,NCC1(C2=CC=CC(F)=C2)CCCC1
+2-ethyl-1-hexylamine,,NCC(CC)CCCC
+"2,4-difluorobenzylamine",,NCC1=CC=C(F)C=C1F
+phenethylamine,,NCCC1=CC=CC=C1
+(6-Chloropyridin-3-yl)methanamine,,NCC1=CC=C(Cl)N=C1
+4-Methoxybenzylamine,,NCC1=CC=C(OC)C=C1
+[1-(4-Fluorophenyl)cyclopentyl]methanamine,,NCC1(C2=CC=C(F)C=C2)CCCC1
+3-(Trifluoromethyl)benzylamine,,NCC1=CC=CC(C(F)(F)F)=C1
+2-Chlorobenzylamine,,NCC1=CC=CC=C1Cl
+Tyramine,,NCCC1=CC=C(C=C1)O
+Pyridin-2-ylmethanamine,,NCC1=NC=CC=C1
+Homoveratrylamine,,NCCC1=CC=C(OC)C(OC)=C1
+3-Chlorobenzylamine,,NCC1=CC=CC(Cl)=C1
+4-Bromobenzylamine,,NCC1=CC=C(Br)C=C1
+Cyclobutylamine,,NC1CCC1
+Naphthalen-2-ylmethanamine,,NCC1=CC=C2C=CC=CC2=C1
+2-Cyclohexylethanamine,,NCCC1CCCCC1
+"2,3-Dihydro-1H-inden-1-amine",,NC1CCC2=C1C=CC=C2
+"4-Oxazolemethanamine,2-cyclopropyl-5-methyl-",,NCC1=C(C)OC(C2CC2)=N1
+2-Methylbenzylamine,,NCC1=CC=CC=C1C
+Naphthalen-1-ylmethanamine,,NCC1=C2C=CC=CC2=CC=C1
+4-Phenylbenzylamine,,NCC1=CC=C(C2=CC=CC=C2)C=C1
+3-(Pyridin-4-yl)propan-1-amine,,NCCCC1=CC=NC=C1
+"1,2,3,4-Tetrahydronaphthalen-2-ylmethanamine",,NCC1CC2=C(C=CC=C2)CC1
+"3-(2,4-Difluorophenyl)propan-1-amine",,NCCCC1=CC=C(F)C=C1F
+Cyclohexylamine,,NC1CCCCC1
+2-Methoxybenzylamine,,NCC1=CC=CC=C1OC
+"2,3-Dihydro-1H-inden-1-ylmethanamine",,NCC1CCC2=C1C=CC=C2
+Benzhydrylamine,,NC(C1=CC=CC=C1)C2=CC=CC=C2
+4-Methylbenzylamine,,NCC1=CC=C(C)C=C1
+2-(Pyridin-3-yloxy)propylamine,,NCC(OC1=CC=CN=C1)C
+(3-Phenylphenyl)methanamine,,NCC1=CC=CC(C2=CC=CC=C2)=C1
+3-Pyridin-2-ylpropan-1-amine,,NCCCC1=NC=CC=C1
+"2,2-Diphenylethylamine",,NCC(C1=CC=CC=C1)C2=CC=CC=C2
+Cyclopentylamine,,NC1CCCC1
+3-(2-Chlorophenyl)propan-1-amine,,NCCCC1=CC=CC=C1Cl
+"2,2-Dimethyl-3-phenylpropan-1-amine",,NCC(C)(C)CC1=CC=CC=C1
+3-(Pyridin-3-yl)propan-1-amine,,NCCCC1=CC=CN=C1
+3-(Naphthalen-1-yl)propan-1-amine,,NCCCC1=C2C=CC=CC2=CC=C1
+Cyclopentanemethylamine,,NCC1CCCC1
+tert-butyl 3-(3-(aminomethyl)phenyl)-1H-indazole-1-carboxylate,,NCC1=CC=CC(C2=NN(C(OC(C)(C)C)=O)C3=CC=CC=C32)=C1
+"tert-butyl 4-(4-(aminomethyl)phenyl)-3,5-dimethyl-1H-pyrazole-1-carboxylate",,NCc1ccc(C=2C(C)=NN(C(=O)OC(C)(C)(C))C(C)2)cc1
+tert-butyl 3-(4-(aminomethyl)phenyl)-1H-indazole-1-carboxylate,,NCC(C=C1)=CC=C1C2=NN(C(OC(C)(C)C)=O)C3=CC=CC=C32
+isoamylamine,,NCCC(C)C
+isopropylamine,N-iPr,NCC(C)(C)
+"2,4-Difluorobenzonitrile",N-dFBn,NCc1c(F)cc(F)cc1
