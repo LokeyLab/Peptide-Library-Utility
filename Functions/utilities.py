@@ -43,10 +43,6 @@ def PlotDataframe(df):
     z = df["ALogP"]
     p = (x + y + z) # df["Predicted PappE-6"]
 
-    print(x.max())
-    print(y.min())
-    print(z.min())
-
     ax.scatter(x, y, z, c = p, cmap="viridis", edgecolors='black', s=20)
     ax.plot(x, z, "r+", zdir='y', zs=y.max())
     ax.plot(y, z, "g+", zdir='x', zs=x.min())

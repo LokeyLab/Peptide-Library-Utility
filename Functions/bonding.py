@@ -29,21 +29,31 @@ def CyclizeThioether(peptide, subunitLibrary):
     tempPeptide = []
 
     if peptide.endswith(subunitLibrary["Thr"].smilesString):
-        tempPeptide = str(peptide[0]) + "%99" + str(peptide[1:-24]) + "O[C@H](C)[C@@H](N)C(=O)O%99"
+        tempPeptide = str(peptide[0]) + "%99" + str(peptide[1:-24]) + "O[C@H](C)[C@@H](N)C(=O)%99"
+
     elif peptide.endswith(subunitLibrary["D-Thr"].smilesString):
-        tempPeptide = str(peptide[0]) + "%99" + str(peptide[1:-23]) + "O[C@H](C)[C@H](N)C(=O)O%99"
+        tempPeptide = str(peptide[0]) + "%99" + str(peptide[1:-23]) + "O[C@H](C)[C@H](N)C(=O)%99"
+
     elif peptide.endswith(subunitLibrary["ß-H-Thr"].smilesString):
-        tempPeptide = str(peptide[0]) + "%99" + str(peptide[1:-25]) + "O[C@H](C)[C@@H](N)CC(=O)O%99"
+        tempPeptide = str(peptide[0]) + "%99" + str(peptide[1:-25]) + "O[C@H](C)[C@@H](N)CC(=O)%99"
+
     elif peptide.endswith(subunitLibrary["ß-H-D-Thr"].smilesString):
-        tempPeptide = str(peptide[0]) + "%99" + str(peptide[1:-24]) + "O[C@H](C)[C@H](N)CC(=O)O%99"
+        tempPeptide = str(peptide[0]) + "%99" + str(peptide[1:-24]) + "O[C@H](C)[C@H](N)CC(=O)%99"
+
     elif peptide.endswith(subunitLibrary["(NMe)-Thr"].smilesString):
-        tempPeptide = str(peptide[0]) + "%99" + str(peptide[1:-27]) + "O[C@H](C)[C@@H](N(C))C(=O)O%99"
+        tempPeptide = str(peptide[0]) + "%99" + str(peptide[1:-27]) + "O[C@H](C)[C@@H](N(C))C(=O)%99"
+
     elif peptide.endswith(subunitLibrary["(NMe)-D-Thr"].smilesString):
-        tempPeptide = str(peptide[0]) + "%99" + str(peptide[1:-26]) + "O[C@H](C)[C@H](N(C))C(=O)O%99"
+        tempPeptide = str(peptide[0]) + "%99" + str(peptide[1:-26]) + "O[C@H](C)[C@H](N(C))C(=O)%99"
+
     elif peptide.endswith(subunitLibrary["(NMe)-ß-H-Thr"].smilesString):
-        tempPeptide = str(peptide[0]) + "%99" + str(peptide[1:-28]) + "O[C@H](C)[C@@H](N(C))CC(=O)O%99"
+        tempPeptide = str(peptide[0]) + "%99" + str(peptide[1:-28]) + "O[C@H](C)[C@@H](N(C))CC(=O)%99"
+
     elif peptide.endswith(subunitLibrary["(NMe)-ß-H-D-Thr"].smilesString):
-        tempPeptide = str(peptide[0]) + "%99" + str(peptide[1:-27]) + "O[C@H](C)[C@H](N(C))CC(=O)O%99"
+        tempPeptide = str(peptide[0]) + "%99" + str(peptide[1:-27]) + "O[C@H](C)[C@H](N(C))CC(=O)%99"
+
+    else:
+        print("\nError. Peptide may not end in a threonine.") # N[C@@H](Cc%98ccc(F)cc%98)C(=O)O
 
     return tempPeptide
 

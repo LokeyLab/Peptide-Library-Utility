@@ -1,14 +1,11 @@
 # Internal
-from Functions import userInterface as ui
+from Functions import userInterface as ui, pampNet as pn
 
 
 
 def Main():
-    # X, y = pn.ReadTrainingData()
-    # df = pn.PreprocessData(X, y)
-    # model = pn.Train("TrainingData/hexData.csv")
-
-    ui.MainUILoop({})
+    pn.PampNetMain()
+    # ui.MainUILoop({})
 
 
 if __name__ == '__main__':

@@ -97,6 +97,10 @@ def CyclicPeptideInTerminal(subunitLibrary):
                 else:
                     print("\nInvalid input, try again.")
 
+                    continue
+
+            break
+
         else:
             print("\nInvalid input, try again.")
 
@@ -180,6 +184,23 @@ def CyclicPeptideLibraryFromCSV(subunitLibrary):
             print("\nCyclizing Thioether...")
 
             cyclizationType = "Thioether"
+            capBool = False
+
+            while True:
+                choice = input("\nCap exposed Amino Group? y/n: ")
+
+                if choice == "y":
+                    cap = input("\nEnter subunit: ")
+
+                    capBool = True
+                    break
+
+                elif choice == "n":
+                    capBool = False
+                    break
+
+                else:
+                    print("\nInvalid input, try again.")
 
             break
 
@@ -188,39 +209,30 @@ def CyclicPeptideLibraryFromCSV(subunitLibrary):
 
             continue
 
-    capBool = False
 
-    while True:
-        choice = input("\nCap exposed Amino Group? y/n: ")
-
-        if choice == "y":
-            cap = input("\nEnter subunit: ")
-
-            capBool = True
-            break
-
-        elif choice == "n":
-            capBool = False
-            break
-        else:
-            print("\nInvalid input, try again.")
 
     cyclicPeptides = []
 
     for l in cartesianProduct:
         subunits = []
+
         for m in l:
             subunits.append(subunitLibrary[m])
+
         peptide = b.BondHeadToTail(subunits)
+
         if cyclizationType == "Head to Tail":
             cyclicPeptide = b.CyclizeHeadToTail(peptide)
-        if cyclizationType == "Huisgen":
+
+        elif cyclizationType == "Huisgen":
             cyclicPeptide = b.CyclizeHuisgen(peptide)
-        if cyclizationType == "Thioether":
+
+        elif cyclizationType == "Thioether":
             cyclicPeptide = b.CyclizeThioether(peptide, subunitLibrary)
 
             if capBool:
                 subunits.append(subunitLibrary[cap])
+
                 tempPeptide = str(cyclicPeptide[0:cyclicPeptide.rfind("N") + 1]) + "(" + \
                               subunitLibrary[cap].smilesString + ")" + \
                               str(cyclicPeptide[cyclicPeptide.rfind("N") + 1:])
