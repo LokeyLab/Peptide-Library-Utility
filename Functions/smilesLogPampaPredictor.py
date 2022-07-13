@@ -17,8 +17,8 @@ from rdkit.Chem import Descriptors
 def TrainModel():
     df = read_csv("../TrainingData/hex.csv")
 
-    X = df.iloc[0:, 10]
-    y = df.iloc[0:, 14]
+    X = df.iloc[0:1000, 10]
+    y = df.iloc[0:1000, 14]
 
     longestSmiles = len(max(df.iloc[1:, 10], key = len)) + 100
 
@@ -41,7 +41,7 @@ def TrainModel():
     X = pd.DataFrame(X)
     y = pd.DataFrame(y)
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.1, random_state = 42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
     # X_test, X_valid, y_test, y_valid = train_test_split(X_test, y_test, test_size=0.5, random_state=42)
 
     print("X_train shape = " + str(X_train.shape))

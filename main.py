@@ -1,11 +1,11 @@
 # Internal
-from Functions import userInterface as ui, pampNet as pn
+from Functions import userInterface as ui, pampNet2 as pn2
 
 
 
 def Main():
-    pn.PampNetMain()
-    # ui.MainUILoop({})
+    # pn2.PampNetMain()
+    ui.MainUILoop({})
 
 
 if __name__ == '__main__':

@@ -52,6 +52,8 @@ def CyclicPeptideInTerminal(subunitLibrary):
     print("1) Head to Tail")
     print("2) Huisgen FIX ME")
     print("3) Thioether (Must end in Threonine)")
+    print("4) Keep Linear")
+
 
     choice = input("\nEnter a number: ")
     while True:
@@ -99,6 +101,10 @@ def CyclicPeptideInTerminal(subunitLibrary):
 
                     continue
 
+            break
+
+        elif choice == "4":
+            cyclicPeptide = peptide
             break
 
         else:
@@ -163,6 +169,7 @@ def CyclicPeptideLibraryFromCSV(subunitLibrary):
         print("1) Head to Tail")
         print("2) Huisgen FIX ME")
         print("3) Thioether (Must end in Threonine)")
+        print("4) Keep Linear")
 
         choice = input("\nEnter a number: ")
 
@@ -204,6 +211,10 @@ def CyclicPeptideLibraryFromCSV(subunitLibrary):
 
             break
 
+        elif choice == "4":
+            cyclizationType = "None"
+            break
+
         else:
             print("\nInvalid input, try again.")
 
@@ -238,6 +249,9 @@ def CyclicPeptideLibraryFromCSV(subunitLibrary):
                               str(cyclicPeptide[cyclicPeptide.rfind("N") + 1:])
 
                 cyclicPeptide = tempPeptide
+
+        elif cyclizationType == "None":
+            cyclicPeptide = peptide
 
         name = ""
 

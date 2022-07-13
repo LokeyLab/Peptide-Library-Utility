@@ -125,9 +125,10 @@ def Train():
     # df = pd.read_csv(data)
     df = pd.read_csv("TrainingData/hexData.csv")
 
-    X = np.asarray(df[["Exact Mass", "TPSA", "ALogP", "# Atoms", "# Rotatable Bonds",
-                     "# Amide Bonds", "# Aromatic Rings"]])
+    X = np.asarray(df[["Exact Mass", "ALogP", "TPSA", "SASA", "# Atoms", "# Rotatable Bonds",
+                               "# Amide Bonds", "# Aromatic Rings","# HBA", "# HBD"]])
 
+    """
     X2 = np.asarray(df["Atoms"].apply(literal_eval))
 
     for x in range(0, len(X2)):
@@ -142,37 +143,38 @@ def Train():
         X2[j] = np.pad(X2[j], (0, largestAtomCount - len(X2[j] + 50)), 'constant', constant_values= 0.0)
 
     X2 = np.stack(X2)
+    """
 
     y = np.asarray(df["PappE-6"])
 
     X = np.nan_to_num(X, copy=True, nan=0.0, posinf=None, neginf=None)
-    X2 = np.nan_to_num(X2, copy=True, nan=0.0, posinf=None, neginf=None)
     y = np.nan_to_num(y, copy=True, nan=0.0, posinf=None, neginf=None)
 
     y = y.reshape(-1,1)
 
     print("X shape is " + str(X.shape))
     print(X.dtype)
-    print("X2 shape is " + str(X2.shape))
-    print(X2.dtype)
     print("y shape is " + str(y.shape))
     print(y.dtype)
 
-    scaler = RobustScaler()
+    scaler = StandardScaler()
 
-    X = scaler.fit_transform(X)
-    X2 = scaler.fit_transform(X2)
+    # X = scaler.fit_transform(X)
+    # X2 = scaler.fit_transform(X2)
     # y = scaler.fit_transform(y)
 
-    inputA = keras.Input(shape=X.shape[1])
-    inputB = keras.Input(shape=X2.shape[1])
+    input = keras.Input(shape=X.shape[1])
 
-    x = keras.layers.Dense(4, activation="relu")(inputA)
+    x = keras.layers.Dropout(0.3)(input)
+    x = keras.layers.Dense(8, activation="relu")(x)
+    x = keras.layers.Dropout(0.2)(x)
+    x = keras.layers.Dense(4, activation="relu")(x)
+    x = keras.layers.Dense(2, activation="linear")(x)
 
-    x = keras.layers.RepeatVector(1)(x)
+    model = keras.Model(inputs=input, outputs=x)
 
-    x = keras.Model(inputs=inputA, outputs=x)
 
+    """
     atomsNodeCount = largestAtomCount
 
     x2 = keras.layers.RepeatVector(3)(inputB)
@@ -194,60 +196,80 @@ def Train():
     x3 = keras.layers.Dense(2, activation="relu")(combined)
     x3 = keras.layers.Dense(1, activation="linear")(x3)
 
+    
     model = keras.Model(inputs=[x.input, x2.input], outputs=x3)
+    """
 
     print(model.summary())
 
     plot_model(model, "modela.png", show_shapes=True, show_layer_names=True)
-    # visualkeras.layered_view(model, to_file='modelb.png', legend = True)
+    visualkeras.layered_view(model, to_file='modelb.png', legend = True)
 
-    model.compile(optimizer = keras.optimizers.Adam(
-        learning_rate=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-7, amsgrad=False, name="Adam"),
-        loss = keras.losses.MeanSquaredError(reduction="auto", name="mean_absolute_error"),
-        metrics = ['accuracy'])
+    model.compile(optimizer = keras.optimizers.Adam(learning_rate=5e-4, decay = 1e-1, name="Adam"),
+        loss = "mse",
+        metrics=[
+            'accuracy',
+            keras.metrics.MeanSquaredError(name="mean_squared_error", dtype=None),
+            keras.metrics.MeanAbsolutePercentageError(name="mean_absolute_percentage_error", dtype=None),
+            keras.metrics.CosineSimilarity(name="cosine_similarity", dtype=None, axis=-1)])
 
 
     print("\nTraining Model...\n")
 
     history = model.fit(
-        x= [X,X2],
+        x= X,
         y= y,
-        batch_size = 32,
+        batch_size=32,
         epochs = 100,
+        shuffle = True,
         validation_split = 0.33,
+        verbose = 1
     )
 
+    """
     score, acc = model.evaluate(
-        x=[X, X2],
+        x=X,
         y=y
     )
 
     print("\nTest score = ", score)
     print("Test accuracy = ", acc)
+    """
 
-    fig, (ax1, ax2) = plt.subplots(2, 1)
+    fig, axes = plt.subplots(1,4)
 
-    ax1.plot(history.history['accuracy'])
-    ax1.plot(history.history['val_accuracy'])
-    ax1.set_title('model accuracy')
-    ax1.set_ylabel('accuracy')
-    ax1.set_xlabel('epoch')
-    ax1.legend(['train', 'test'], loc='upper left')
+    axes[0].plot(history.history['mean_squared_error'])
+    axes[0].plot(history.history['val_mean_squared_error'])
+    axes[0].set_title('MSE')
+    # axes[0].set_ylabel('metric')
+    axes[0].set_xlabel('epoch')
+    axes[0].legend(['train', 'test'], loc='upper right')
 
-    ax2.plot(history.history['loss'])
-    ax2.plot(history.history['val_loss'])
-    ax2.set_title('model loss')
-    ax2.set_ylabel('loss')
-    ax2.set_xlabel('epoch')
-    ax2.legend(['train', 'test'], loc='upper right')
+    axes[1].plot(history.history['mean_absolute_percentage_error'])
+    axes[1].plot(history.history['val_mean_absolute_percentage_error'])
+    axes[1].set_title('MAPE')
+    axes[1].set_xlabel('epoch')
+    axes[1].legend(['train', 'test'], loc='upper right')
 
-    fig.tight_layout()
+    axes[2].plot(history.history['accuracy'])
+    axes[2].plot(history.history['val_accuracy'])
+    axes[2].set_title('Accuracy')
+    axes[2].set_xlabel('epoch')
+    axes[2].legend(['train', 'test'], loc='upper right')
+
+    axes[3].plot(history.history['loss'])
+    axes[3].plot(history.history['val_loss'])
+    axes[3].set_title('Loss')
+    axes[3].set_xlabel('epoch')
+    axes[3].legend(['train', 'test'], loc='upper right')
+
+    # fig.tight_layout()
     plt.show()
 
 def PampNetMain():
-    X, y = ReadTrainingData()
-    PreprocessData(X, y)
-    # model = Train()
+    # X, y = ReadTrainingData()
+    # PreprocessData(X, y)
+    model = Train()
 
 
 def PlotMol():
