@@ -13,19 +13,19 @@ class AminoAcid:
         self.sideChain = sideChain
         self.stereocenter = stereocenter
         self.carboxylGroup = carboxylGroup
-        self.smilesString = aminoGroup + stereocenter + sideChain + "C" + carboxylGroup
+        self.smilesString = (aminoGroup + stereocenter + sideChain + "C" + carboxylGroup).rstrip()
 
 class Peptoid:
     def __init__(self, name, multipleLetter, smilesString):
         self.name = name
         self.multipleLetter = multipleLetter
-        self.smilesString = smilesString
+        self.smilesString = (smilesString).rstrip()
 
 class Misc:
     def __init__(self, name, multipleLetter, smilesString):
         self.name = name
         self.multipleLetter = multipleLetter
-        self.smilesString = smilesString
+        self.smilesString = (smilesString).rstrip()
 
 
 def GenerateBaseAminoAcid(parentheses, name, multipleLetter, aminoGroup, sideChain, carboxylGroup):

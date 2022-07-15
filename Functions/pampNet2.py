@@ -1,5 +1,5 @@
 print("\nImporting Packages...")
-# internal
+# Internal
 from Functions import smilesToMatricies as stm
 
 # External
@@ -13,7 +13,7 @@ from ast import literal_eval
 from tqdm import tqdm
 from itertools import chain
 
-from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler
+from sklearn.preprocessing import MinMaxScaler
 
 import tensorflow as tf
 from tensorflow import keras
@@ -154,15 +154,17 @@ def Train():
     matricies = pickle.load(infile)
     infile.close()
 
+    scaler = MinMaxScaler()
+
     X = []
     maxLen = 0
     for i in range(0,len(matricies)):
         tempX = []
-        tempX.append(matricies[i].adjacencyMatrix) # np.asarray(df["One-Hot"])
-        tempX.append(matricies[i].atomicNumberMatrix)
-        tempX.append(matricies[i].aromaticityMatrix)
-        tempX.append(matricies[i].chiralityMatrix)
-        tempX.append(matricies[i].distanceMatrix)
+        tempX.append(scaler.fit_transform(np.array(matricies[i].adjacencyMatrix)))
+        tempX.append(scaler.fit_transform(np.array(matricies[i].atomicNumberMatrix)))
+        tempX.append(scaler.fit_transform(np.array(matricies[i].aromaticityMatrix)))
+        tempX.append(scaler.fit_transform(np.array(matricies[i].chiralityMatrix)))
+        tempX.append(scaler.fit_transform(np.array(matricies[i].distanceMatrix)))
 
         if len(matricies[i].adjacencyMatrix) > maxLen:
             maxLen = len(matricies[i].adjacencyMatrix)
@@ -202,20 +204,16 @@ def Train():
     """
 
     df = pd.read_csv("TrainingData/hex.csv")
-    y = np.asarray(df["PappE-6"])
+    y = scaler.fit_transform(np.asarray(df["PappE-6"]).reshape(-1, 1))
 
     X = np.nan_to_num(X, copy=True, nan=0.0, posinf=None, neginf=None)
     y = np.nan_to_num(y, copy=True, nan=0.0, posinf=None, neginf=None)
 
-    y = y.reshape(-1, 1)
-
-    # print("X shape is " + str(X.shape))
-    # print(X.dtype)
-    # print("y shape is " + str(y.shape))
+    print("X shape is " + str(X.shape))
+    print(X.dtype)
+    print("y shape is " + str(y.shape))
     print(y.dtype)
 
-    # scaler = StandardScaler()
-    # X = scaler.fit_transform(X)
 
     X = np.stack(X)
     X = tf.transpose(X, [0, 2, 3, 1])
@@ -235,30 +233,15 @@ def Train():
 
     x = keras.layers.Flatten()(x)
 
-    x = keras.layers.Dense(128)(x)
+    x = keras.layers.Dense(64)(x)
     x = keras.layers.Activation('relu')(x)
     x = keras.layers.BatchNormalization(axis=-1)(x)
     x = keras.layers.Dropout(0.9)(x)
 
-    x = keras.layers.Dense(64)(x)
-    x = keras.layers.Activation('relu')(x)
-    x = keras.layers.BatchNormalization(axis=-1)(x)
-    x = keras.layers.Dropout(0.75)(x)
-
-    x = keras.layers.Dense(32)(x)
-    x = keras.layers.Activation('relu')(x)
-    x = keras.layers.BatchNormalization(axis=-1)(x)
-    x = keras.layers.Dropout(0.75)(x)
-
     x = keras.layers.Dense(16)(x)
     x = keras.layers.Activation('relu')(x)
     x = keras.layers.BatchNormalization(axis=-1)(x)
-    x = keras.layers.Dropout(0.5)(x)
-
-    x = keras.layers.Dense(8)(x)
-    x = keras.layers.Activation('relu')(x)
-    x = keras.layers.BatchNormalization(axis=-1)(x)
-    x = keras.layers.Dropout(0.5)(x)
+    x = keras.layers.Dropout(0.75)(x)
 
     x = keras.layers.Dense(1)(x)
     x = keras.layers.Activation('linear')(x)
@@ -270,7 +253,7 @@ def Train():
     plot_model(model, "modela.png", show_shapes=True, show_layer_names=True)
     visualkeras.layered_view(model, to_file='modelb.png', legend=True)
 
-    model.compile(optimizer = keras.optimizers.Adam(learning_rate = 1e-3, decay = 1e-3, name="Adam"),
+    model.compile(optimizer = keras.optimizers.Adam(learning_rate = 5e-3, decay = 1e-4, name="Adam"),
                   loss = "mse",
                   metrics = 'accuracy')
 
@@ -280,9 +263,9 @@ def Train():
         x=X,
         y=y,
         batch_size=32,
-        epochs=10,
+        epochs=20,
         shuffle=True,
-        validation_split=0.1,
+        validation_split=0.2,
         verbose=1
     )
 
@@ -309,7 +292,8 @@ def Train():
     ax2.set_xlabel('epoch')
     ax2.legend(['train', 'test'], loc='upper right')
 
-    # fig.tight_layout()
+    fig.tight_layout()
+    plt.savefig("Accuracy and Loss.png")
     plt.show()
 
 def PampNetMain():

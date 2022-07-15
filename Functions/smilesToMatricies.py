@@ -4,8 +4,6 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 
-# smiles = "N4(C)[C@H](C)C(=O)N(C)[C@H](CC(C)C)C(=O)N(Cc1ccccc1)CC(=O)N2[C@H](CCC2)C(=O)N(C)[C@@H](CC(C)C)C(=O)N[C@@H](Cc3ccccc3)C4=O"
-
 class molMatricies:
     def __init__(self, adjacencyMatrix, atomicNumberMatrix, aromaticityMatrix, chiralityMatrix, distanceMatrix):
 
@@ -116,7 +114,8 @@ def smilesToMatricies(smiles):
 
     matricies = molMatricies(adjacencyMatrix, atomicNumberMatrix, aromaticityMatrix, chiralityMatrix, distanceMatrix)
 
-    return matricies
+    # return matricies
+    return molNx, adjacencyMatrix, atomicNumberMatrix, aromaticityMatrix, chiralityMatrix, distanceMatrix
 
 def plotCyclicPeptideMatricies(molNx, adjacencyMatrix, atomicNumberMatrix, aromaticityMatrix, chiralityMatrix,
                                distanceMatrix):
@@ -161,4 +160,15 @@ def plotCyclicPeptideMatricies(molNx, adjacencyMatrix, atomicNumberMatrix, aroma
     axs[1,2].matshow(distanceMatrix)
 
     plt.tight_layout()
+    plt.savefig("Data Structure.png")
+
     plt.show()
+
+"""
+smiles = "N4(C)[C@H](C)C(=O)N(C)[C@H](CC(C)C)C(=O)N(Cc1ccccc1)CC(=O)N2[C@H](CCC2)C(=O)N(C)[C@@H](CC(C)C)C(=O)N[C@@H](Cc3ccccc3)C4=O"
+
+molNx, adjacencyMatrix, atomicNumberMatrix, aromaticityMatrix, chiralityMatrix, distanceMatrix = smilesToMatricies(smiles)
+
+plotCyclicPeptideMatricies(molNx, adjacencyMatrix, atomicNumberMatrix, aromaticityMatrix, chiralityMatrix,
+                               distanceMatrix)
+"""
