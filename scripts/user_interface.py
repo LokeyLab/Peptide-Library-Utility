@@ -1,14 +1,16 @@
-# Internal
-from scripts import header as h
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
-# External
-import numpy as np
-import pandas as pd
+"""
+This script contains all the user interface related functions and most of the function calls that are related to the
+creating of peptide libraries.
+"""
+
+from scripts import header as h
 
 
 def cyclic_peptide_in_terminal(subunit_library):
-
-    cyclicPeptides = []
+    """This function guides the user through creating a peptide using the text-based user interface."""
 
     while True:
 
@@ -40,7 +42,7 @@ def cyclic_peptide_in_terminal(subunit_library):
 
                 break
 
-            except:
+            except TypeError:
 
                 print("\nInvalid input, try again.")
 
@@ -58,7 +60,7 @@ def cyclic_peptide_in_terminal(subunit_library):
 
         name += subunits[i].multiple_letter + " "
 
-    peptide = h._bonding.bond_head_to_tail(subunits)
+    peptide = h.bonding.bond_head_to_tail(subunits)
 
     print("Cyclization Types:")
     print("1) Head to Tail")
@@ -75,7 +77,7 @@ def cyclic_peptide_in_terminal(subunit_library):
 
             print("\nCyclizing Head to Tail...")
 
-            cyclic_peptide = h._bonding.cyclize_head_to_tail(peptide)
+            cyclic_peptide = h.bonding.cyclize_head_to_tail(peptide)
 
             print("\nCyclization Complete.")
 
@@ -85,7 +87,7 @@ def cyclic_peptide_in_terminal(subunit_library):
 
             print("\nCyclizing Huisgen...")
 
-            cyclic_peptide = h._bonding.cyclize_huisgen(peptide)
+            cyclic_peptide = h.bonding.cyclize_huisgen(peptide)
 
             print("\nCyclization Complete.")
 
@@ -95,7 +97,7 @@ def cyclic_peptide_in_terminal(subunit_library):
 
             print("\nCyclizing Thioether...")
 
-            cyclic_peptide = h._bonding.cyclize_thioether(peptide, subunit_library)
+            cyclic_peptide = h.bonding.cyclize_thioether(peptide, subunit_library)
 
             print("\nCyclization Complete.")
 
@@ -136,28 +138,29 @@ def cyclic_peptide_in_terminal(subunit_library):
 
             continue
 
-    molecule = h._cheminformatics.get_molecule_from_smiles(cyclic_peptide)
+    molecule = h.cheminformatics.get_molecule_from_smiles(cyclic_peptide)
 
-    exact_mass, tpsa, a_log_p = h._cheminformatics.GetChemometrics(molecule)
+    exact_mass, tpsa, a_log_p = h.cheminformatics.get_chemometrics(molecule)
 
-    cyclic_peptide_object = h._classes.Peptide(name, exact_mass, tpsa, a_log_p, cyclic_peptide)
+    cyclic_peptide_object = h.classes.Peptide(name, exact_mass, tpsa, a_log_p, cyclic_peptide)
 
-    df = h._utilities.peptides_to_dataframe([cyclic_peptide_object])
+    df = h.utilities.peptides_to_dataframe([cyclic_peptide_object])
 
-    h._utilities.print_dataframe(df)
+    h.utilities.print_dataframe(df)
 
-    h._utilities.dataframe_to_csv(df)
+    h.utilities.dataframe_to_csv(df)
 
     return cyclic_peptide
 
 
 def peptide_library_from_csv(subunit_library):
+    """Creates a peptide library from a user provided .csv."""
 
     while True:
 
         try:
 
-            df = h._utilities.csv_to_dataframe("input/" + input("\nEnter file name: ") + ".csv")
+            df = h.utilities.csv_to_dataframe("input/" + input("\nEnter file name: ") + ".csv")
 
             break
 
@@ -167,7 +170,7 @@ def peptide_library_from_csv(subunit_library):
 
             continue
 
-    h._utilities.print_dataframe(df)
+    h.utilities.print_dataframe(df)
 
     pot_sizes = []
 
@@ -181,7 +184,7 @@ def peptide_library_from_csv(subunit_library):
 
         for j in range(0, df.shape[0]):
 
-            if pd.notnull(df.iloc[j, i]):
+            if h.pd.notnull(df.iloc[j, i]):
 
                 temp_pot.append(df.iloc[j, i])
 
@@ -199,7 +202,7 @@ def peptide_library_from_csv(subunit_library):
 
     print("\nCyclic Peptides To Be Generated: " + str(cyclic_peptide_count))
 
-    cartesian_product = h._combinatronics.CartesianProduct(pots)
+    cartesian_product = h.combinatronics.CartesianProduct(pots)
 
     cyclization_type = ''
 
@@ -280,19 +283,19 @@ def peptide_library_from_csv(subunit_library):
 
             subunits.append(subunit_library[m])
 
-        peptide = h._bonding.bond_head_to_tail(subunits)
+        peptide = h.bonding.bond_head_to_tail(subunits)
 
         if cyclization_type == "Head to Tail":
 
-            cyclic_peptide = h._bonding.cyclize_head_to_tail(peptide)
+            cyclic_peptide = h.bonding.cyclize_head_to_tail(peptide)
 
         elif cyclization_type == "Huisgen":
 
-            cyclic_peptide = h._bonding.cyclize_huisgen(peptide)
+            cyclic_peptide = h.bonding.cyclize_huisgen(peptide)
 
         elif cyclization_type == "Thioether":
 
-            cyclic_peptide = h._bonding.cyclize_thioether(peptide, subunit_library)
+            cyclic_peptide = h.bonding.cyclize_thioether(peptide, subunit_library)
 
             if cap_bool:
 
@@ -304,7 +307,6 @@ def peptide_library_from_csv(subunit_library):
 
                 cyclic_peptide = tempPeptide
 
-
         elif cyclization_type == "None":
 
             cyclic_peptide = peptide
@@ -315,23 +317,23 @@ def peptide_library_from_csv(subunit_library):
 
             name += subunits[i].multiple_letter + " "
 
-        molecule = h._cheminformatics.get_molecule_from_smiles(cyclic_peptide)
+        molecule = h.cheminformatics.get_molecule_from_smiles(cyclic_peptide)
 
-        exactMass, TPSA, aLogP= h._cheminformatics.GetChemometrics(molecule)
+        exactMass, TPSA, aLogP= h.cheminformatics.get_chemometrics(molecule)
 
-        cyclicPeptideObject = h._cheminformatics.Peptide(name, exactMass, TPSA, aLogP, cyclic_peptide)
+        cyclicPeptideObject = h.classes.Peptide(name, exactMass, TPSA, aLogP, cyclic_peptide)
 
         cyclic_peptides.append(cyclicPeptideObject)
 
     print("\nCyclizations Complete.")
 
-    df = h._utilities.peptides_to_dataframe(cyclic_peptides)
+    df = h.utilities.peptides_to_dataframe(cyclic_peptides)
 
-    h._utilities.print_dataframe(df)
+    h.utilities.print_dataframe(df)
 
-    h._utilities.dataframe_to_csv(df)
+    h.utilities.dataframe_to_csv(df)
 
-    h._utilities.plot_exact_mass_tpsa_alogp(df)
+    h.utilities.plot_exact_mass_tpsa_a_log_p(df)
 
     return
 
@@ -350,7 +352,7 @@ def Introduction():
     return choice
 
 
-def MainUILoop(subunitLibrary):
+def ui_loop(subunitLibrary):
 
     print("\n-------------------- Main Menu --------------------")
 
@@ -360,21 +362,21 @@ def MainUILoop(subunitLibrary):
 
         print("\nPopulating Subunit Library...\n")
 
-        subunitLibrary = h._subunit_builder.GenerateSubunitLibrary()
+        subunitLibrary = h.subunit_builder.generate_subunit_library()
 
         print("\nSubunit Library Populated.")
 
     elif choice == "1":
         print("\nCreating Cyclic Peptide...\n")
 
-        cyclicPeptide = cyclic_peptide_in_terminal(subunitLibrary)
+        cyclic_peptide_in_terminal(subunitLibrary)
 
         print("\nCyclic Peptide Created.")
 
     elif choice == "2":
         print("\nCreating Cyclic Peptide Library...")
 
-        cyclicPeptides = peptide_library_from_csv(subunitLibrary)
+        peptide_library_from_csv(subunitLibrary)
 
         print("\nCyclic Peptide Library Created.")
 
@@ -386,15 +388,15 @@ def MainUILoop(subunitLibrary):
 
                 cyclicPeptide = input("\nEnter SMILES String: ")
 
-                molecule = h._cheminformatics.get_molecule_from_smiles(cyclicPeptide)
+                molecule = h.cheminformatics.get_molecule_from_smiles(cyclicPeptide)
 
-                exact_mass, TPSA, a_log_p = h._cheminformatics.GetChemometrics(molecule)
+                exact_mass, TPSA, a_log_p = h.cheminformatics.get_chemometrics(molecule)
 
-                cyclicPeptideObject = h._classes.Peptide("", exact_mass, TPSA, a_log_p, cyclicPeptide)
+                cyclicPeptideObject = h.classes.Peptide("", exact_mass, TPSA, a_log_p, cyclicPeptide)
 
-                df = h._utilities.peptides_to_dataframe([cyclicPeptideObject])
+                df = h.utilities.peptides_to_dataframe([cyclicPeptideObject])
 
-                h._utilities.print_dataframe(df)
+                h.utilities.print_dataframe(df)
 
                 break
 
@@ -408,13 +410,13 @@ def MainUILoop(subunitLibrary):
 
         print("")
 
-        molecule = h._cheminformatics.get_molecule_from_smiles(subunit.smiles_string)
+        molecule = h.cheminformatics.get_molecule_from_smiles(subunit.smiles_string)
 
-        exact_mass, tpsa, a_log_p = h._cheminformatics.GetChemometrics(molecule)
+        exact_mass, tpsa, a_log_p = h.cheminformatics.get_chemometrics(molecule)
 
         columns = ["Name", "Exact Mass", "TPSA", "ALogP", "Predicted PappE-6", "SMILES String"]
 
-        df = pd.DataFrame(columns=columns)
+        df = h.pd.DataFrame(columns=columns)
 
         df.loc[len(df.index)] = {"Name": subunit.multiple_letter,
                                  "Exact Mass": exact_mass,
@@ -422,7 +424,7 @@ def MainUILoop(subunitLibrary):
                                  "ALogP": a_log_p,
                                  "SMILES String": subunit.smiles_string}
 
-        h._utilities.print_dataframe(df)
+        h.utilities.print_dataframe(df)
 
     elif choice == "5":
 
@@ -430,4 +432,4 @@ def MainUILoop(subunitLibrary):
 
         exit()
 
-    MainUILoop(subunitLibrary)
+    ui_loop(subunitLibrary)

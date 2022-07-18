@@ -1,3 +1,10 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"""
+This script contains functions for evaluating cheminformatic values using RDKits suite.
+"""
+
 from scripts import header as h
 
 
@@ -33,8 +40,8 @@ def Geta_log_p(molecule):
     return a_log_p
 
 
-def GetChemometrics(molecule):
-    """Returns the exact mass, tpsa, and ALogP which is calculated using RDKit without any force field optimazation"""
+def get_chemometrics(molecule):
+    """Returns the exact mass, tpsa, and ALogP which is calculated using RDKit without any force field optimization"""
 
     mol_h = h.AddHs(molecule)
 
@@ -45,8 +52,8 @@ def GetChemometrics(molecule):
     return exact_mass, tpsa, a_log_p
 
 
-def GetChemometricsWithUFFOptimazation(molecule):
-    """"""
+def get_chemometrics_with_uff_optimization(molecule):
+    """Returns the exact mass, tpsa, and ALogP which is calculated using RDKit with UFF force field optimization"""
 
     moleculeH = h.AddHs(molecule)
 
@@ -60,7 +67,10 @@ def GetChemometricsWithUFFOptimazation(molecule):
 
     return exact_mass, tpsa, a_log_p
 
-def GetChemometricsWithMMFFOptimazation(molecule):
+
+def get_chemometrics_with_mmff_optimization(molecule):
+    """Returns the exact mass, tpsa, and ALogP which is calculated using RDKit with MMFF force field optimization"""
+
     moleculeH = h.AddHs(molecule)
 
     h.AllChem.EmbedMolecule(moleculeH)

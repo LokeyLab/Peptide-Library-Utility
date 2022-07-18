@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 """
 This script contains various miscellaneous utility functions.
 """
@@ -7,6 +10,7 @@ from scripts import header as h
 
 def csv_to_dataframe(f):
     """Reads a CSV file to a Pandas dataframe."""
+
     df = h.pd.read_csv(f)
 
     return df
@@ -21,9 +25,9 @@ def peptides_to_dataframe(cyclicPeptides):
 
     for i in range(0,len(cyclicPeptides)):
         df.loc[len(df.index)] = { "Name" : cyclicPeptides[i].name,
-                                  "Exact Mass" : cyclicPeptides[i].exactMass,
-                                  "TPSA" : cyclicPeptides[i].TPSA,
-                                  "ALogP" : cyclicPeptides[i].ALogP,
+                                  "Exact Mass" : cyclicPeptides[i].exact_mass,
+                                  "TPSA" : cyclicPeptides[i].tpsa,
+                                  "ALogP" : cyclicPeptides[i].a_log_p,
                                   "SMILES String" : cyclicPeptides[i].smiles_string}
 
     return df
@@ -41,8 +45,8 @@ def dataframe_to_csv(df):
     df.to_csv("output/output.csv")
 
 
-def plot_exact_mass_tpsa_alogp(df):
-    """Displays a 3D scatter plot showing Exact Mass, TPSA, and ALogP"""
+def plot_exact_mass_tpsa_a_log_p(df):
+    """Displays a 3D scatter plot showing Exact Mass, TPSA, and a_log_p"""
 
     fig = h.plt.figure(figsize=(12,8))
     ax = fig.add_subplot(projection='3d')

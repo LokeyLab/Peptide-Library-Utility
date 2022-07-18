@@ -1,5 +1,5 @@
 # Internal
-from scripts import _bonding as bnd, _cheminformatics as cmi, _utilities as utl, _classes as cls
+from scripts import bonding as bnd, cheminformatics as cmi, utilities as utl, classes as cls
 
 
 def GetSubunits(desiredSubunits, possibleSubunits):
