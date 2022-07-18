@@ -16,7 +16,7 @@ pip install pandas
 pip install rdkit
 ```
 
-### Usage
+## Usage
 
 ## Contributors
 Code written by Adam Murray
