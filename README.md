@@ -2,7 +2,7 @@
 ## Synopsis
 This python program was created to stream line the process of creating with linear and cyclic peptide libraries in silico and evaluating some basic cheminformatic values.
 
-### Features
+## Features
 - Create a single peptide using a text-based user inteface. (Outputs cheminformatic data and SMILES string)
 - Create a peptide library conbinatorially by inputing a .csv file and following a shortened text-based user inteface. (Writes cheminformatic data and SMILES string to .csv in the output folder.)
 - Get basic cheminformatic data from a SMILES string.
