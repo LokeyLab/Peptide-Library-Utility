@@ -275,10 +275,10 @@ def GenerateSubunitLibrary():
 
     subunits = {}
 
-    canonicalAminoAcidDataframe = u.csv_to_dataframe("Subunits/Canonical Amino Acids-Canonical Amino Acids.csv")
-    noncanonicalAminoAcidDataframe = u.csv_to_dataframe("Subunits/Non-Canonical Amino Acids-Non-Canonical Amino Acids.csv")
-    amineDataframe = u.csv_to_dataframe("Subunits/Amines-Amines.csv")
-    miscDataframe = u.csv_to_dataframe("Subunits/Misc-Misc.csv")
+    canonicalAminoAcidDataframe = u.csv_to_dataframe("subunits/Canonical Amino Acids-Canonical Amino Acids.csv")
+    noncanonicalAminoAcidDataframe = u.csv_to_dataframe("subunits/Non-Canonical Amino Acids-Non-Canonical Amino Acids.csv")
+    amineDataframe = u.csv_to_dataframe("subunits/Amines-Amines.csv")
+    miscDataframe = u.csv_to_dataframe("subunits/Misc-Misc.csv")
 
     print("\nCanonical Amino Acids")
     print("----------------------------------------------------------")
@@ -312,6 +312,6 @@ def GenerateSubunitLibrary():
     for i in range(0, len(miscObjectList)):
         subunits.update({miscObjectList[i].multiple_letter : miscObjectList[i]})
 
-    print("\nNumber of Valid Subunits Generated = " + str(len(subunits)))
+    print("\nNumber of Valid subunits Generated = " + str(len(subunits)))
 
     return subunits

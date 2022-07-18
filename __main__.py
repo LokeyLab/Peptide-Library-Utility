@@ -4,8 +4,8 @@
 """
 This program is intended to automate the production process of peptide libraries (cyclic or linear) in silico.
 
-Peptide libraries can be created by putting .csv file in the Input folder. Single peptides can be made in the
-text-based user interface or by putting .csv file with only a single row of subunits in the Input folder.
+Peptide libraries can be created by putting .csv file in the input folder. Single peptides can be made in the
+text-based user interface or by putting .csv file with only a single row of subunits in the input folder.
 """
 
 from scripts import header as h

@@ -157,7 +157,7 @@ def peptide_library_from_csv(subunit_library):
 
         try:
 
-            df = h._utilities.csv_to_dataframe("Input/" + input("\nEnter file name: ") + ".csv")
+            df = h._utilities.csv_to_dataframe("input/" + input("\nEnter file name: ") + ".csv")
 
             break
 
