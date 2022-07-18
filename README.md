@@ -25,9 +25,7 @@ Code written by Adam Murray
 
 ## Funding
 [National Institutes of Health](https://www.nih.gov/)
-
 [Bridges to the Baccalaureate Program](https://access.ucsc.edu/)
-
 Grant #R25GM51765
 
 ## References
