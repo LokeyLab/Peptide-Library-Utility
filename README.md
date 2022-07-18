@@ -25,7 +25,9 @@ Code written by [Adam Murray](https://github.com/Adiaslow)
 
 ## Funding
 [National Institutes of Health](https://www.nih.gov/)
+
 [Bridges to the Baccalaureate Program](https://access.ucsc.edu/)
+
 Grant #R25GM51765
 
 ## References
@@ -34,7 +36,9 @@ Grant #R25GM51765
 
 ### SMILES string reference:
 [Simplified molecular-input line-entry system](https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system)
+
 [3. SMILES - A Simplified Chemical Language](https://www.daylight.com/dayhtml/doc/theory/theory.smiles.html)
+
 [Appendix F. SMILES Notation Tutorial](https://www.epa.gov/sites/default/files/2015-05/documents/appendf.pdf)
 
 ## Change Log
@@ -43,13 +47,20 @@ All notable changes to this project will be documented in this file. This projec
 ## 0.1.0 - 2022-07-18
 ### Added
 Initial Commit
+
 Developed plugin
+
 ### Changed
 Initial Commit
+
 Developed plugin
+
 ### Fixed
 Initial Commit
+
 Developed plugin
+
 ### Removed
 Initial Commit
+
 Developed plugin
