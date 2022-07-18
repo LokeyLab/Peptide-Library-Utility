@@ -19,7 +19,7 @@ pip install rdkit
 ## Usage
 
 ## Contributors
-Code written by Adam Murray
+Code written by [Adam Murray](https://github.com/Adiaslow)
 
 ## License
 
