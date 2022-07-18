@@ -1,5 +1,5 @@
 # Internal
-from Functions import utilities as u
+from scripts import _utilities as u
 
 # External
 import pandas as pd
@@ -49,13 +49,13 @@ def GenerateBaseAminoAcid(parentheses, name, multipleLetter, aminoGroup, sideCha
 def KeepBaseVariant(baseAminoAcid):
     baseVariant = baseAminoAcid
 
-    print(baseVariant.name + "     " + baseVariant.multipleLetter + "     " + baseVariant.smilesString)
+    print(baseVariant.name + "     " + baseVariant.multiple_letter + "     " + baseVariant.smiles_string)
 
     return baseVariant
 
 
 def GenerateLVariants(baseAminoAcid):
-    lVariant = AminoAcid(baseAminoAcid.name, baseAminoAcid.multipleLetter, baseAminoAcid.aminoGroup,
+    lVariant = AminoAcid(baseAminoAcid.name, baseAminoAcid.multiple_letter, baseAminoAcid.aminoGroup,
                          baseAminoAcid.sideChain, "[C@@H]", baseAminoAcid.carboxylGroup)
 
     print(lVariant.name + "     " + lVariant.multipleLetter + "     " + lVariant.smilesString)
@@ -64,7 +64,7 @@ def GenerateLVariants(baseAminoAcid):
 
 
 def GenerateDVariants(baseAminoAcid):
-    dVariant = AminoAcid("D-" + baseAminoAcid.name, "D-" + baseAminoAcid.multipleLetter, baseAminoAcid.aminoGroup,
+    dVariant = AminoAcid("D-" + baseAminoAcid.name, "D-" + baseAminoAcid.multiple_letter, baseAminoAcid.aminoGroup,
                          baseAminoAcid.sideChain, "[C@H]", baseAminoAcid.carboxylGroup)
 
     print(dVariant.name.capitalize() + "     " + dVariant.multipleLetter + "     " + dVariant.smilesString)
@@ -101,13 +101,13 @@ def GenerateHomoVariants(baseAminoAcid):
 
 def GenerateBetaHomoVariants(baseAminoAcid):
     if baseAminoAcid.name.startswith("D-"):
-        betaHomoVariant = AminoAcid("ß-homo-" + baseAminoAcid.name, "ß-H-" + baseAminoAcid.multipleLetter,
+        betaHomoVariant = AminoAcid("ß-homo-" + baseAminoAcid.name, "ß-H-" + baseAminoAcid.multiple_letter,
                                     baseAminoAcid.aminoGroup,
                                     baseAminoAcid.sideChain, "[C@H]",
                                     "C" + baseAminoAcid.carboxylGroup)
 
     else:
-        betaHomoVariant = AminoAcid("ß-homo-" + baseAminoAcid.name, "ß-H-" + baseAminoAcid.multipleLetter,
+        betaHomoVariant = AminoAcid("ß-homo-" + baseAminoAcid.name, "ß-H-" + baseAminoAcid.multiple_letter,
                                     baseAminoAcid.aminoGroup,
                                     baseAminoAcid.sideChain, "[C@@H]",
                                     "C" + baseAminoAcid.carboxylGroup)
@@ -118,8 +118,8 @@ def GenerateBetaHomoVariants(baseAminoAcid):
 
 
 def GenerateNMeVariants(baseAminoAcid):
-    nMeVariant = AminoAcid("NMe-" + baseAminoAcid.name, "(NMe)-" + baseAminoAcid.multipleLetter, baseAminoAcid.aminoGroup + "(C)",
-                            baseAminoAcid.sideChain, baseAminoAcid.stereocenter, baseAminoAcid.carboxylGroup)
+    nMeVariant = AminoAcid("NMe-" + baseAminoAcid.name, "(NMe)-" + baseAminoAcid.multiple_letter, baseAminoAcid.aminoGroup + "(C)",
+                           baseAminoAcid.sideChain, baseAminoAcid.stereocenter, baseAminoAcid.carboxylGroup)
 
     print(nMeVariant.name + "       " + nMeVariant.multipleLetter + "     " + nMeVariant.smilesString)
 
@@ -275,10 +275,10 @@ def GenerateSubunitLibrary():
 
     subunits = {}
 
-    canonicalAminoAcidDataframe = u.ReadFileToDataframe("Subunits/Canonical Amino Acids-Canonical Amino Acids.csv")
-    noncanonicalAminoAcidDataframe = u.ReadFileToDataframe("Subunits/Non-Canonical Amino Acids-Non-Canonical Amino Acids.csv")
-    amineDataframe = u.ReadFileToDataframe("Subunits/Amines-Amines.csv")
-    miscDataframe = u.ReadFileToDataframe("Subunits/Misc-Misc.csv")
+    canonicalAminoAcidDataframe = u.csv_to_dataframe("Subunits/Canonical Amino Acids-Canonical Amino Acids.csv")
+    noncanonicalAminoAcidDataframe = u.csv_to_dataframe("Subunits/Non-Canonical Amino Acids-Non-Canonical Amino Acids.csv")
+    amineDataframe = u.csv_to_dataframe("Subunits/Amines-Amines.csv")
+    miscDataframe = u.csv_to_dataframe("Subunits/Misc-Misc.csv")
 
     print("\nCanonical Amino Acids")
     print("----------------------------------------------------------")
@@ -286,7 +286,7 @@ def GenerateSubunitLibrary():
     canonicalAminoAcidObjectList = GenerateAminoAcids(canonicalAminoAcidDataframe)
 
     for i in range(0,len(canonicalAminoAcidObjectList)):
-        subunits.update({ canonicalAminoAcidObjectList[i].multipleLetter : canonicalAminoAcidObjectList[i] })
+        subunits.update({canonicalAminoAcidObjectList[i].multiple_letter : canonicalAminoAcidObjectList[i]})
 
     print("\nNoncanonical Amino Acids")
     print("----------------------------------------------------------")
@@ -294,7 +294,7 @@ def GenerateSubunitLibrary():
     noncanonicalAminoAcidObjectList = GenerateAminoAcids(noncanonicalAminoAcidDataframe)
 
     for i in range(0, len(noncanonicalAminoAcidObjectList)):
-        subunits.update({ noncanonicalAminoAcidObjectList[i].multipleLetter : noncanonicalAminoAcidObjectList[i] })
+        subunits.update({noncanonicalAminoAcidObjectList[i].multiple_letter : noncanonicalAminoAcidObjectList[i]})
 
     print("\nPeptoids")
     print("----------------------------------------------------------")
@@ -302,7 +302,7 @@ def GenerateSubunitLibrary():
     peptoidObjectList = GeneratePeptoids(amineDataframe)
 
     for i in range(0, len(peptoidObjectList)):
-        subunits.update({ peptoidObjectList[i].multipleLetter : peptoidObjectList[i] })
+        subunits.update({peptoidObjectList[i].multiple_letter : peptoidObjectList[i]})
 
     print("\nMisc")
     print("----------------------------------------------------------")
@@ -310,7 +310,7 @@ def GenerateSubunitLibrary():
     miscObjectList = GenerateMiscs(miscDataframe)
 
     for i in range(0, len(miscObjectList)):
-        subunits.update({ miscObjectList[i].multipleLetter : miscObjectList[i] })
+        subunits.update({miscObjectList[i].multiple_letter : miscObjectList[i]})
 
     print("\nNumber of Valid Subunits Generated = " + str(len(subunits)))
 

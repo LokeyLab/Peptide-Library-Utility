@@ -12,6 +12,8 @@ from tqdm import tqdm
 
 import statistics
 
+import numpy as np
+from scipy import signal
 
 smiles = ["N4(C)[C@H](C)C(=O)N(C)[C@H](CC(C)C)C(=O)N(Cc1ccccc1)CC(=O)N2[C@H](CCC2)C(=O)N(C)[C@@H](CC(C)C)C(=O)N[C@@H](Cc3ccccc3)C4=O",
 "N4(C)[C@H](C)C(=O)N(C)[C@H](CC(C)C)C(=O)N(Cc1ccccc1)CC(=O)N2[C@H](CCC2)C(=O)N(C)[C@@H](CC(C)C)C(=O)N[C@@H](Cc3ccccc3)C4=O",
@@ -30,83 +32,39 @@ smiles = ["N4(C)[C@H](C)C(=O)N(C)[C@H](CC(C)C)C(=O)N(Cc1ccccc1)CC(=O)N2[C@H](CCC
 "N6(C)[C@H](C)C(=O)N(Cc1ccccc1)CC(=O)N(Cc2ccccc2)CC(=O)N3[C@H](CCC3)C(=O)N(Cc4ccccc4)CC(=O)N[C@@H](Cc5ccccc5)C6=O"
 ]
 
-mols = []
-
-energiesInWater = []
-energiesInChloroform = []
-
 mol = Chem.MolFromSmiles(smiles[0])
 
 params = AllChem.ETKDGv3()
 
-# Water
-for i in tqdm(range(0, 72)):
-    mol = Chem.AddHs(mol)
+mol = Chem.AddHs(mol)
 
-    Chem.SanitizeMol(mol)
+Chem.SanitizeMol(mol)
 
-    AllChem.EmbedMultipleConfs(mol, 1, params)
+AllChem.EmbedMultipleConfs(mol, 1, params)
 
-    AllChem.MMFFOptimizeMolecule(mol)
+AllChem.MMFFOptimizeMolecule(mol)
 
-    mp = AllChem.MMFFGetMoleculeProperties(mol)
+mp = AllChem.MMFFGetMoleculeProperties(mol)
 
-    mp.SetMMFFDielectricConstant(dielConst=80.1)
+mp.SetMMFFDielectricConstant(dielConst=80.1)
 
-    ffm = AllChem.MMFFGetMoleculeForceField(mol, mp)
+ffm = AllChem.MMFFGetMoleculeForceField(mol, mp)
 
-    energy = ffm.CalcEnergy()
+energy = ffm.CalcEnergy()
 
-    energiesInWater.append(energy)
+mol = Chem.RemoveHs(mol)
 
-    mol = Chem.RemoveHs(mol)
+c = mol.GetConformer()
+p = c.GetPositions()
+a = []
 
-    mols.append(mol)
+for i in range(0, c.GetNumAtoms()):
+    a.append(mol.GetAtomWithIdx(i).GetAtomicNum())
 
-#Chloroform
-for i in tqdm(range(0, 72)):
-    mol = Chem.AddHs(mol)
+print(a)
+print(p)
 
-    Chem.SanitizeMol(mol)
+fig = plt.figure()
+ax = fig.add_subplot(projection='3d')
 
-    AllChem.EmbedMultipleConfs(mol, 1, params)
-
-    AllChem.MMFFOptimizeMolecule(mol)
-
-    mp = AllChem.MMFFGetMoleculeProperties(mol)
-
-    mp.SetMMFFDielectricConstant(dielConst=4.81)
-
-    ffm = AllChem.MMFFGetMoleculeForceField(mol, mp)
-
-    energy = ffm.CalcEnergy()
-
-    energiesInChloroform.append(energy)
-
-    mol = Chem.RemoveHs(mol)
-
-    mols.append(mol)
-
-img = MolsToGridImage(mols[:], molsPerRow=16, subImgSize=(100, 100))
-img.save(fp="Conformers.png")
-img.show()
-
-def myFunc(e):
-    return e['energy']
-
-# mols.sort(key=myFunc)
-
-# energiesInWater.sort()
-
-# print(mols)
-
-plt.violinplot([energiesInWater, energiesInChloroform], showextrema=True, showmeans=True)
-plt.title("Energy of Conformers")
-plt.ylabel("Energy (kcal/mol)")
-plt.xlabel("Water vs. Chloroform")
-# plt.axhline(y=statistics.median(energys), color='r', linestyle='--')
-
-plt.savefig("Energy of Conformers.png")
-plt.show()
-
-
+ax.scatter(p[:][0], p[:][1], p[:][2], marker=m)
