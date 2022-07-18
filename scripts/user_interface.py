@@ -2,15 +2,18 @@
 # -*- coding: utf-8 -*-
 
 """
-This script contains all the user interface related functions and most of the function calls that are related to the
-creating of peptide libraries.
+This script contains all the user interface related
+functions and most of the function calls that are
+related to the creation of peptide libraries.
 """
 
 from scripts import header as h
 
 
 def cyclic_peptide_in_terminal(subunit_library):
-    """This function guides the user through creating a peptide using the text-based user interface."""
+    """This function guides the user through
+    creating a peptide using the text-based user
+    interface."""
 
     while True:
 
@@ -108,8 +111,8 @@ def cyclic_peptide_in_terminal(subunit_library):
                 if choice == "y":
 
                     temp_peptide = str(cyclic_peptide[0:cyclic_peptide.rfind("N") + 1]) + "(" + \
-                                   subunit_library[input("\nEnter subunit: ")].smiles_string + ")" + \
-                                   str(cyclic_peptide[cyclic_peptide.rfind("N") + 1:])
+                                   subunit_library[input("\nEnter subunit: ")].smiles_string + ")" \
+                                   + str(cyclic_peptide[cyclic_peptide.rfind("N") + 1:])
 
                     cyclic_peptide = temp_peptide
 
@@ -202,7 +205,7 @@ def peptide_library_from_csv(subunit_library):
 
     print("\nCyclic Peptides To Be Generated: " + str(cyclic_peptide_count))
 
-    cartesian_product = h.combinatronics.CartesianProduct(pots)
+    cartesian_product = h.combinatronics.cartesian_product(pots)
 
     cyclization_type = ''
 
@@ -319,9 +322,9 @@ def peptide_library_from_csv(subunit_library):
 
         molecule = h.cheminformatics.get_molecule_from_smiles(cyclic_peptide)
 
-        exactMass, TPSA, aLogP= h.cheminformatics.get_chemometrics(molecule)
+        exactMass, tpsa, aLogP= h.cheminformatics.get_chemometrics(molecule)
 
-        cyclicPeptideObject = h.classes.Peptide(name, exactMass, TPSA, aLogP, cyclic_peptide)
+        cyclicPeptideObject = h.classes.Peptide(name, exactMass, tpsa, aLogP, cyclic_peptide)
 
         cyclic_peptides.append(cyclicPeptideObject)
 
@@ -390,9 +393,10 @@ def ui_loop(subunitLibrary):
 
                 molecule = h.cheminformatics.get_molecule_from_smiles(cyclicPeptide)
 
-                exact_mass, TPSA, a_log_p = h.cheminformatics.get_chemometrics(molecule)
+                exact_mass, tpsa, a_log_p = h.cheminformatics.get_chemometrics(molecule)
 
-                cyclicPeptideObject = h.classes.Peptide("", exact_mass, TPSA, a_log_p, cyclicPeptide)
+                cyclicPeptideObject = h.classes.Peptide("", exact_mass, tpsa, a_log_p,
+                                                        cyclicPeptide)
 
                 df = h.utilities.peptides_to_dataframe([cyclicPeptideObject])
 
@@ -430,6 +434,6 @@ def ui_loop(subunitLibrary):
 
         print("\nGoodbye!")
 
-        exit()
+        sys.exit()
 
     ui_loop(subunitLibrary)

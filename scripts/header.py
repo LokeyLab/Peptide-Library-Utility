@@ -14,7 +14,6 @@ from scripts import bonding
 from scripts import cheminformatics
 from scripts import classes
 from scripts import combinatronics
-from scripts import peptide_builder
 from scripts import subunit_builder
 from scripts import user_interface
 from scripts import utilities

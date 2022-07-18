@@ -2,21 +2,24 @@
 # -*- coding: utf-8 -*-
 
 """
-This script contains the combinatronics functions for creating the peptide libraries.
+This script contains the combinatronics functions
+for creating the peptide libraries.
 """
 
 from scripts import header as h
 
 
-def CartesianProduct(pots):
-    """Calculates Cartesian Product to find all the unique combinations with which the peptide subunits can be
+def cartesian_product(pots):
+    """Calculates Cartesian Product to find all the
+    unique combinations with which the peptide subunits can be
     combined."""
 
-    cartesian_product = []
+    cartesian_product_list = []
 
-    # only creates combinations of amino acids listed in their respective pots.
+    # only creates combinations of amino acids listed in
+    # their respective pots.
     for j in h.itertools.product(*pots):
 
-        cartesian_product.append(j)
+        cartesian_product_list.append(j)
 
-    return cartesian_product
+    return cartesian_product_list
