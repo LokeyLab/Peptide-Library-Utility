@@ -7,18 +7,23 @@ This python program was created to stream line the process of creating with line
 - Create a peptide library conbinatorially by inputing a .csv file and following a shortened text-based user inteface. (Writes cheminformatic data and SMILES string to .csv in the output folder.)
 - Get basic cheminformatic data from a SMILES string.
 
-## Motivation
-
 ## Installation
+Below are the required libraries.
 ```
 pip install itertools
 pip install matplotlib
 pip install pandas
 pip install rdkit
 ```
+
+### Usage
+
 ## Contributors
+Code written by Adam Murray
 
 ## License
+
+## Funding
 
 ## References
 Formating of amino acids and peptides:
