@@ -50,7 +50,7 @@ Run the __main__.py script and follow the text-based user interface to create pe
 Code written by [Adam Murray](https://github.com/Adiaslow)
 
 ## License
-MIT License
+[MIT License](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/license)
 
 ## Funding
 [National Institutes of Health](https://www.nih.gov/)
