@@ -31,6 +31,7 @@ This python program is created to stream line the process of creating with linea
 └── .gitignore
 └── __main__.py The main script.
 └── README.md
+└──license
 ```
 
 ## Installation
