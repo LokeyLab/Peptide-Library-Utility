@@ -1,3 +1,5 @@
+<img align="center" src="https://cpb-us-e1.wpmucdn.com/sites.ucsc.edu/dist/6/1264/files/2022/07/cropped-LOKEYLABLOGO-1.png">
+  
 # Peptide Library Utility
 ## Synopsis
 Create linear and cyclic peptide libraries *in silico* and evaluate some basic cheminformatic values.
