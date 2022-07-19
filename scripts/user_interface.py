@@ -17,19 +17,27 @@ def cyclic_peptide_in_terminal(subunit_library):
 
     while True:
 
-        subunit_count = input("\nHow many subunits?: ")
+        try:
 
-        if subunit_count.isnumeric():
+            subunit_count = int(input("\nHow many subunits?: "))
 
-            subunit_count = int(subunit_count)
+            if subunit_count > 0:
 
-            break
+                break
 
-        else:
+            else:
 
-            print("\nInvalid input, try again.")
+                print("\nInput was less than 1. Try again.")
+
+                continue
+
+        except ValueError:
+
+            print("\nInput was not a number. Try again.")
 
             continue
+
+
 
     subunits = []
 
@@ -45,9 +53,9 @@ def cyclic_peptide_in_terminal(subunit_library):
 
                 break
 
-            except TypeError:
+            except KeyError:
 
-                print("\nInvalid input, try again.")
+                print("\nInvalid subunit. Check the subunit list and try again.")
 
                 continue
 
@@ -348,9 +356,29 @@ def Introduction():
     print("2) Create Cyclic Peptide Library from .CSV FIX ME (add Huisgen)")
     print("3) Calculate Chemometrics of a SMILES string")
     print("4) Check a Subunit")
-    print("5) Quit\n")
+    print("5) Quit")
 
-    choice = input("Enter number: ")
+    while True:
+
+        try:
+
+            choice = int(input("\nEnter number: "))
+
+            if choice < 0 or choice > 5:
+
+                print("\nInput was not a valid choice. Try again.")
+
+                continue
+
+            else:
+
+                break
+
+        except ValueError:
+
+            print("\nInput was not a number. Try again.")
+
+            continue
 
     return choice
 
@@ -361,7 +389,7 @@ def ui_loop(subunitLibrary):
 
     choice = Introduction()
 
-    if choice == "0":
+    if choice == 0:
 
         print("\nPopulating Subunit Library...\n")
 
@@ -369,21 +397,21 @@ def ui_loop(subunitLibrary):
 
         print("\nSubunit Library Populated.")
 
-    elif choice == "1":
-        print("\nCreating Cyclic Peptide...\n")
+    elif choice == 1:
+        print("\nCreating Cyclic Peptide...")
 
         cyclic_peptide_in_terminal(subunitLibrary)
 
         print("\nCyclic Peptide Created.")
 
-    elif choice == "2":
+    elif choice == 2:
         print("\nCreating Cyclic Peptide Library...")
 
         peptide_library_from_csv(subunitLibrary)
 
         print("\nCyclic Peptide Library Created.")
 
-    elif choice == "3":
+    elif choice == 3:
 
         while True:
 
@@ -404,9 +432,11 @@ def ui_loop(subunitLibrary):
 
                 break
 
-            except:
+            except TypeError:
 
-                print("\nInvalid input, try again.")
+                print("\n\nInput was not a valid SMILES string. Try again.")
+
+                continue
 
     elif choice == "4":
 
@@ -434,6 +464,6 @@ def ui_loop(subunitLibrary):
 
         print("\nGoodbye!")
 
-        sys.exit()
+        h.sys.exit()
 
     ui_loop(subunitLibrary)
