@@ -2,12 +2,23 @@
 ## Synopsis
 Create linear and cyclic peptide libraries *in silico* and evaluate some basic cheminformatic values.
 
+# Table of Contents
+- [Features](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/README.md#features)
+- [Structure](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/README.md#structure)
+- [Installation](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/README.md#installation)
+- [Usage](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/README.md#usage)
+- [Contributors](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/README.md#contributors)
+- [License](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/README.md#license)
+- [Funding](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/README.md#funding)
+- [References](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/README.md#references)
+- [Change Log](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/README.md#change-log)
+
 ## Features
 - Create a single peptide using a text-based user inteface. (Outputs cheminformatic data and SMILES string)
 - Create a peptide library conbinatorially by inputing a .csv file and following a shortened text-based user inteface. (Writes cheminformatic data and SMILES string to .csv in the output folder.)
 - Get basic cheminformatic data from a SMILES string.
 
-## Directory Structure
+## Structure
 ```
 .
 ├── input/ ... Directory for .CSV files containing the subunits to be made into peptides.
