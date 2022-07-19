@@ -44,11 +44,13 @@ pip install rdkit
 ```
 
 ## Usage
+Run the __main__.py script and follow the text-based user interface to create peptides, peptide libraries, and calculate cheminformatic information from SMILES strings.
 
 ## Contributors
 Code written by [Adam Murray](https://github.com/Adiaslow)
 
 ## License
+MIT License
 
 ## Funding
 [National Institutes of Health](https://www.nih.gov/)
