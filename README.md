@@ -1,13 +1,26 @@
+<img align="center" src="https://cpb-us-e1.wpmucdn.com/sites.ucsc.edu/dist/6/1264/files/2022/07/cropped-LOKEYLABLOGO-1.png">
+  
 # Peptide Library Utility
 ## Synopsis
-This python program is created to stream line the process of creating with linear and cyclic peptide libraries in silico and evaluating some basic cheminformatic values.
+Create linear and cyclic peptide libraries *in silico* and evaluate some basic cheminformatic values.
+
+# Table of Contents
+- [Features](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/README.md#features)
+- [Structure](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/README.md#structure)
+- [Installation](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/README.md#installation)
+- [Usage](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/README.md#usage)
+- [Contributors](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/README.md#contributors)
+- [License](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/README.md#license)
+- [Funding](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/README.md#funding)
+- [References](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/README.md#references)
+- [Change Log](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/README.md#change-log)
 
 ## Features
 - Create a single peptide using a text-based user inteface. (Outputs cheminformatic data and SMILES string)
 - Create a peptide library conbinatorially by inputing a .csv file and following a shortened text-based user inteface. (Writes cheminformatic data and SMILES string to .csv in the output folder.)
 - Get basic cheminformatic data from a SMILES string.
 
-## Directory Structure
+## Structure
 ```
 .
 ├── input/ ... Directory for .CSV files containing the subunits to be made into peptides.
@@ -29,7 +42,7 @@ This python program is created to stream line the process of creating with linea
 │   └── miscellaneous.csv ... Miscellaneous subunits .CSV
 └── .gitattribuites
 └── .gitignore
-└── __main__.py The main script.
+└── __main__.py ... The main script.
 └── README.md
 └── license ... MIT License.
 ```
@@ -46,8 +59,30 @@ pip install rdkit
 ## Usage
 Run the __main__.py script and follow the text-based user interface to create peptides, peptide libraries, and calculate cheminformatic information from SMILES strings.
 
+For canonical and noncanonical amino acids, the format must comply to the following examples:
+
+```
+(NMe)-ß-H-D-Leu    ß-Leu    H-Leu    Leu    (NMe)-Leu
+```
+
+For peptoids and miscellaneous subunits, use the multiple letter acronym as defined in the appropriate .CSV file.
+
+For the input .CSV file, the format must comply to the following example:
+
+```
+Pot 1       Pot 2       Pot 3       Pot 4       Pot 5       Pot 6       <──── Lets the program know how 
+                                                                                many pots there are.
+Leu         Leu         Leu         Leu         Leu         Leu         <──⌍─ Can be any subunit as long as
+                                                                           |    it is on the subunit list.
+Pro         D-Pro       Ala         D-Ala       (NMe)-ß-Leu Gly         <──⌏ 
+
+Val                     D-Gly                                           <──── Uneven pot sizes are acceptable.
+```
+
 ## Contributors
 Code written by [Adam Murray](https://github.com/Adiaslow)
+
+In collaboration with Lokey Lab.
 
 ## License
 [MIT License](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/license)
@@ -75,19 +110,8 @@ All notable changes to this project will be documented in this file. This projec
 ### Added
 Initial Commit
 
-Developed plugin
-
 ### Changed
-Initial Commit
-
-Developed plugin
 
 ### Fixed
-Initial Commit
-
-Developed plugin
 
 ### Removed
-Initial Commit
-
-Developed plugin
