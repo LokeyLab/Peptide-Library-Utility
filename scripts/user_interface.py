@@ -15,6 +15,8 @@ def cyclic_peptide_in_terminal(subunit_library):
     creating a peptide using the text-based user
     interface."""
 
+    subunit_count = 0
+
     while True:
 
         try:
@@ -36,8 +38,6 @@ def cyclic_peptide_in_terminal(subunit_library):
             print("\nInput was not a number. Try again.")
 
             continue
-
-
 
     subunits = []
 
@@ -68,7 +68,6 @@ def cyclic_peptide_in_terminal(subunit_library):
     name = ""
 
     for i in range(0, len(subunits)):
-
         name += subunits[i].multiple_letter + " "
 
     peptide = h.bonding.bond_head_to_tail(subunits)
@@ -79,87 +78,134 @@ def cyclic_peptide_in_terminal(subunit_library):
     print("3) Thioether (Must end in Threonine)")
     print("4) Keep Linear")
 
-
-    choice = input("\nEnter a number: ")
-
     while True:
 
-        if choice == "1":
+        try:
 
-            print("\nCyclizing Head to Tail...")
+            choice = int(input("\nEnter a number: "))
 
-            cyclic_peptide = h.bonding.cyclize_head_to_tail(peptide)
+            if choice < 1 or choice > 4:
 
-            print("\nCyclization Complete.")
+                print("\nInput was not a valid choice. Try again.")
 
-            break
+                continue
 
-        elif choice == "2":
+            else:
 
-            print("\nCyclizing Huisgen...")
+                break
 
-            cyclic_peptide = h.bonding.cyclize_huisgen(peptide)
+        except ValueError:
 
-            print("\nCyclization Complete.")
-
-            break
-
-        elif choice == "3":
-
-            print("\nCyclizing Thioether...")
-
-            cyclic_peptide = h.bonding.cyclize_thioether(peptide, subunit_library)
-
-            print("\nCyclization Complete.")
-
-            while True:
-
-                choice = input("\nCap exposed Amino Group? y/n: ")
-
-                if choice == "y":
-
-                    temp_peptide = str(cyclic_peptide[0:cyclic_peptide.rfind("N") + 1]) + "(" + \
-                                   subunit_library[input("\nEnter subunit: ")].smiles_string + ")" \
-                                   + str(cyclic_peptide[cyclic_peptide.rfind("N") + 1:])
-
-                    cyclic_peptide = temp_peptide
-
-                    break
-
-                elif choice == "n":
-
-                    break
-
-                else:
-
-                    print("\nInvalid input, try again.")
-
-                    continue
-
-            break
-
-        elif choice == "4":
-
-            cyclic_peptide = peptide
-
-            break
-
-        else:
-            print("\nInvalid input, try again.")
+            print("\nInput was not a number. Try again.")
 
             continue
 
-    molecule = h.cheminformatics.get_molecule_from_smiles(cyclic_peptide)
+    if choice == 1:
 
-    exact_mass, tpsa, a_log_p = h.cheminformatics.get_chemometrics(molecule)
+        print("\nCyclizing Head to Tail...")
 
-    cyclic_peptide_object = h.classes.Peptide(name, exact_mass, tpsa, a_log_p, cyclic_peptide)
+        cyclic_peptide = h.bonding.cyclize_head_to_tail(peptide)
 
-    df = h.utilities.peptides_to_dataframe([cyclic_peptide_object])
+        print("\nCyclization Complete.")
 
-    h.utilities.print_dataframe(df)
+    elif choice == 2:
 
-    h.utilities.dataframe_to_csv(df)
+        print("\nCyclizing Huisgen...")
+
+        cyclic_peptide = h.bonding.cyclize_huisgen(peptide)
+
+        print("\nCyclization Complete.")
+
+    elif choice == 3:
+
+        print("\nCyclizing Thioether...")
+
+        cyclic_peptide = h.bonding.cyclize_thioether(peptide, subunit_library)
+
+        print("\nCyclization Complete.")
+
+        while True:
+
+            try:
+
+                choice = input("\nCap exposed Amino Group? y/n: ")
+
+                if not choice == "y" or choice == "n":
+
+                    print("\nInput was not a valid choice. Try again.")
+
+                    continue
+
+                else:
+
+                    break
+
+            except ValueError:
+
+                print("\nInput was not either \"y\" or \"n\". Try again.")
+
+                continue
+
+        if choice == "y":
+
+            while True:
+
+                try:
+
+                    subunit = subunit_library[input("\nEnter subunit: ")]
+
+                    break
+
+                except KeyError:
+
+                    print("\nInvalid subunit. Check the subunit list and try again.")
+
+                    continue
+
+            temp_peptide = str(cyclic_peptide[0:cyclic_peptide.rfind("N") + 1]) + "(" + \
+                               subunit.smiles_string + ")" + \
+                               str(cyclic_peptide[cyclic_peptide.rfind("N") + 1:])
+
+            cyclic_peptide = temp_peptide
+
+        elif choice == "n":
+
+            pass
+
+    elif choice == 4:
+
+        cyclic_peptide = peptide
+
+    else:
+
+        print("\nSomething went wrong.")
+
+    while True:
+
+        try:
+
+            molecule = h.cheminformatics.get_molecule_from_smiles(
+                cyclic_peptide)
+
+            exact_mass, tpsa, a_log_p = h.cheminformatics.get_chemometrics(
+                molecule)
+
+            cyclic_peptide_object = h.classes.Peptide(name, exact_mass, tpsa,
+                                                      a_log_p, cyclic_peptide)
+
+            df = h.utilities.peptides_to_dataframe([cyclic_peptide_object])
+
+            h.utilities.print_dataframe(df)
+
+            h.utilities.dataframe_to_csv(df)
+
+            break
+
+        except TypeError:
+
+            print("\n\nInput was not a valid SMILES string. Try again.")
+
+            continue
 
     return cyclic_peptide
 
@@ -171,13 +217,17 @@ def peptide_library_from_csv(subunit_library):
 
         try:
 
-            df = h.utilities.csv_to_dataframe("input/" + input("\nEnter file name: ") + ".csv")
+            file = h.os.path.normcase("input/" + input("\nEnter file name: ") + ".csv")
+
+            print("\n" + str(file))
+
+            df = h.utilities.csv_to_dataframe(file)
 
             break
 
-        except:
+        except FileNotFoundError:
 
-            print("\nInvalid file name, try again.")
+            print("\nFile not found. Try again.")
 
             continue
 
@@ -196,7 +246,6 @@ def peptide_library_from_csv(subunit_library):
         for j in range(0, df.shape[0]):
 
             if h.pd.notnull(df.iloc[j, i]):
-
                 temp_pot.append(df.iloc[j, i])
 
                 count += 1
@@ -208,91 +257,147 @@ def peptide_library_from_csv(subunit_library):
     cyclic_peptide_count = pot_sizes[0]
 
     for k in range(1, len(pot_sizes)):
-
         cyclic_peptide_count *= pot_sizes[k]
 
     print("\nCyclic Peptides To Be Generated: " + str(cyclic_peptide_count))
 
+
     cartesian_product = h.combinatronics.cartesian_product(pots)
 
-    cyclization_type = ''
+    choice = 0
+
+    print("\nCyclization Types:")
+    print("1) Head to Tail")
+    print("2) Huisgen FIX ME")
+    print("3) Thioether (Must end in Threonine)")
+    print("4) Keep Linear")
 
     while True:
 
-        print("\nCyclization Types:")
-        print("1) Head to Tail")
-        print("2) Huisgen FIX ME")
-        print("3) Thioether (Must end in Threonine)")
-        print("4) Keep Linear")
+        try:
 
-        choice = input("\nEnter a number: ")
+            choice = int(input("\nEnter a number: "))
 
-        if choice == "1":
+            if choice < 1 or choice > 4:
 
-            print("\nCyclizing Head to Tail...")
+                print("\nInput was not a valid choice. Try again.")
 
-            cyclization_type = "Head to Tail"
+                continue
 
-            break
+            else:
 
-        elif choice == "2":
+                break
 
-            print("\nCyclizing Huisgen...")
+        except ValueError:
 
-            cyclization_type = "Huisgen"
-
-            break
-
-        elif choice == "3":
-
-            print("\nCyclizing Thioether...")
-
-            cyclization_type = "Thioether"
-
-            while True:
-                choice = input("\nCap exposed Amino Group? y/n: ")
-
-                if choice == "y":
-
-                    cap = input("\nEnter subunit: ")
-
-                    cap_bool = True
-
-                    break
-
-                elif choice == "n":
-
-                    cap_bool = False
-
-                    break
-
-                else:
-
-                    print("\nInvalid input, try again.")
-
-            break
-
-        elif choice == "4":
-
-            cyclization_type = "None"
-
-            break
-
-        else:
-
-            print("\nInvalid input, try again.")
+            print("\nInput was not a number. Try again.")
 
             continue
 
+    if choice == 1:
+
+        print("\nCyclizing Head to Tail...")
+
+        cyclization_type = "Head to Tail"
+
+    elif choice == 2:
+
+        print("\nCyclizing Huisgen...")
+
+        cyclization_type = "Huisgen"
+
+    elif choice == 3:
+
+        print("\nCyclizing Thioether...")
+
+        cyclization_type = "Thioether"
+
+        while True:
+
+            try:
+
+                choice = input("\nCap exposed Amino Group? y/n: ")
+
+                if not (choice == "y" or choice == "n"):
+
+                    print("\nInput was not a valid choice. Try again.")
+
+                    continue
+
+                else:
+
+                    break
+
+            except ValueError:
+
+                print("\nInput was not either \"y\" or \"n\". Try again.")
+
+                continue
+
+        while True:
+
+            if choice == "y":
+
+                while True:
+
+                    try:
+
+                        cap = subunit_library[input("\nEnter subunit: ")]
+
+                        print("\n" + str(cap.name) + " cap")
+
+                        cap_bool = True
+
+                        break
+
+                    except KeyError:
+
+                        print("\nInvalid subunit. Check the subunit list and try again.")
+
+                        continue
+
+                break
+
+            elif choice == "n":
+
+                cap_bool = False
+
+                break
+
+            else:
+
+                print("\nSomething went wrong.")
+
+                continue
+
+    elif choice == 4:
+
+        cyclization_type = "None"
+
+    else:
+
+        print("\nSomething went wrong.")
+
     cyclic_peptides = []
 
-    for l in cartesian_product:
+
+    for i in cartesian_product:
 
         subunits = []
 
-        for m in l:
+        for j in i:
 
-            subunits.append(subunit_library[m])
+            try:
+                subunit = subunit_library[j]
+
+                subunits.append(subunit)
+
+            except KeyError:
+
+                print(f"\nSubunit \"%s\" is not a valid subunit." % j)
+                print("Change the input file and try again.")
+
+                exit()
 
         peptide = h.bonding.bond_head_to_tail(subunits)
 
@@ -309,11 +414,10 @@ def peptide_library_from_csv(subunit_library):
             cyclic_peptide = h.bonding.cyclize_thioether(peptide, subunit_library)
 
             if cap_bool:
-
-                subunits.append(subunit_library[cap])
+                subunits.append(cap)
 
                 tempPeptide = str(cyclic_peptide[0:cyclic_peptide.rfind("N") + 1]) + "(" + \
-                              subunit_library[cap].smiles_string + ")" + \
+                              cap.smiles_string + ")" + \
                               str(cyclic_peptide[cyclic_peptide.rfind("N") + 1:])
 
                 cyclic_peptide = tempPeptide
@@ -325,18 +429,22 @@ def peptide_library_from_csv(subunit_library):
         name = ""
 
         for i in range(0, len(subunits)):
-
             name += subunits[i].multiple_letter + " "
 
         molecule = h.cheminformatics.get_molecule_from_smiles(cyclic_peptide)
 
-        exactMass, tpsa, aLogP= h.cheminformatics.get_chemometrics(molecule)
+        exactMass, tpsa, aLogP = h.cheminformatics.get_chemometrics(molecule)
 
-        cyclicPeptideObject = h.classes.Peptide(name, exactMass, tpsa, aLogP, cyclic_peptide)
+        cyclic_peptide_object = h.classes.Peptide(name, exactMass, tpsa, aLogP, cyclic_peptide)
 
-        cyclic_peptides.append(cyclicPeptideObject)
+        cyclic_peptides.append(cyclic_peptide_object)
 
-    print("\nCyclizations Complete.")
+    if not len(cyclic_peptides) == cyclic_peptide_count:
+
+        print("\nSomething was wrong with one or more of your subunits.")
+        print("Check your subunit input file and try again.")
+
+        exit()
 
     df = h.utilities.peptides_to_dataframe(cyclic_peptides)
 
@@ -350,7 +458,6 @@ def peptide_library_from_csv(subunit_library):
 
 
 def Introduction():
-
     print("0) Populate Subunit Library")
     print("1) Create Cyclic Peptide in Terminal FIX ME (add Huisgen)")
     print("2) Create Cyclic Peptide Library from .CSV FIX ME (add Huisgen)")
@@ -384,7 +491,6 @@ def Introduction():
 
 
 def ui_loop(subunitLibrary):
-
     print("\n-------------------- Main Menu --------------------")
 
     choice = Introduction()
@@ -417,16 +523,16 @@ def ui_loop(subunitLibrary):
 
             try:
 
-                cyclicPeptide = input("\nEnter SMILES String: ")
+                cyclic_peptide = input("\nEnter SMILES String: ")
 
-                molecule = h.cheminformatics.get_molecule_from_smiles(cyclicPeptide)
+                molecule = h.cheminformatics.get_molecule_from_smiles(cyclic_peptide)
 
                 exact_mass, tpsa, a_log_p = h.cheminformatics.get_chemometrics(molecule)
 
-                cyclicPeptideObject = h.classes.Peptide("", exact_mass, tpsa, a_log_p,
-                                                        cyclicPeptide)
+                cyclic_peptide_object = h.classes.Peptide("", exact_mass, tpsa, a_log_p,
+                                                          cyclic_peptide)
 
-                df = h.utilities.peptides_to_dataframe([cyclicPeptideObject])
+                df = h.utilities.peptides_to_dataframe([cyclic_peptide_object])
 
                 h.utilities.print_dataframe(df)
 
@@ -438,32 +544,41 @@ def ui_loop(subunitLibrary):
 
                 continue
 
-    elif choice == "4":
+    elif choice == 4:
 
-        subunit = subunitLibrary[input("Enter subunit: ")]
+        while True:
 
-        print("")
+            try:
+                subunit = subunitLibrary[input("\nEnter subunit: ")]
 
-        molecule = h.cheminformatics.get_molecule_from_smiles(subunit.smiles_string)
+                print("")
 
-        exact_mass, tpsa, a_log_p = h.cheminformatics.get_chemometrics(molecule)
+                molecule = h.cheminformatics.get_molecule_from_smiles(subunit.smiles_string)
 
-        columns = ["Name", "Exact Mass", "TPSA", "ALogP", "Predicted PappE-6", "SMILES String"]
+                exact_mass, tpsa, a_log_p = h.cheminformatics.get_chemometrics(molecule)
 
-        df = h.pd.DataFrame(columns=columns)
+                columns = ["Name", "Exact Mass", "TPSA", "ALogP", "SMILES String"]
 
-        df.loc[len(df.index)] = {"Name": subunit.multiple_letter,
-                                 "Exact Mass": exact_mass,
-                                 "TPSA": tpsa,
-                                 "ALogP": a_log_p,
-                                 "SMILES String": subunit.smiles_string}
+                df = h.pd.DataFrame(columns=columns)
 
-        h.utilities.print_dataframe(df)
+                df.loc[len(df.index)] = {"Name": subunit.multiple_letter,
+                                         "Exact Mass": exact_mass,
+                                         "TPSA": tpsa,
+                                         "ALogP": a_log_p,
+                                         "SMILES String": subunit.smiles_string}
 
-    elif choice == "5":
+                h.utilities.print_dataframe(df)
+
+            except KeyError:
+
+                print("\nInvalid subunit. Check the subunit list and try again.")
+
+                continue
+
+    elif choice == 5:
 
         print("\nGoodbye!")
 
-        h.sys.exit()
+        exit()
 
     ui_loop(subunitLibrary)
