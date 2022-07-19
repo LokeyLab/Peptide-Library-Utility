@@ -1,6 +1,6 @@
 # Peptide Library Utility
 ## Synopsis
-This python program is created to stream line the process of creating with linear and cyclic peptide libraries in silico and evaluating some basic cheminformatic values.
+Create linear and cyclic peptide libraries in silico and evaluate some basic cheminformatic values.
 
 ## Features
 - Create a single peptide using a text-based user inteface. (Outputs cheminformatic data and SMILES string)
