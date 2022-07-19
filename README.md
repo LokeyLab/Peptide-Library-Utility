@@ -48,10 +48,13 @@ Run the __main__.py script and follow the text-based user interface to create pe
 
 For canonical and noncanonical amino acids, the format must comply to the following examples:
 
+```
 (NMe)-ß-H-D-Leu    ß-Leu    H-Leu    Leu    (NMe)-Leu
+```
 
 For the input .CSV file, the format must comply to the following example:
 
+```
 Pot 1       Pot 2       Pot 3       Pot 4       Pot 5       Pot 6       <-- Lets the program know how many pots there are
 
 Leu         Leu         Leu         Leu         Leu         Leu         <-- Can be any subunit as long as it is on the subunit list 
@@ -59,6 +62,7 @@ Leu         Leu         Leu         Leu         Leu         Leu         <-- Can 
 Pro         D-Pro       Ala         D-Ala       (NMe)-ß-Leu Gly         <-- Can be any subunit as long as it is on the subunit list 
 
 Val                     D-Gly                                           <-- Uneven pot sizes are acceptable
+```
 
 ## Contributors
 Code written by [Adam Murray](https://github.com/Adiaslow)
