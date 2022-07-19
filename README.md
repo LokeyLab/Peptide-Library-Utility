@@ -29,7 +29,7 @@ This python program is created to stream line the process of creating with linea
 │   └── miscellaneous.csv ... Miscellaneous subunits .CSV
 └── .gitattribuites
 └── .gitignore
-└── __main__.py The main script.
+└── __main__.py ... The main script.
 └── README.md
 └── license ... MIT License.
 ```
