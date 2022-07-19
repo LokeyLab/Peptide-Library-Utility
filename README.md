@@ -52,6 +52,8 @@ For canonical and noncanonical amino acids, the format must comply to the follow
 (NMe)-ß-H-D-Leu    ß-Leu    H-Leu    Leu    (NMe)-Leu
 ```
 
+For peptoids and miscellaneous subunits, use the multiple letter acronym as defined in the appropriate .CSV file.
+
 For the input .CSV file, the format must comply to the following example:
 
 ```
