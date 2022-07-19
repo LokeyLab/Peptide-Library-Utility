@@ -69,6 +69,8 @@ Val                     D-Gly                                           <──�
 ## Contributors
 Code written by [Adam Murray](https://github.com/Adiaslow)
 
+In collaboration with Lokey Lab.
+
 ## License
 [MIT License](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/license)
 
