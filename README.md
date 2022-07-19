@@ -55,13 +55,13 @@ For canonical and noncanonical amino acids, the format must comply to the follow
 For the input .CSV file, the format must comply to the following example:
 
 ```
-Pot 1       Pot 2       Pot 3       Pot 4       Pot 5       Pot 6       <-- Lets the program know how many pots there are
+Pot 1       Pot 2       Pot 3       Pot 4       Pot 5       Pot 6       <──── Lets the program know how 
+                                                                                many pots there are.
+Leu         Leu         Leu         Leu         Leu         Leu         <──⌍─ Can be any subunit as long as
+                                                                           |    it is on the subunit list.
+Pro         D-Pro       Ala         D-Ala       (NMe)-ß-Leu Gly         <──⌏ 
 
-Leu         Leu         Leu         Leu         Leu         Leu         <-- Can be any subunit as long as it is on the subunit list 
-
-Pro         D-Pro       Ala         D-Ala       (NMe)-ß-Leu Gly         <-- Can be any subunit as long as it is on the subunit list 
-
-Val                     D-Gly                                           <-- Uneven pot sizes are acceptable
+Val                     D-Gly                                           <──── Uneven pot sizes are acceptable.
 ```
 
 ## Contributors
