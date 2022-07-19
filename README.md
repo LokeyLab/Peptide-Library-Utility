@@ -7,6 +7,30 @@ This python program is created to stream line the process of creating with linea
 - Create a peptide library conbinatorially by inputing a .csv file and following a shortened text-based user inteface. (Writes cheminformatic data and SMILES string to .csv in the output folder.)
 - Get basic cheminformatic data from a SMILES string.
 
+## Directory Structure
+.
+├── input/ ... Directory for .CSV files containing the subunits to be made into peptides.
+├── output/ ... Directory where the peptide library will be output as a .CSV file.
+├── scripts/ ... Directory that contains all of the internal dependencies.
+│   └── bonding.py ... Functions for bonding and cyclization.
+│   └── cheminformatics.py ... Functions for calculating cheminformatic data.
+│   └── classes.py ... Classes used for creating objects that hold data used in the various stages of the peptide creation process.
+│   └── combinatronics.py ... Functions for calculating permutations and combinations.
+│   └── header.py ... Holds all of the library imports.
+│   └── smiles_strings.py ... Holds the SMILE strings for the amino acids from Pub Chem and the reorganized versions. Not used in the program.
+│   └── subunit_builder.py ... Functions for generating the subunit library.
+│   └── user_interface.py ... Where most of functions are called as the user navigates the text-based interface.
+│   └── utilities.py ... Various utility functions.
+└── subunits/ ... Directory where the .CSVs that hold the data for all of the subunits.
+│   └── amines.csv ... Amines .CSV. These will automatically be bonded with a bromoacetic acid.
+│   └── canonical_amino_acids.csv ... Canonical Amino Acids .CSV
+│   └── noncanonical_amino_acids.csv ... Noncanonical Amino Acids .CSV
+│   └── miscellaneous.csv ... Miscellaneous subunits .CSV
+└── .gitattribuites
+└── .gitignore
+└── __main__.py The main script.
+└── README.md
+
 ## Installation
 Below are the required libraries.
 ```
