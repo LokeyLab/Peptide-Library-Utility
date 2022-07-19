@@ -95,19 +95,8 @@ All notable changes to this project will be documented in this file. This projec
 ### Added
 Initial Commit
 
-Developed plugin
-
 ### Changed
-Initial Commit
-
-Developed plugin
 
 ### Fixed
-Initial Commit
-
-Developed plugin
 
 ### Removed
-Initial Commit
-
-Developed plugin
