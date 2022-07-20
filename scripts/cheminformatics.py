@@ -5,7 +5,7 @@
 This script contains functions for evaluating cheminformatic values using RDKits suite.
 """
 
-from scripts import header as h
+import header as h
 
 
 def get_molecule_from_smiles(smiles_string):

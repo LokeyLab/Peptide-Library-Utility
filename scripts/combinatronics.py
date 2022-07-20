@@ -6,7 +6,7 @@ This script contains the combinatronics functions
 for creating the peptide libraries.
 """
 
-from scripts import header as h
+import header as h
 
 
 def cartesian_product(pots):

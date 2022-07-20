@@ -5,7 +5,7 @@
 This script contains various miscellaneous utility functions.
 """
 
-from scripts import header as h
+import header as h
 
 
 def csv_to_dataframe(f):

@@ -8,7 +8,7 @@ quantity of subunits that might be used in creating the peptide libraries. This 
 functions that are used in the creation of the various subunits.
 """
 
-from scripts import header as h
+import header as h
 
 
 class AminoAcid:
