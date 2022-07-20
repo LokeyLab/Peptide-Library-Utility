@@ -364,13 +364,13 @@ def generate_subunit_library():
     subunits = {}
 
     canonical_amino_acid_dataframe = h.utilities.csv_to_dataframe(
-        "subunits/Canonical Amino Acids-Canonical Amino Acids.csv")
+        "subunits/canonical_amino_acids.csv")
     noncanonical_amino_acid_dataframe = h.utilities.csv_to_dataframe(
-        "subunits/Non-Canonical Amino Acids-Non-Canonical Amino Acids.csv")
+        "subunits/noncanonical_amino_acids.csv")
     amine_dataframe = h.utilities.csv_to_dataframe(
-        "subunits/Amines-Amines.csv")
+        "subunits/amines.csv")
     miscellaneous_dataframe = h.utilities.csv_to_dataframe(
-        "subunits/Misc-Misc.csv")
+        "subunits/miscellaneous.csv")
 
     print("\nCanonical Amino Acids")
     print("----------------------------------------------------------")
