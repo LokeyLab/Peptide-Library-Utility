@@ -59,6 +59,8 @@ pip install rdkit
 ## Usage
 Run the __main__.py script and follow the text-based user interface to create peptides, peptide libraries, and calculate cheminformatic information from SMILES strings.
 
+Before using any of the other functions, be sure to populate the subunit library to ensure that all of the subunits you've added are loaded and ready to use in the creation of peptides.
+
 For canonical and noncanonical amino acids, the format must cohere with the following examples:
 
 ```
