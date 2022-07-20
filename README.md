@@ -59,7 +59,7 @@ pip install rdkit
 ## Usage
 Run the __main__.py script and follow the text-based user interface to create peptides, peptide libraries, and calculate cheminformatic information from SMILES strings.
 
-For canonical and noncanonical amino acids, the format must comply to the following examples:
+For canonical and noncanonical amino acids, the format must cohere with the following examples:
 
 ```
 (NMe)-ß-H-D-Leu    ß-Leu    H-Leu    Leu    (NMe)-Leu
@@ -67,16 +67,16 @@ For canonical and noncanonical amino acids, the format must comply to the follow
 
 For peptoids and miscellaneous subunits, use the multiple letter acronym as defined in the appropriate .CSV file.
 
-For the input .CSV file, the format must comply to the following example:
+For the input .CSV file, the format must cohere with the following example:
 
 ```
-Pot 1       Pot 2       Pot 3       Pot 4       Pot 5       Pot 6       <──── Lets the program know how 
-                                                                                many pots there are.
-Leu         Leu         Leu         Leu         Leu         Leu         <──⌍─ Can be any subunit as long as
-                                                                           |    it is on the subunit list.
-Pro         D-Pro       Ala         D-Ala       (NMe)-ß-Leu Gly         <──⌏ 
+Pot 1       Pot 2       Pot 3       Pot 4       Pot 5       Pot 6 <──── Lets the program know how 
+                                                                          many pots there are.
+Leu         Leu         Leu         Leu         Leu         Leu   <──⌍─ Can be any subunit as long as
+                                                                     |    it is on the subunit list.
+Pro         D-Pro       Ala         D-Ala       (NMe)-ß-Leu Gly   <──⌏ 
 
-Val                     D-Gly                                           <──── Uneven pot sizes are acceptable.
+Val                     D-Gly                                     <──── Uneven pot sizes are acceptable.
 ```
 
 ## Contributors
