@@ -79,6 +79,21 @@ Pro         D-Pro       Ala         D-Ala       (NMe)-ß-Leu Gly   <──⌏
 Val                     D-Gly                                     <──── Uneven pot sizes are acceptable.
 ```
 
+Adding deuterated amino acids to noncanonical-amino-acids.csv:
+```
+Improperly formatted L-Leucine (from Sigma-Aldrich):
+CC(C)C[C@H](N)C(O)=O
+
+Improperly formatted L-Leucine-d3 (from Sigma-Aldrich):
+[2H]C([2H])([2H])C(C)C[C@H](N)C(O)=O
+
+Properly formatted L-Leucine: 
+N[C@@H](CC(C)C)C(=O)O
+
+Properly formatted L-Leucine-d3: 
+N[C@@H](CC(C)C([2H])([2H])([2H]))C(=O)O
+```
+
 ## Contributors
 Code written by [Adam Murray](https://github.com/Adiaslow)
 
