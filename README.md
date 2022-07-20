@@ -59,6 +59,8 @@ pip install rdkit
 ## Usage
 Run the __main__.py script and follow the text-based user interface to create peptides, peptide libraries, and calculate cheminformatic information from SMILES strings.
 
+Before using any of the other functions, be sure to populate the subunit library to ensure that all of the subunits you've added are loaded and ready to use in the creation of peptides.
+
 For canonical and noncanonical amino acids, the format must cohere with the following examples:
 
 ```
@@ -77,6 +79,21 @@ Leu         Leu         Leu         Leu         Leu         Leu   <──⌍─ 
 Pro         D-Pro       Ala         D-Ala       (NMe)-ß-Leu Gly   <──⌏ 
 
 Val                     D-Gly                                     <──── Uneven pot sizes are acceptable.
+```
+
+Adding deuterated amino acids to noncanonical-amino-acids.csv:
+```
+Improperly formatted L-Leucine (from Sigma-Aldrich):
+CC(C)C[C@H](N)C(O)=O
+
+Improperly formatted L-Leucine-d3 (from Sigma-Aldrich):
+[2H]C([2H])([2H])C(C)C[C@H](N)C(O)=O
+
+Properly formatted L-Leucine: 
+N[C@@H](CC(C)C)C(=O)O
+
+Properly formatted L-Leucine-d3: 
+N[C@@H](CC(C)C([2H])([2H])([2H]))C(=O)O
 ```
 
 ## Contributors
