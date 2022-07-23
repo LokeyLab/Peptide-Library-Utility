@@ -139,6 +139,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ### Changed
 - Made the alpha carbon editable (useful for deuterated amino acids)
+- Moved __main__.py to scripts folder
 
 ### Fixed
 - Minor code clean up
