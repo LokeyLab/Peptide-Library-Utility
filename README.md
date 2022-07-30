@@ -26,6 +26,7 @@ Create linear and cyclic peptide libraries *in silico* and evaluate some basic c
 ├── input/ ... Directory for .CSV files containing the subunits to be made into peptides.
 ├── output/ ... Directory where the peptide library will be output as a .CSV file.
 ├── scripts/ ... Directory that contains all of the internal dependencies.
+|   └── __main__.py ... The main script.
 │   └── bonding.py ... Functions for bonding and cyclization.
 │   └── cheminformatics.py ... Functions for calculating cheminformatic data.
 │   └── classes.py ... Classes used for creating objects that hold data used in the various stages of the peptide creation process.
@@ -42,7 +43,6 @@ Create linear and cyclic peptide libraries *in silico* and evaluate some basic c
 │   └── miscellaneous.csv ... Miscellaneous subunits .CSV
 └── .gitattribuites
 └── .gitignore
-└── __main__.py ... The main script.
 └── README.md
 └── license ... MIT License.
 ```
@@ -72,21 +72,31 @@ For peptoids and miscellaneous subunits, use the multiple letter acronym as defi
 For the input .CSV file, the format must cohere with the following example:
 
 ```
-Pot 1       Pot 2       Pot 3       Pot 4       Pot 5       Pot 6 <──── Lets the program know how 
-                                                                          many pots there are.
-Leu         Leu         Leu         Leu         Leu         Leu   <──⌍─ Can be any subunit as long as
-                                                                     |    it is on the subunit list.
-Pro         D-Pro       Ala         D-Ala       (NMe)-ß-Leu Gly   <──⌏ 
+Position 1  Position 2  Position 3  Position 4  Position 5  Position 6 <──── Lets the program know how 
+                                                                                many pots there are.
+Leu         Leu         Leu         Leu         Leu         Leu        <──⌍─ Can be any subunit as long as
+                                                                          |     it is on the subunit list.
+Pro         D-Pro       Ala         D-Ala       (NMe)-ß-Leu Gly        <──⌏ 
 
-Val                     D-Gly                                     <──── Uneven pot sizes are acceptable.
+Val                     D-Gly                                          <──── Uneven pot sizes are acceptable.
+```
+
+Anatomy of properly formatted Amino Acid SMILES string:
+```
+N[C@@H](CC(C)C)C(=O)O
+
+Amino Group   Stereocenter   Side Chain   Alpha Carbon    Carboxyl Group
+N             [C@@H]         (CC(C)C)     C               (=O)O
+                             ^      ^
+                             (Some side chains may or may not require surrounding parentheses)
 ```
 
 Adding deuterated amino acids to noncanonical-amino-acids.csv:
 ```
-Improperly formatted L-Leucine (from Sigma-Aldrich):
+Improperly formatted L-Leucine:
 CC(C)C[C@H](N)C(O)=O
 
-Improperly formatted L-Leucine-d3 (from Sigma-Aldrich):
+Improperly formatted L-Leucine-d3:
 [2H]C([2H])([2H])C(C)C[C@H](N)C(O)=O
 
 Properly formatted L-Leucine: 
@@ -123,9 +133,23 @@ Grant #R25GM51765
 ## Change Log
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 0.2.0 - 2022-07-23
+### Added
+- Beta and Homo versions of amino acids (still working on this)
+
+### Changed
+- Made the alpha carbon editable (useful for deuterated amino acids)
+- Moved __main__.py to scripts folder
+
+### Fixed
+- Minor code clean up
+
+### Removed
+- Classes from subunits.py
+
 ## 0.1.0 - 2022-07-18
 ### Added
-Initial Commit
+- Initial Commit
 
 ### Changed
 
