@@ -2,3 +2,45 @@ Name,Multiple Letter,SMILES String
 Bromoacetic Acid,BrOAc,BrCC(=O)O
 Acetic Acid,OAc,OC(=O)C
 Acytl,Ac,C(=O)C
+Grant Koch Tripeptide 1,GKTP01,N[C@@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%89CCC[C@H]%89C(=O)O
+Grant Koch Tripeptide 2,GKTP02,N[C@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%88CCC[C@H]%88C(=O)O
+Grant Koch Tripeptide 3,GKTP03,N(C)[C@@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%87CCC[C@H]%87C(=O)O
+Grant Koch Tripeptide 4,GKTP04,N(C)[C@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%86CCC[C@H]%86C(=O)O
+Grant Koch Tripeptide 5,GKTP05,N[C@@H](CC(C)C)C(=O)N[C@H](CC(C)C)C(=O)N%85CCC[C@H]%85C(=O)O
+Grant Koch Tripeptide 6,GKTP06,N[C@H](CC(C)C)C(=O)N[C@H](CC(C)C)C(=O)N%84CCC[C@H]%84C(=O)O
+Grant Koch Tripeptide 7,GKTP07,N(C)[C@@H](CC(C)C)C(=O)N[C@H](CC(C)C)C(=O)N%83CCC[C@H]%83C(=O)O
+Grant Koch Tripeptide 8,GKTP08,N(C)[C@H](CC(C)C)C(=O)N[C@H](CC(C)C)C(=O)N%82CCC[C@H]%82C(=O)O
+Grant Koch Tripeptide 9,GKTP09,N[C@@H](CC(C)C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N%81CCC[C@H]%81C(=O)O
+Grant Koch Tripeptide 10,GKTP10,N[C@H](CC(C)C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N%80CCC[C@H]%80C(=O)O
+Grant Koch Tripeptide 11,GKTP11,N(C)[C@@H](CC(C)C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N%79CCC[C@H]%79C(=O)O
+Grant Koch Tripeptide 12,GKTP12,N(C)[C@H](CC(C)C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N%78CCC[C@H]%78C(=O)O
+Grant Koch Tripeptide 13,GKTP13,N[C@@H](CC(C)C)C(=O)N(C)[C@H](CC(C)C)C(=O)N%77CCC[C@H]%77C(=O)O
+Grant Koch Tripeptide 14,GKTP14,N[C@H](CC(C)C)C(=O)N(C)[C@H](CC(C)C)C(=O)N%76CCC[C@H]%76C(=O)O
+Grant Koch Tripeptide 15,GKTP15,N(C)[C@@H](CC(C)C)C(=O)N(C)[C@H](CC(C)C)C(=O)N%75CCC[C@H]%75C(=O)O
+Grant Koch Tripeptide 16,GKTP16,N(C)[C@H](CC(C)C)C(=O)N(C)[C@H](CC(C)C)C(=O)N%74CCC[C@H]%74C(=O)O
+Grant Koch Tripeptide 17,GKTP17,N[C@@H](CC(C)C)C(=O)N(CC(C)C)CC(=O)N%73CCC[C@H]%73C(=O)O
+Grant Koch Tripeptide 18,GKTP18,N[C@H](CC(C)C)C(=O)N(CC(C)C)CC(=O)N%72CCC[C@H]%72C(=O)O
+Grant Koch Tripeptide 19,GKTP19,N(C)[C@@H](CC(C)C)C(=O)N(CC(C)C)CC(=O)N%71CCC[C@H]%71C(=O)O
+Grant Koch Tripeptide 20,GKTP20,N(C)[C@H](CC(C)C)C(=O)N(CC(C)C)CC(=O)N%70CCC[C@H]%70C(=O)O
+Grant Koch Tripeptide 21,GKTP21,N[C@@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%69CCC[C@@H]%69C(=O)O
+Grant Koch Tripeptide 22,GKTP22,N[C@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%68CCC[C@@H]%68C(=O)O
+Grant Koch Tripeptide 23,GKTP23,N(C)[C@@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%67CCC[C@@H]%67C(=O)O
+Grant Koch Tripeptide 24,GKTP24,N(C)[C@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%66CCC[C@@H]%66C(=O)O
+Grant Koch Tripeptide 25,GKTP25,N[C@@H](CC(C)C)C(=O)N[C@H](CC(C)C)C(=O)N%65CCC[C@@H]%65C(=O)O
+Grant Koch Tripeptide 26,GKTP26,N[C@H](CC(C)C)C(=O)N[C@H](CC(C)C)C(=O)N%64CCC[C@@H]%64C(=O)O
+Grant Koch Tripeptide 27,GKTP27,N(C)[C@@H](CC(C)C)C(=O)N[C@H](CC(C)C)C(=O)N%63CCC[C@@H]%63C(=O)O
+Grant Koch Tripeptide 28,GKTP28,N(C)[C@H](CC(C)C)C(=O)N[C@H](CC(C)C)C(=O)N%62CCC[C@@H]%62C(=O)O
+Grant Koch Tripeptide 29,GKTP29,N[C@@H](CC(C)C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N%61CCC[C@@H]%61C(=O)O
+Grant Koch Tripeptide 30,GKTP30,N[C@H](CC(C)C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N%60CCC[C@@H]%60C(=O)O
+Grant Koch Tripeptide 31,GKTP31,N(C)[C@@H](CC(C)C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N%59CCC[C@@H]%59C(=O)O
+Grant Koch Tripeptide 32,GKTP32,N(C)[C@H](CC(C)C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N%58CCC[C@@H]%58C(=O)O
+Grant Koch Tripeptide 33,GKTP33,N[C@@H](CC(C)C)C(=O)N(C)[C@H](CC(C)C)C(=O)N%57CCC[C@@H]%57C(=O)O
+Grant Koch Tripeptide 34,GKTP34,N[C@H](CC(C)C)C(=O)N(C)[C@H](CC(C)C)C(=O)N%56CCC[C@@H]%56C(=O)O
+Grant Koch Tripeptide 35,GKTP35,N(C)[C@@H](CC(C)C)C(=O)N(C)[C@H](CC(C)C)C(=O)N%55CCC[C@@H]%55C(=O)O
+Grant Koch Tripeptide 36,GKTP36,N(C)[C@H](CC(C)C)C(=O)N(C)[C@H](CC(C)C)C(=O)N%54CCC[C@@H]%54C(=O)O
+Grant Koch Tripeptide 37,GKTP37,N[C@@H](CC(C)C)C(=O)N(CC(C)C)CC(=O)N%53CCC[C@@H]%53C(=O)O
+Grant Koch Tripeptide 38,GKTP38,N[C@H](CC(C)C)C(=O)N(CC(C)C)CC(=O)N%52CCC[C@@H]%52C(=O)O
+Grant Koch Tripeptide 39,GKTP39,N(C)[C@@H](CC(C)C)C(=O)N(CC(C)C)CC(=O)N%51CCC[C@@H]%51C(=O)O
+Grant Koch Tripeptide 40,GKTP40,N(C)[C@H](CC(C)C)C(=O)N(CC(C)C)CC(=O)N%50CCC[C@@H]%50C(=O)O
+N-Methylamine,N-Me,NC
+Cereblon Linker,CRBN1-5,C(=O)CCCCOc%89ccc(C%88C(=O)NC(=O)CC%88)cc%89

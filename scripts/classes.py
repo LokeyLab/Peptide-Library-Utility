@@ -28,9 +28,6 @@ class AminoAcid:
         print("There was an error initializing an amino acid subunit.")
 
 
-
-
-
 class Peptoid:
     """The peptoid class."""
 
@@ -67,17 +64,28 @@ class Miscellaneous:
 
 class Peptide:
     """The peptide class."""
+    # "Exact MW", "ALogP", "SLogP", "SASA", "TPSA", "# Atoms", "# Heteroatoms", "# Amide Bonds",
+    #                   "# Rings", "# Aromatic Rings", "# Rotatable Bonds", "# HBA", "# HBD"
 
-    try:
+    def __init__(self, name, smiles_string, exact_mass=None,
+                 a_log_p=None, s_log_p=None, sasa=None, tpsa=None,
+                 num_atoms=None, num_heteroatoms=None, num_amide_bonds=None, num_rings=None,
+                 num_aromatic_rings=None, num_rotatable_bonds=None, num_hba=None,
+                 num_hbd=None, largest_ring_size=None):
 
-        def __init__(self, name, exact_mass, tpsa, a_log_p, smiles_string):
-
-            self.name = name
-            self.exact_mass = exact_mass
-            self.tpsa = tpsa
-            self.a_log_p = a_log_p
-            self.smiles_string = smiles_string
-
-    except:
-
-        print("There was an error initializing a peptide.")
+        self.name = name
+        self.smiles_string = smiles_string
+        self.exact_mass = exact_mass
+        self.a_log_p = a_log_p
+        self.s_log_p = s_log_p
+        self.sasa = sasa
+        self.tpsa = tpsa
+        self.num_atoms = num_atoms
+        self.num_heteroatoms = num_heteroatoms
+        self.num_amide_bonds = num_amide_bonds
+        self.num_rings = num_rings
+        self.num_aromatic_rings = num_aromatic_rings
+        self.num_rotatable_bonds = num_rotatable_bonds
+        self.num_hba = num_hba
+        self.num_hbd = num_hbd
+        self.largest_ring_size = largest_ring_size

@@ -75,7 +75,7 @@ def cyclic_peptide_in_terminal(subunit_library):
     print("Cyclization Types:")
     print("1) Head to Tail")
     print("2) Huisgen FIX ME")
-    print("3) Thioether (Must end in Threonine)")
+    print("3) Macrolactone (Must end in Threonine)")
     print("4) Keep Linear")
 
     while True:
@@ -118,9 +118,9 @@ def cyclic_peptide_in_terminal(subunit_library):
 
     elif choice == 3:
 
-        print("\nCyclizing Thioether...")
+        print("\nCyclizing Macrolactone...")
 
-        cyclic_peptide = h.bonding.cyclize_thioether(peptide, subunit_library)
+        cyclic_peptide = h.bonding.cyclize_Macrolactone(peptide, subunit_library)
 
         print("\nCyclization Complete.")
 
@@ -264,12 +264,10 @@ def peptide_library_from_csv(subunit_library):
 
     cartesian_product = h.combinatronics.cartesian_product(pots)
 
-    choice = 0
-
     print("\nCyclization Types:")
     print("1) Head to Tail")
-    print("2) Huisgen FIX ME")
-    print("3) Thioether (Must end in Threonine)")
+    print("2) Huisgen")
+    print("3) Macrolactone (Must end in Threonine)")
     print("4) Keep Linear")
 
     while True:
@@ -305,12 +303,71 @@ def peptide_library_from_csv(subunit_library):
         print("\nCyclizing Huisgen...")
 
         cyclization_type = "Huisgen"
+        
+
+        while True:
+
+            try:
+
+                choice = input("\nCap exposed carboxyl group? y/n: ")
+
+                if not (choice == "y" or choice == "n"):
+
+                    print("\nInput was not a valid choice. Try again.")
+
+                    continue
+
+                else:
+
+                    break
+
+            except ValueError:
+
+                print("\nInput was not either \"y\" or \"n\". Try again.")
+
+                continue
+
+        while True:
+
+            if choice == "y":
+
+                while True:
+
+                    try:
+
+                        cap = subunit_library[input("\nEnter subunit: ")]
+
+                        print("\n" + str(cap.name) + " cap")
+
+                        cap_bool = True
+
+                        break
+
+                    except KeyError:
+
+                        print("\nInvalid subunit. Check the subunit list and try again.")
+
+                        continue
+
+                break
+
+            elif choice == "n":
+
+                cap_bool = False
+
+                break
+
+            else:
+
+                print("\nSomething went wrong.")
+
+                continue
 
     elif choice == 3:
 
-        print("\nCyclizing Thioether...")
+        print("\nCyclizing Macrolactone...")
 
-        cyclization_type = "Thioether"
+        cyclization_type = "Macrolactone"
 
         while True:
 
@@ -380,8 +437,12 @@ def peptide_library_from_csv(subunit_library):
 
     cyclic_peptides = []
 
+    molecules_list = []
 
-    for i in cartesian_product:
+    count = 0
+    print("")
+
+    for i in h.tqdm.tqdm(cartesian_product):
 
         subunits = []
 
@@ -407,11 +468,17 @@ def peptide_library_from_csv(subunit_library):
 
         elif cyclization_type == "Huisgen":
 
-            cyclic_peptide = h.bonding.cyclize_huisgen(peptide)
+            cyclic_peptide = h.bonding.cyclize_triazole(peptide, subunit_library)
 
-        elif cyclization_type == "Thioether":
+            subunits.append(cap)
 
-            cyclic_peptide = h.bonding.cyclize_thioether(peptide, subunit_library)
+            tempPeptide = str(cyclic_peptide[0:-1]) + cap.smiles_string
+
+            cyclic_peptide = tempPeptide
+
+        elif cyclization_type == "Macrolactone":
+
+            cyclic_peptide = h.bonding.cyclize_Macrolactone(peptide, subunit_library)
 
             if cap_bool:
                 subunits.append(cap)
@@ -428,6 +495,7 @@ def peptide_library_from_csv(subunit_library):
 
         name = ""
 
+
         for i in range(0, len(subunits)):
             name += subunits[i].multiple_letter + " "
 
@@ -439,6 +507,8 @@ def peptide_library_from_csv(subunit_library):
 
         cyclic_peptides.append(cyclic_peptide_object)
 
+        molecules_list.append(molecule)
+
     if not len(cyclic_peptides) == cyclic_peptide_count:
 
         print("\nSomething was wrong with one or more of your subunits.")
@@ -448,11 +518,15 @@ def peptide_library_from_csv(subunit_library):
 
     df = h.utilities.peptides_to_dataframe(cyclic_peptides)
 
+    df2 = h.utilities.molecules_to_dataframe(molecules_list)
+
     h.utilities.print_dataframe(df)
 
     h.utilities.dataframe_to_csv(df)
 
-    h.utilities.plot_exact_mass_tpsa_a_log_p(df)
+    # h.utilities.dataframe_to_sdf(df2)
+
+    # h.utilities.plot_exact_mass_tpsa_a_log_p(df)
 
     return
 
@@ -488,6 +562,12 @@ def Introduction():
             continue
 
     return choice
+
+
+def gui_loop():
+    h.root.mainloop()
+    h.subunit_window.mainloop()
+    h.peptide_window.mainloop()
 
 
 def ui_loop(subunitLibrary):

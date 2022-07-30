@@ -7,21 +7,50 @@ This script contains functions for evaluating cheminformatic values using RDKits
 
 import header as h
 
+# "Exact MW", "ALogP", "SLogP", "SASA", "TPSA", "# Atoms", "# Heteroatoms", "# Amide Bonds",
+# "# Rings", "# Aromatic Rings", "# Rotatable Bonds", "# HBA", "# HBD", "Largest Ring Size"
+
 
 def get_molecule_from_smiles(smiles_string):
     """Returns RDKit molecule object from a SMILES string using the MolFromSmiles function."""
 
     molecule = h.MolFromSmiles(smiles_string)
 
+    molecule = h.AddHs(molecule)
+
     return molecule
 
 
 def get_exact_mass(molecule):
     """Returns exact mass using RDKit's ExactMolWt function"""
-
     exact_mass = h.Descriptors.ExactMolWt(molecule)
 
     return exact_mass
+
+
+def get_a_log_p(molecule):
+    """Returns Crippen's ALogP using RDKit's MolLogP function."""
+
+    a_log_p = h.Crippen.MolLogP(molecule)
+
+    return a_log_p
+
+
+def get_s_log_p(molecule):
+    """Returns SLogP using RDKit's SlogP_VSA_ function."""
+
+    s_log_p = h.rdMolDescriptors.SlogP_VSA_(molecule)
+
+    return s_log_p
+
+
+def get_sasa(molecule):
+    """Returns SASA using RDKit's CalcSASA function"""
+    h.AllChem.EmbedMolecule(molecule)
+    radii = h.rdFreeSASA.classifyAtoms(molecule)
+    sasa = h.rdFreeSASA.CalcSASA(molecule, radii)
+
+    return sasa
 
 
 def get_tpsa(molecule):
@@ -32,12 +61,77 @@ def get_tpsa(molecule):
     return tpsa
 
 
-def get_a_log_p(molecule):
-    """Returns Crippen's ALogP using RDKit's MolLogP function."""
+def get_num_atoms(molecule):
+    """Returns number of atoms using RDKit's CalcNumAtoms function"""
 
-    a_log_p = h.Crippen.MolLogP(molecule)
+    num_atoms = h.rdMolDescriptors.CalcNumAtoms(molecule)
 
-    return a_log_p
+    return num_atoms
+
+
+def get_num_heteroatoms(molecule):
+    """Returns number of atoms using RDKit's CalcNumHeteroatoms function"""
+
+    num_heteroatoms = h.rdMolDescriptors.CalcNumHeteroatoms(molecule)
+
+    return num_heteroatoms
+
+
+def get_num_amide_bonds(molecule):
+    """Returns number of amide bonds using RDKit's CalcNumAmideBonds function"""
+
+    num_amide_bonds = h.rdMolDescriptors.CalcNumAmideBonds(molecule)
+
+    return num_amide_bonds
+
+
+def get_num_rings(molecule):
+    """Returns number of rings using RDKit's CalcNumRings function"""
+
+    num_rings = h.rdMolDescriptors.CalcNumRings(molecule)
+
+    return num_rings
+
+
+def get_num_aromatic_rings(molecule):
+    """Returns number of aromatic rings using RDKit's CalcNumAromaticRings function"""
+
+    num_aromatic_rings = h.rdMolDescriptors.CalcNumAromaticRings(molecule)
+
+    return num_aromatic_rings
+
+
+def get_num_rotatable_bonds(molecule):
+    """Returns number of rotatable bonds using RDKit's CalcNumRotatableBonds function"""
+
+    num_rotatable_bonds = h.rdMolDescriptors.CalcNumRotatableBonds(molecule)
+
+    return num_rotatable_bonds
+
+
+def get_num_hba(molecule):
+    """Returns number of hydrogen bond acceptors using RDKit's CalcNumHBA function"""
+
+    num_hba = h.rdMolDescriptors.CalcNumHBA(molecule)
+
+    return num_hba
+
+
+def get_num_hbd(molecule):
+    """Returns number of hydrogen bond donors using RDKit's CalcNumHBD function"""
+
+    num_hbd = h.rdMolDescriptors.CalcNumHBD(molecule)
+
+    return num_hbd
+
+
+def get_largest_ring_size(molecule):
+    """Returns number of rotatable bonds using RDKit's CalcNumRotatableBonds function"""
+
+    ri = molecule.GetRingInfo()
+    largest_ring_size = max((len(r) for r in ri.AtomRings()), default=0)
+
+    return largest_ring_size
 
 
 def get_chemometrics(molecule):

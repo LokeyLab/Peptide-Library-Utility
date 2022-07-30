@@ -2,7 +2,7 @@ Name,Multiple Letter,SMILES String
 butylamine,Bu,NCCCC
 ethylamine,Et,NCC
 propylamine,,NCCC
-isobutylamine,Ib,NCC(C)C
+isobutylamine,N-Ib,NCC(C)C
 2-methoxyethylamine,OME,NCCOC
 pentylamine (amylamine),Pnt,NCCCCC
 furfurylamine,Ffl,NCC1=CC=CO1
@@ -108,5 +108,8 @@ tert-butyl 3-(3-(aminomethyl)phenyl)-1H-indazole-1-carboxylate,,NCC1=CC=CC(C2=NN
 "tert-butyl 4-(4-(aminomethyl)phenyl)-3,5-dimethyl-1H-pyrazole-1-carboxylate",,NCc1ccc(C=2C(C)=NN(C(=O)OC(C)(C)(C))C(C)2)cc1
 tert-butyl 3-(4-(aminomethyl)phenyl)-1H-indazole-1-carboxylate,,NCC(C=C1)=CC=C1C2=NN(C(OC(C)(C)C)=O)C3=CC=CC=C32
 isoamylamine,,NCCC(C)C
-isopropylamine,N-iPr,NCC(C)(C)
+isopropylamine,N-iPr,NC(C)(C)
 "2,4-Difluorobenzonitrile",N-dFBn,NCc1c(F)cc(F)cc1
+(3-isopropoxypropyl)glycine,N-Ipop-Gly,NCCCOC(C)C
+(2-phenoxyethyl)glycine,N-Poe-Gly,NCCOC%80=CC=CC=C%80
+"(3,4-dimethoxyphenethyl)glycine",N-Dmope-Gly,NCCC%79=CC=C(C(OC)=C%79)OC

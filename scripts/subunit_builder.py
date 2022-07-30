@@ -82,14 +82,14 @@ def generate_d_variants(base_amino_acid):
 def generate_beta_variants(base_amino_acid):
     
     side_chain = base_amino_acid.side_chain
-    betaside_chain = base_amino_acid.side_chain[0] + base_amino_acid.side_chain[2:]
+    beta_side_chain = base_amino_acid.side_chain[0] + base_amino_acid.side_chain[2:]
 
     beta_variant = h.classes.AminoAcid("ß-" + base_amino_acid.name,
                                       "ß-" + base_amino_acid.multiple_letter,
                                       base_amino_acid.amino_group,
-                                      betaside_chain,
+                                      beta_side_chain,
                                       base_amino_acid.stereocenter,
-                                      base_amino_acid.alpha_carbon,
+                                      base_amino_acid.alpha_carbon + "C",
                                       base_amino_acid.carboxyl_group)
 
     print(beta_variant.name + "      " + beta_variant.smiles_string)
@@ -106,7 +106,7 @@ def generate_homo_variants(base_amino_acid):
                                        base_amino_acid.amino_group,
                                        homoside_chain,
                                        base_amino_acid.stereocenter,
-                                       base_amino_acid.amino_group,
+                                       base_amino_acid.alpha_carbon,
                                        base_amino_acid.carboxyl_group)
 
     print(homo_variant.name + "      " + homo_variant.smiles_string)
@@ -122,7 +122,7 @@ def generate_beta_homo_variants(base_amino_acid):
         beta_homo_variant = h.classes.AminoAcid("ß-homo-" + base_amino_acid.name,
                                                 "ß-H-" + base_amino_acid.multiple_letter,
                                                 base_amino_acid.amino_group,
-                                                base_amino_acid.side_chain,
+                                                "CC" + base_amino_acid.side_chain,
                                                 "[C@H]",
                                                 base_amino_acid.alpha_carbon,
                                                 base_amino_acid.carboxyl_group)
@@ -132,7 +132,7 @@ def generate_beta_homo_variants(base_amino_acid):
         beta_homo_variant = h.classes.AminoAcid("ß-homo-" + base_amino_acid.name,
                                                 "ß-H-" + base_amino_acid.multiple_letter,
                                                 base_amino_acid.amino_group,
-                                                base_amino_acid.side_chain,
+                                                "CC" + base_amino_acid.side_chain,
                                                 "[C@@H]",
                                                 base_amino_acid.alpha_carbon,
                                                 base_amino_acid.carboxyl_group)
@@ -202,9 +202,7 @@ def generate_amino_acids(df):
 
             temp_amino_acid_list.clear()
 
-            # FIXME
-
-            """elif multiple_letter == "ß-H-Pro":
+        elif multiple_letter == "ß-Pro":
 
             amino_acid = h.classes.AminoAcid(name, multiple_letter, amino_group,
                                    side_chain, "", alpha_carbon, carboxyl_group)
@@ -216,8 +214,21 @@ def generate_amino_acids(df):
 
             amino_acid_list += temp_amino_acid_list
 
-            temp_amino_acid_list.clear()"""
+            temp_amino_acid_list.clear()
 
+        elif multiple_letter == "H-Pro":
+
+            amino_acid = h.classes.AminoAcid(name, multiple_letter, amino_group,
+                                             side_chain, "", alpha_carbon, carboxyl_group)
+
+            temp_amino_acid_list += [amino_acid]
+
+            print(amino_acid.name + "       " + amino_acid.multiple_letter +
+                  "     " + amino_acid.smiles_string)
+
+            amino_acid_list += temp_amino_acid_list
+
+            temp_amino_acid_list.clear()
 
         elif multiple_letter == "D-Pro":
 
@@ -233,12 +244,10 @@ def generate_amino_acids(df):
 
             temp_amino_acid_list.clear()
 
-            # FIXME
+        elif multiple_letter == "ß-D-Pro":
 
-            """elif multiple_letter == "ß-H-D-Pro":
-
-            amino_acid = h.classes.AminoAcid(name, multiple_letter, amino_group, side_chain,
-                                   "", alpha_carbon, carboxyl_group)
+            amino_acid = h.classes.AminoAcid(name, multiple_letter, amino_group,
+                                   side_chain, "", alpha_carbon, carboxyl_group)
 
             temp_amino_acid_list += [amino_acid]
 
@@ -247,7 +256,105 @@ def generate_amino_acids(df):
 
             amino_acid_list += temp_amino_acid_list
 
-            temp_amino_acid_list.clear()"""
+            temp_amino_acid_list.clear()
+
+        elif multiple_letter == "H-D-Pro":
+
+            amino_acid = h.classes.AminoAcid(name, multiple_letter, amino_group,
+                                             side_chain, "", alpha_carbon, carboxyl_group)
+
+            temp_amino_acid_list += [amino_acid]
+
+            print(amino_acid.name + "       " + amino_acid.multiple_letter +
+                  "     " + amino_acid.smiles_string)
+
+            amino_acid_list += temp_amino_acid_list
+
+            temp_amino_acid_list.clear()
+
+        elif multiple_letter == "(NMe)-Pro":
+
+            amino_acid = h.classes.AminoAcid(name, multiple_letter, amino_group,
+                                             side_chain, "", alpha_carbon, carboxyl_group)
+
+            temp_amino_acid_list += [amino_acid]
+
+            print(amino_acid.name + "       " + amino_acid.multiple_letter +
+                  "     " + amino_acid.smiles_string)
+
+            amino_acid_list += temp_amino_acid_list
+
+            temp_amino_acid_list.clear()
+
+        elif multiple_letter == "(NMe)-ß-Pro":
+
+            amino_acid = h.classes.AminoAcid(name, multiple_letter, amino_group,
+                                             side_chain, "", alpha_carbon, carboxyl_group)
+
+            temp_amino_acid_list += [amino_acid]
+
+            print(amino_acid.name + "       " + amino_acid.multiple_letter +
+                  "     " + amino_acid.smiles_string)
+
+            amino_acid_list += temp_amino_acid_list
+
+            temp_amino_acid_list.clear()
+
+        elif multiple_letter == "(NMe)-H-Pro":
+
+            amino_acid = h.classes.AminoAcid(name, multiple_letter, amino_group,
+                                             side_chain, "", alpha_carbon, carboxyl_group)
+
+            temp_amino_acid_list += [amino_acid]
+
+            print(amino_acid.name + "       " + amino_acid.multiple_letter +
+                  "     " + amino_acid.smiles_string)
+
+            amino_acid_list += temp_amino_acid_list
+
+            temp_amino_acid_list.clear()
+
+        elif multiple_letter == "(NMe)-D-Pro":
+
+            amino_acid = h.classes.AminoAcid(name, multiple_letter, amino_group,
+                                             side_chain, "", alpha_carbon, carboxyl_group)
+
+            temp_amino_acid_list += [amino_acid]
+
+            print(amino_acid.name + "       " + amino_acid.multiple_letter +
+                  "     " + amino_acid.smiles_string)
+
+            amino_acid_list += temp_amino_acid_list
+
+            temp_amino_acid_list.clear()
+
+        elif multiple_letter == "(NMe)-ß-D-Pro":
+
+            amino_acid = h.classes.AminoAcid(name, multiple_letter, amino_group,
+                                             side_chain, "", alpha_carbon, carboxyl_group)
+
+            temp_amino_acid_list += [amino_acid]
+
+            print(amino_acid.name + "       " + amino_acid.multiple_letter +
+                  "     " + amino_acid.smiles_string)
+
+            amino_acid_list += temp_amino_acid_list
+
+            temp_amino_acid_list.clear()
+
+        elif multiple_letter == "(NMe)-H-D-Pro":
+
+            amino_acid = h.classes.AminoAcid(name, multiple_letter, amino_group,
+                                             side_chain, "", alpha_carbon, carboxyl_group)
+
+            temp_amino_acid_list += [amino_acid]
+
+            print(amino_acid.name + "       " + amino_acid.multiple_letter +
+                  "     " + amino_acid.smiles_string)
+
+            amino_acid_list += temp_amino_acid_list
+
+            temp_amino_acid_list.clear()
 
         # Case for the rest of the canonical amino acids
         else:
@@ -273,11 +380,11 @@ def generate_amino_acids(df):
                 for amino_acid in temp_amino_acid_list:
                     beta_amino_acid_list.append(generate_beta_variants(amino_acid))
                     homo_amino_acid_list.append(generate_homo_variants(amino_acid))
-                    beta_homo_amino_acid_list.append(generate_beta_homo_variants(amino_acid))
+                    # beta_homo_amino_acid_list.append(generate_beta_homo_variants(amino_acid))
                     
                 temp_amino_acid_list += beta_amino_acid_list
                 temp_amino_acid_list += homo_amino_acid_list
-                temp_amino_acid_list += beta_homo_amino_acid_list
+                # temp_amino_acid_list += beta_homo_amino_acid_list
 
             if nme == "y":
 
@@ -296,10 +403,14 @@ def generate_amino_acids(df):
 
 
 def generate_peptoids(df):
-    """Generates the peptoids according to the specifications in the amines.csv. This function automatically binds
-    the amines to bromoacetic acid in order to create a peptoid. This function and the proper creation of the peptoids
-    in general rely heavily on the proper formatting of the SMILES string in the amines.csv so that they can be bound 
-    to the bromoacetic acid and work properly in the peptide bonding process."""
+    """Generates the peptoids according to the specifications
+    in the amines.csv. This function automatically binds
+    the amines to bromoacetic acid in order to create a peptoid.
+    This function and the proper creation of the peptoids
+    in general rely heavily on the proper formatting of the
+    SMILES string in the amines.csv so that they can be bound
+    to the bromoacetic acid and work properly in the peptide
+    bonding process."""
 
     peptoid_list = []
 
@@ -331,9 +442,12 @@ def generate_peptoids(df):
 
 
 def generate_miscellaneous(df):
-    """This function generates on object that holds any miscellaneous subunit that might be added to the misc.csv.
-    This function heavily depends on the user inputting the SMILES string properly so that it behaves the way that 
-    they want it to. If the outcome the user is expecting is not happening, they should check their SMILES string
+    """This function generates on object that holds any
+    miscellaneous subunit that might be added to the misc.csv.
+    This function heavily depends on the user inputting
+    the SMILES string properly so that it behaves the way that
+    they want it to. If the outcome the user is expecting is
+    not happening, they should check their SMILES string
     input."""
 
     miscellaneous_list = []

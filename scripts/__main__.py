@@ -11,7 +11,7 @@ user interface or by putting .csv file with only a single row
 of subunits in the input folder.
 """
 
-from scripts import header as h
+import header as h
 
 __author__ = 'Adam Murray'
 __contact__ = "admmurra@ucsc.edu"
@@ -24,5 +24,5 @@ __status__ = 'Development'
 
 
 if __name__ == '__main__':
-    h.user_interface.ui_loop({})
-    # Test
+    # h.tbui.ui_loop({})
+    h.gui.ui_loop()
