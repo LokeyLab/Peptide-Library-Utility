@@ -23,18 +23,25 @@ Create linear and cyclic peptide libraries *in silico* and evaluate some basic c
 ## Structure
 ```
 .
-├── input/ ... Directory for .CSV files containing the subunits to be made into peptides.
-├── output/ ... Directory where the peptide library will be output as a .CSV file.
+├── .idea ... IDE Specific information. 
 ├── scripts/ ... Directory that contains all of the internal dependencies.
-|   └── __main__.py ... The main script.
 │   └── bonding.py ... Functions for bonding and cyclization.
 │   └── cheminformatics.py ... Functions for calculating cheminformatic data.
 │   └── classes.py ... Classes used for creating objects that hold data used in the various stages of the peptide creation process.
 │   └── combinatronics.py ... Functions for calculating permutations and combinations.
+│   └── full_logo.gif
+│   └── full_logo.png
+│   └── gui.py ... Creates and manages the graphical user interface.
+│   └── gui_functions.py ... Functions used by the gui.py script related to library generation and a few other things.
 │   └── header.py ... Holds all of the library imports.
+│   └── logo.ico
+│   └── logo.icns
+│   └── logo.png
+│   └── peptide_library_utility.py ... The main script from which the gui.py script is called.
+│   └── setup.py ... Checks to see if modules are installed and creates desktop shortcut.
 │   └── smiles_strings.py ... Holds the SMILE strings for the amino acids from Pub Chem and the reorganized versions. Not used in the program.
 │   └── subunit_builder.py ... Functions for generating the subunit library.
-│   └── user_interface.py ... Where most of functions are called as the user navigates the text-based interface.
+│   └── tbui.py ... Deprecated text-based user interface.
 │   └── utilities.py ... Various utility functions.
 └── subunits/ ... Directory where the .CSVs that hold the data for all of the subunits.
 │   └── amines.csv ... Amines .CSV. These will automatically be bonded with a bromoacetic acid.
@@ -43,8 +50,8 @@ Create linear and cyclic peptide libraries *in silico* and evaluate some basic c
 │   └── miscellaneous.csv ... Miscellaneous subunits .CSV
 └── .gitattribuites
 └── .gitignore
-└── README.md
 └── license ... MIT License.
+└── README.md
 ```
 
 ## Installation
