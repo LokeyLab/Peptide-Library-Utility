@@ -9,6 +9,13 @@ import PIL
 from PIL import ImageTk, Image
 import random
 import sys
+
+import tkinter as tk
+from tkinter import ttk
+from tkinter import messagebox
+from tkinter import filedialog
+from tkinter import font
+
 import webbrowser
 
 # External Libraries
@@ -22,10 +29,6 @@ import rdkit
 from rdkit.Chem import Descriptors, rdMolDescriptors, AllChem, AddHs, Crippen, MolFromSmiles, \
     PandasTools, rdFreeSASA
 
-import tkinter as tk
-from tkinter import ttk
-from tkinter import filedialog
-from tkinter import font
 
 import tqdm
 
@@ -66,6 +69,9 @@ OUTPUT_DIR = ''
 
 global OUTPUT_TYPES
 OUTPUT_TYPES = []
+
+global OUTPUT_IMG_TYPES
+OUTPUT_IMG_TYPES = []
 
 global CHEMINFORMATICS_OPTIONS
 CHEMINFORMATICS_OPTIONS = []

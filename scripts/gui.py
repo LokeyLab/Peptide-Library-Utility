@@ -227,7 +227,7 @@ def single_peptide_creator(root, console_list):
     return peptide
 
 
-def peptide_library_creator(root, console_list, output_list, subunit_list):
+def peptide_library_creator(root, console_list, output_list, subunit_list, subunit_count):
     console_list.insert("end", "Peptide Library Creator Started.")
     console_list.insert("end", "")
     console_list.see("end")
@@ -499,7 +499,8 @@ def peptide_library_creator(root, console_list, output_list, subunit_list):
         h.gui_functions.peptide_library_creation(console_list, output_list, subunit_list,
                                                  peptide_library_progress_bar, cyclization_type,
                                                  amine_cap_subunit, c_terminus_cap_subunit,
-                                                 peptide_library_window)
+                                                 peptide_library_window, subunit_count)
+
 
         if not cyclization_type == "Linear":
             console_list.insert("end", f"{cyclization_type} Cyclization.")
@@ -762,7 +763,7 @@ def plotting(root, console_list, output_list):
 
     def plotting_exit_button():
         plotting_window.destroy()
-        console_list.insert("end", "3D Ploting Exited.")
+        console_list.insert("end", "3D Plotting Exited.")
         console_list.insert("end", "")
         console_list.see("end")
 
@@ -913,7 +914,7 @@ def plotting(root, console_list, output_list):
                                                                    padx=10, pady=10,
                                                                    sticky='w')
 
-    file_types = [".CSV", ".TXT", ".SDF (Only Mol Data)", ".SMI (Only SMILES)"]
+    img_file_types = [".PNG", ".PDF", ".SVG"]
 
     c_vars = []
     cs = []
@@ -921,12 +922,12 @@ def plotting(root, console_list, output_list):
     col = 0
     row = 1
 
-    for i in range(0, len(file_types)):
+    for i in range(0, len(img_file_types)):
         var = h.tk.StringVar()
         c_vars.append(var)
 
-        c = h.tk.Checkbutton(file_output_type_frame, text=file_types[i],
-                             variable=var, onvalue=file_types[i], offvalue='')
+        c = h.tk.Checkbutton(file_output_type_frame, text=img_file_types[i],
+                             variable=var, onvalue=img_file_types[i], offvalue='')
         c.grid(column=col, columnspan=1, row=row, rowspan=1, padx=10, pady=10, sticky='new')
 
         cs.append(c)
@@ -990,11 +991,26 @@ def plotting(root, console_list, output_list):
                                                  sticky="e")
 
     def plot_data():
-        x = x_radio_var.get()
-        y = y_radio_var.get()
-        z = y_radio_var.get()
+        plotting_progress_bar_text.start(10)
 
-        h.gui_functions.plot_generator(x, y, z)
+        h.OUTPUT_IMG_TYPES = []
+
+        for j in range(0, len(img_file_types)):
+            if not c_vars[j] == '':
+                h.OUTPUT_IMG_TYPES.append(c_vars[j].get())
+
+        x_axis = x_radio_var.get()
+        y_axis = y_radio_var.get()
+        z_axis = z_radio_var.get()
+
+        h.gui_functions.plot_generator(x_axis, y_axis, z_axis,
+                                       console_list, plotting_progress_bar_text)
+
+        console_list.insert("end", "3D Plotting Successful.")
+        console_list.insert("end", "")
+        console_list.see("end")
+
+        plotting_window.destroy()
 
     h.tk.Button(plotting_main_frame, text="Plot", command=plot_data).grid(column=0, columnspan=1,
                                         row=0, rowspan=1,
@@ -1002,7 +1018,8 @@ def plotting(root, console_list, output_list):
                                         sticky="ne")
 
 
-def create_main_window_main_menu(root, main_frame, console_list, output_list, subunit_list):
+def create_main_window_main_menu(root, main_frame, console_list, output_list, subunit_list,
+                                 subunit_count):
     main_menu_frame = h.tk.LabelFrame(main_frame)
     main_menu_frame.grid(column=0, columnspan=1, row=1, rowspan=1, sticky='nsew')
     main_menu_frame.columnconfigure(0, weight=1)
@@ -1023,7 +1040,7 @@ def create_main_window_main_menu(root, main_frame, console_list, output_list, su
     """
 
     def pep_lib():
-        peptide_library_creator(root, console_list, output_list, subunit_list)
+        peptide_library_creator(root, console_list, output_list, subunit_list, subunit_count)
 
     h.tk.Button(main_menu_frame, text="Peptide Library Creator",
                 command=pep_lib, width=20).grid(column=0, columnspan=1,
@@ -1187,7 +1204,7 @@ def create_main_window_subunits(main_frame, console_list, main_progress_bar):
 
     entry.bind('<KeyRelease>', subunit_scan_key)
 
-    return subunit_frame, subunit_list
+    return subunit_frame, subunit_list, subunit_count
 
 
 def create_main_window_output(main_frame, console_list):
@@ -1255,10 +1272,12 @@ def ui_loop():
 
     console_frame, console_list = create_main_window_console(main_frame)
     output_frame, output_list = create_main_window_output(main_frame, console_list)
-    subunit_frame, subunit_list = create_main_window_subunits(main_frame, console_list,
+    subunit_frame, subunit_list, subunit_count = create_main_window_subunits(main_frame,
+                                                                            console_list,
                                                               main_progress_bar)
     main_menu_frame = create_main_window_main_menu(main_window, main_frame,
-                                                   console_list, output_list, subunit_list)
+                                                   console_list, output_list, subunit_list,
+                                                   subunit_count)
 
     console_list.insert("end", "Welcome to Peptide Library Utility 0.2.0!")
     console_list.insert("end", "")

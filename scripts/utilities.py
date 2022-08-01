@@ -125,18 +125,13 @@ def dataframe_to_smi(df):
     df["SMILES String"].to_csv(path)
 
 
-def plot_exact_mass_tpsa_a_log_p(df):
+def plot_exact_mass_tpsa_a_log_p(x, y, z, c, cmap):
     """Displays a 3D scatter plot showing Exact Mass, TPSA, and a_log_p"""
 
     fig = h.plt.figure(figsize=(12,8))
     ax = fig.add_subplot(projection='3d')
 
-    x = df["Exact Mass"]
-    y = df["TPSA"]
-    z = df["ALogP"]
-    p = (x + y + z) # df["Predicted PappE-6"]
-
-    ax.scatter(x, y, z, c = p, cmap="viridis", edgecolors='black', s=20)
+    ax.scatter(x, y, z, c = c, cmap=cmap, edgecolors='black', s=20)
 
     ax.plot(x, z, "r+", zdir='y', zs=y.max())
     ax.plot(y, z, "g+", zdir='x', zs=x.min())

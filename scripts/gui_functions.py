@@ -82,10 +82,12 @@ def subunit_library_update(console_list, subunit_list):
 def peptide_library_creation(console_list, output_list, subunit_list,
                              peptide_library_progress_bar, cyclization_type,
                              amine_cap_subunit, c_terminus_cap_subunit,
-                             peptide_library_window):
+                             peptide_library_window, subunit_count):
 
     if not h.SUBUNIT_LIBRARY_POPULATED:
         subunit_library_update(console_list, subunit_list)
+        subunit_count.set("n = " + str(h.SUBUNIT_COUNT))
+
 
     subunit_library = h.SUBUNIT_LIBRARY
 
@@ -98,14 +100,12 @@ def peptide_library_creation(console_list, output_list, subunit_list,
         console_list.see("end")
 
     else:
-        console_list.insert("end", "File Not Found.")
-        console_list.insert("end", "")
-        console_list.see("end")
+        h.messagebox.showinfo("Error Message", "Input file does not exist.")
 
     # h.utilities.print_dataframe(df)
     df_list = df.to_string().split("\n")
 
-    for i in range(0, len(df)):
+    for i in range(0, df.count().max() + 1):
         # row_list = df_list[i]
         print(df_list[i])
         console_list.insert("end", df_list[i])
@@ -134,7 +134,7 @@ def peptide_library_creation(console_list, output_list, subunit_list,
 
         pots.append(temp_pot)
 
-    peptide_count = df.count().max()
+    peptide_count = pot_sizes[0]
 
     for k in range(1, len(pot_sizes)):
         peptide_count *= pot_sizes[k]
@@ -163,10 +163,9 @@ def peptide_library_creation(console_list, output_list, subunit_list,
 
             except KeyError:
 
-                print(f"\nSubunit \"%s\" is not a valid subunit." % j)
-                print("Change the input file and try again.")
+                h.messagebox.showinfo("Error Message", f"There was an issue with subunit: {j}.")
 
-                exit()
+                break
 
         peptide = h.bonding.bond_head_to_tail(subunits)
 
@@ -327,14 +326,11 @@ def peptide_library_creation(console_list, output_list, subunit_list,
 
         molecules_list.append(molecule)
 
-    if not len(peptides) == peptide_count:
-        exit()
-
     df = h.utilities.peptides_to_dataframe(peptides)
 
     df.dropna(how='all', axis=1, inplace=True)
 
-    df2 = h.utilities.molecules_to_dataframe(molecules_list)
+    df2 = h.pd.concat([h.utilities.molecules_to_dataframe(molecules_list), df], axis=1)
 
     df_list = df.to_string().split("\n")
 
@@ -342,7 +338,25 @@ def peptide_library_creation(console_list, output_list, subunit_list,
 
     h.OUTPUT_DIR = h.os.path.join(h.OUTPUT_DIR, date_time)
 
-    h.os.mkdir(h.OUTPUT_DIR)
+    if not len(peptides) == peptide_count:
+        h.messagebox.showinfo("Error Message", f"Number of peptides ({len(peptides)}) output does "
+                                               f"not equal the Cartesian product "
+                                               f"({peptide_count}). Only valid molecules were "
+                                               "output. There may have been an issue with one or "
+                                               "more subunits.")
+
+    temp_num = 2
+
+    if h.os.path.exists(h.OUTPUT_DIR):
+        temp_path = h.OUTPUT_DIR + "_" + str(temp_num)
+        while h.os.path.exists(temp_path):
+            temp_num += 1
+            temp_path = h.OUTPUT_DIR + "_" + str(temp_num)
+        h.OUTPUT_DIR = temp_path
+        h.os.mkdir(h.OUTPUT_DIR)
+
+    else:
+        h.os.mkdir(h.OUTPUT_DIR)
 
     for i in range(0, len(df)):
         output_list.insert("end", df_list[i])
@@ -366,7 +380,7 @@ def peptide_library_creation(console_list, output_list, subunit_list,
     # h.utilities.plot_exact_mass_tpsa_a_log_p(df)
 
 
-def plot_generator(x_axis, y_axis, z_axis, console_list):
+def plot_generator(x_axis, y_axis, z_axis, console_list, progress_bar):
 
     input_file = h.os.path.abspath(h.INPUT_FILE)
 
@@ -377,16 +391,72 @@ def plot_generator(x_axis, y_axis, z_axis, console_list):
         console_list.see("end")
 
     else:
-        console_list.insert("end", "File Not Found.")
-        console_list.insert("end", "")
-        console_list.see("end")
+        h.messagebox.showinfo("Error Message", "There was a problem with your input file.")
+        progress_bar.stop()
 
-    x = df[x_axis]
-    y = df[y_axis]
-    z = df[z_axis]
+    try:
+        x = df[x_axis]
 
-    fig = h.plt.figure()
+    except:
+        h.messagebox.showinfo("Error Message", "There was a problem with your X axis input.")
+        progress_bar.stop()
+
+    try:
+        y = df[y_axis]
+
+    except:
+        h.messagebox.showinfo("Error Message", "There was a problem with your Y axis input.")
+        progress_bar.stop()
+
+    try:
+        z = df[z_axis]
+
+    except:
+        h.messagebox.showinfo("Error Message", "There was a problem with your Z axis input.")
+        progress_bar.stop()
+
+
+    fig = h.plt.figure(figsize=(16, 9))
     ax = fig.add_subplot(111, projection='3d')
+
+    ax.scatter(x, y, z, c=(x+y+z), cmap="viridis", edgecolors='black', s=20)
+    ax.plot(x, z, "r+", zdir='y', zs=y.max())
+    ax.plot(y, z, "g+", zdir='x', zs=x.min())
+    ax.plot(x, y, "b+", zdir='z', zs=z.min())
+
+    ax.set_xlabel(x_axis)
+    ax.set_ylabel(y_axis)
+    ax.set_zlabel(z_axis)
+
+    date_time = h.datetime.datetime.now().strftime("%m%d%Y%H%M")
+
+    output_dir = h.os.path.abspath(h.OUTPUT_DIR)
+
+    if h.os.path.exists(output_dir):
+        h.OUTPUT_DIR = h.os.path.join(h.OUTPUT_DIR, date_time + "_figures")
+
+        temp_num = 2
+
+        if h.os.path.exists(h.OUTPUT_DIR):
+            temp_path = h.OUTPUT_DIR + "_" + str(temp_num)
+            while h.os.path.exists(temp_path):
+                temp_num += 1
+                temp_path = h.OUTPUT_DIR + "_" + str(temp_num)
+            h.OUTPUT_DIR = temp_path
+            h.os.mkdir(h.OUTPUT_DIR)
+
+        else:
+            h.os.mkdir(h.OUTPUT_DIR)
+
+        if not len(h.OUTPUT_IMG_TYPES) == 0:
+            for output_type in h.OUTPUT_IMG_TYPES:
+                if not output_type == '':
+                    h.plt.savefig(h.os.path.join(h.OUTPUT_DIR, "3d_plot" + output_type.lower()),
+                                  format=(output_type.lower()[1:]), transparent=True)
+
+    progress_bar.stop()
+
+    h.plt.show()
 
 
 def quote_generator():
