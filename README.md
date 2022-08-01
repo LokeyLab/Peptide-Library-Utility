@@ -102,6 +102,7 @@ N[C@@H](CC(C)C([2H])([2H])([2H]))C(=O)O
 
 ## Contributors
 Code written by [Adam Murray](https://github.com/Adiaslow)
+Coding help from [Akshar Lohith](https://github.com/alohith)
 
 In collaboration with Lokey Lab.
 
