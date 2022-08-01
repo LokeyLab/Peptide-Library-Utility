@@ -39,6 +39,7 @@ import classes
 import combinatronics
 import gui
 import gui_functions
+import setup
 import subunit_builder
 import tbui
 import utilities

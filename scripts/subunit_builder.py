@@ -11,6 +11,7 @@ peptide libraries. This script also contains the various
 functions that are used in the creation of the various
 subunits.
 """
+import os.path
 
 import header as h
 
@@ -487,14 +488,14 @@ def generate_subunit_library():
 
     subunits = {}
 
-    canonical_amino_acid_dataframe = h.utilities.csv_to_dataframe(
-        "subunits/canonical_amino_acids.csv")
-    noncanonical_amino_acid_dataframe = h.utilities.csv_to_dataframe(
-        "subunits/noncanonical_amino_acids.csv")
-    amine_dataframe = h.utilities.csv_to_dataframe(
-        "subunits/amines.csv")
-    miscellaneous_dataframe = h.utilities.csv_to_dataframe(
-        "subunits/miscellaneous.csv")
+    canonical_amino_acid_dataframe = h.utilities.csv_to_dataframe(os.path.relpath(
+        "subunits/canonical_amino_acids.csv"))
+    noncanonical_amino_acid_dataframe = h.utilities.csv_to_dataframe(os.path.relpath(
+        "subunits/noncanonical_amino_acids.csv"))
+    amine_dataframe = h.utilities.csv_to_dataframe(os.path.relpath(
+        "subunits/amines.csv"))
+    miscellaneous_dataframe = h.utilities.csv_to_dataframe(os.path.relpath(
+        "subunits/miscellaneous.csv"))
 
     print("\nCanonical Amino Acids")
     print("----------------------------------------------------------")

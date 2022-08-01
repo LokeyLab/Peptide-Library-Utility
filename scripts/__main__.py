@@ -14,15 +14,16 @@ of subunits in the input folder.
 import header as h
 
 __author__ = 'Adam Murray'
-__contact__ = "admmurra@ucsc.edu"
+__contact__ = 'admmurra@ucsc.edu, a.murray0413@gmail.com'
 __credits__ = ['']
-__date__ = "2022/07/17"
-__version__ = '0.1.0'
+__date__ = "2022/08/01"
+__version__ = '1.0.0'
 __maintainer__ = 'Developer'
-__email__ = 'admmurra@ucsc.edu'
+__email__ = 'admmurra@ucsc.edu, a.murray0413@gmail.com'
 __status__ = 'Development'
 
 
 if __name__ == '__main__':
+    h.setup.run_setup()
     # h.tbui.ui_loop({})
     h.gui.ui_loop()
