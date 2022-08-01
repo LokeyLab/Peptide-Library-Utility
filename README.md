@@ -48,13 +48,7 @@ Create linear and cyclic peptide libraries *in silico* and evaluate some basic c
 ```
 
 ## Installation
-Below are the required libraries.
-```
-pip install itertools
-pip install matplotlib
-pip install pandas
-pip install rdkit
-```
+
 
 ## Usage
 Run the __main__.py script and follow the text-based user interface to create peptides, peptide libraries, and calculate cheminformatic information from SMILES strings.
