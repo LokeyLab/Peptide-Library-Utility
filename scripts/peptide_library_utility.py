@@ -24,6 +24,5 @@ __status__ = 'Development'
 
 
 if __name__ == '__main__':
-    h.setup.run_setup()
     # h.tbui.ui_loop({})
     h.gui.ui_loop()

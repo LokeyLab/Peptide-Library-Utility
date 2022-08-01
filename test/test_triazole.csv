@@ -1,13 +1,13 @@
 Position 1,Position 2,Position 3,Position 4,Position 5,Position 6
-Prg,Leu-d7,(NMe)-Phe-F,Pro,Leu,(NMe)-Thr
-ß-Prg,,,,,
-H-Prg,,,,,
-D-Prg,,,,,
-ß-D-Prg,,,,,
-H-D-Prg,,,,,
-(NMe)-Prg,,,,,
-(NMe)-ß-Prg,,,,,
-(NMe)-H-Prg,,,,,
-(NMe)-D-Prg,,,,,
-(NMe)-ß-D-Prg,,,,,
-(NMe)-H-D-Prg,,,,,
+(NMe)-Thr,Leu,Pro,(NMe)-Phe-F,Leu-d7,Prg
+,,,,,ß-Prg
+,,,,,H-Prg
+,,,,,D-Prg
+,,,,,ß-D-Prg
+,,,,,H-D-Prg
+,,,,,(NMe)-Prg
+,,,,,(NMe)-ß-Prg
+,,,,,(NMe)-H-Prg
+,,,,,(NMe)-D-Prg
+,,,,,(NMe)-ß-D-Prg
+,,,,,(NMe)-H-D-Prg

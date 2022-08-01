@@ -1,13 +1,13 @@
 Position 1,Position 2,Position 3,Position 4,Position 5,Position 6
-Cys,Leu-d7,(NMe)-Phe-F,Pro,Leu,(NMe)-Thr
-ß-Cys,,,,,
-H-Cys,,,,,
-D-Cys,,,,,
-ß-D-Cys,,,,,
-H-D-Cys,,,,,
-(NMe)-Cys,,,,,
-(NMe)-ß-Cys,,,,,
-(NMe)-H-Cys,,,,,
-(NMe)-D-Cys,,,,,
-(NMe)-ß-D-Cys,,,,,
-(NMe)-H-D-Cys,,,,,
+(NMe)-Thr,Leu,Pro,(NMe)-Phe-F,Leu-d7,Cys
+,,,,,ß-Cys
+,,,,,H-Cys
+,,,,,D-Cys
+,,,,,ß-D-Cys
+,,,,,H-D-Cys
+,,,,,(NMe)-Cys
+,,,,,(NMe)-ß-Cys
+,,,,,(NMe)-H-Cys
+,,,,,(NMe)-D-Cys
+,,,,,(NMe)-ß-D-Cys
+,,,,,(NMe)-H-D-Cys

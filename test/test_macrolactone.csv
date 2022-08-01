@@ -1,13 +1,13 @@
 Position 1,Position 2,Position 3,Position 4,Position 5,Position 6
-Tyr,Leu-d7,(NMe)-Phe-F,Pro,Leu,Thr
-,,,,,ß-Thr
-,,,,,H-Thr
-,,,,,D-Thr
-,,,,,ß-D-Thr
-,,,,,H-D-Thr
-,,,,,(NMe)-Thr
-,,,,,(NMe)-ß-Thr
-,,,,,(NMe)-H-Thr
-,,,,,(NMe)-D-Thr
-,,,,,(NMe)-ß-D-Thr
-,,,,,(NMe)-H-D-Thr
+Thr,Leu,Pro,(NMe)-Phe-F,Leu-d7,Tyr
+ß-Thr,,,,,
+H-Thr,,,,,
+D-Thr,,,,,
+ß-D-Thr,,,,,
+H-D-Thr,,,,,
+(NMe)-Thr,,,,,
+(NMe)-ß-Thr,,,,,
+(NMe)-H-Thr,,,,,
+(NMe)-D-Thr,,,,,
+(NMe)-ß-D-Thr,,,,,
+(NMe)-H-D-Thr,,,,,

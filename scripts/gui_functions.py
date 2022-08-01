@@ -113,6 +113,8 @@ def peptide_library_creation(console_list, output_list, subunit_list,
 
     console_list.insert("end", "")
 
+    df = df.iloc[:, ::-1]
+
     pot_sizes = []
 
     pots = []
@@ -237,6 +239,8 @@ def peptide_library_creation(console_list, output_list, subunit_list,
         name = ""
 
         for j in range(0, len(subunits)):
+            subunits.reverse()
+
             name += subunits[j].multiple_letter + " "
 
         molecule = h.cheminformatics.get_molecule_from_smiles(peptide)
