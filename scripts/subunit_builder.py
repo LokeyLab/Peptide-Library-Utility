@@ -488,14 +488,19 @@ def generate_subunit_library():
 
     subunits = {}
 
-    canonical_amino_acid_dataframe = h.utilities.csv_to_dataframe(os.path.relpath(
-        "subunits/canonical_amino_acids.csv"))
-    noncanonical_amino_acid_dataframe = h.utilities.csv_to_dataframe(os.path.relpath(
-        "subunits/noncanonical_amino_acids.csv"))
-    amine_dataframe = h.utilities.csv_to_dataframe(os.path.relpath(
-        "subunits/amines.csv"))
-    miscellaneous_dataframe = h.utilities.csv_to_dataframe(os.path.relpath(
-        "subunits/miscellaneous.csv"))
+    path = f'{h.os.path.curdir}/subunits'
+
+    canonical_amino_acid_dataframe = \
+        h.utilities.csv_to_dataframe(os.path.join(path, "canonical_amino_acids.csv"))
+
+    noncanonical_amino_acid_dataframe = \
+        h.utilities.csv_to_dataframe(os.path.join(path, "noncanonical_amino_acids.csv"))
+
+    amine_dataframe = \
+        h.utilities.csv_to_dataframe(os.path.join(path, "amines.csv"))
+
+    miscellaneous_dataframe = \
+        h.utilities.csv_to_dataframe(os.path.join(path, "miscellaneous.csv"))
 
     print("\nCanonical Amino Acids")
     print("----------------------------------------------------------")
