@@ -65,7 +65,7 @@ Before using any of the other functions, be sure to populate the subunit library
 For canonical and noncanonical amino acids, the format must cohere with the following examples:
 
 ```
-(NMe)-ß-H-D-Leu    ß-Leu    H-Leu    Leu    (NMe)-Leu
+(NMe)-ß-D-Leu    ß-Leu-F    H-Leu    Leu    (NMe)-D-Leu-d3
 ```
 
 For peptoids and miscellaneous subunits, use the multiple letter acronym as defined in the appropriate .CSV file.
@@ -73,6 +73,7 @@ For peptoids and miscellaneous subunits, use the multiple letter acronym as defi
 For the input .CSV file, the format must cohere with the following example:
 
 ```
+*note that subunits should be in reverse synthetic order or N to C.*
 Position 1  Position 2  Position 3  Position 4  Position 5  Position 6 <──── Lets the program know how 
                                                                                 many pots there are.
 Leu         Leu         Leu         Leu         Leu         Leu        <──⌍─ Can be any subunit as long as
