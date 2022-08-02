@@ -55,22 +55,30 @@ Create linear and cyclic peptide libraries *in silico* and evaluate some basic c
 ```
 
 ## Installation
+0. Have Python 3.10 installed.
+1. [Download .ZIP](https://github.com/LokeyLab/Peptide-Library-Utility/archive/refs/heads/main.zip)
+2. Run ../scripts/setup.py.
+  a. If any python modules are not installed automatically and can not be found by the script, you will need to install them manually.  This can be done using the format:
+```
+pip install module_name
+```
+Once you are able to run setup.py with all of the modules reporting as installed, you may proceed to use the program as stated below.
 
 
 ## Usage
-Run the __main__.py script and follow the text-based user interface to create peptides, peptide libraries, and calculate cheminformatic information from SMILES strings.
-
-Before using any of the other functions, be sure to populate the subunit library to ensure that all of the subunits you've added are loaded and ready to use in the creation of peptides.
+Having run setup.py properly, a desktop shortcut will be created with which you may run the program.
 
 For canonical and noncanonical amino acids, the format must cohere with the following examples:
-
 ```
 (NMe)-ß-D-Leu    ß-Leu-F    H-Leu    Leu    (NMe)-D-Leu-d3
 ```
+- *Note that there is no ß-H-, only either ß- or H-.*
 
-For peptoids and miscellaneous subunits, use the multiple letter acronym as defined in the appropriate .CSV file.
+- *Standard practice for amino acids is to include any mass encoding after the amino acid three-letter.*
 
-For the input .CSV file, the format must cohere with the following example:
+- For peptoids and miscellaneous subunits, use the multiple letter acronym as defined in the appropriate .CSV file.
+
+### For the input .CSV file, the format must cohere with the following example:
 
 ```
 Position 1  Position 2  Position 3  Position 4  Position 5  Position 6 <──── Lets the program know how 
@@ -81,10 +89,10 @@ Pro         D-Pro       Ala         D-Ala       (NMe)-ß-Leu Gly        <──�
 
 Val                     D-Gly                                          <──── Uneven pot sizes are acceptable.
 ```
-*Note that subunits should be in reverse synthetic order or N to C.*
+- *Note that subunits should be in reverse synthetic order or N to C.*
 
 
-Anatomy of properly formatted Amino Acid SMILES string:
+### Anatomy of properly formatted Amino Acid SMILES string:
 ```
 N[C@@H](CC(C)C)C(=O)O
 
@@ -94,7 +102,7 @@ N             [C@@H]         (CC(C)C)     C               (=O)O
                              (Some side chains may or may not require surrounding parentheses)
 ```
 
-Adding deuterated amino acids to noncanonical-amino-acids.csv:
+### Adding deuterated amino acids to noncanonical-amino-acids.csv:
 ```
 Improperly formatted L-Leucine:
 CC(C)C[C@H](N)C(O)=O
@@ -123,7 +131,7 @@ In collaboration with Lokey Lab.
 
 [Bridges to the Baccalaureate Program](https://access.ucsc.edu/)
 
-Grant #R25GM51765
+- Grant #R25GM51765
 
 ## References
 ### Formating of amino acids and peptides:
@@ -136,6 +144,23 @@ Grant #R25GM51765
 
 ## Change Log
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/).
+
+## 1.0.0 - 2022-08-1
+### Added
+- GUI added
+- setup.py script for the initialization of the program for first time users.
+- Desktop shortcut to run program without using an IDE.
+
+### Changed
+- __main__.py renamed to peptide_library_utility.py
+- Input files are now taken in reverse syntheic order.
+
+### Fixed
+- Minor code clean up
+- subunit_builder .CSV file importing is now fixed.
+
+### Removed
+- input and output folder
 
 ## 0.2.0 - 2022-07-23
 ### Added
