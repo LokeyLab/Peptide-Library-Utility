@@ -73,7 +73,6 @@ For peptoids and miscellaneous subunits, use the multiple letter acronym as defi
 For the input .CSV file, the format must cohere with the following example:
 
 ```
-*note that subunits should be in reverse synthetic order or N to C.*
 Position 1  Position 2  Position 3  Position 4  Position 5  Position 6 <──── Lets the program know how 
                                                                                 many pots there are.
 Leu         Leu         Leu         Leu         Leu         Leu        <──⌍─ Can be any subunit as long as
@@ -82,6 +81,8 @@ Pro         D-Pro       Ala         D-Ala       (NMe)-ß-Leu Gly        <──�
 
 Val                     D-Gly                                          <──── Uneven pot sizes are acceptable.
 ```
+*Note that subunits should be in reverse synthetic order or N to C.*
+
 
 Anatomy of properly formatted Amino Acid SMILES string:
 ```
