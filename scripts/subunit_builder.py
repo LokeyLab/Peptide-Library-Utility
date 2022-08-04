@@ -488,7 +488,7 @@ def generate_subunit_library():
 
     subunits = {}
 
-    path = f'{h.os.path.curdir}/subunits'
+    path = f'{h.os.path.curdir}/../subunits'
 
     canonical_amino_acid_dataframe = \
         h.utilities.csv_to_dataframe(os.path.join(path, "canonical_amino_acids.csv"))
