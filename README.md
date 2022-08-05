@@ -127,11 +127,9 @@ In collaboration with Lokey Lab.
 [MIT License](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/license)
 
 ## Funding
-[National Institutes of Health](https://www.nih.gov/)
+Simpson PSB Fund
 
 [Bridges to the Baccalaureate Program](https://access.ucsc.edu/)
-
-- Grant #R25GM51765
 
 ## References
 ### Formating of amino acids and peptides:
@@ -144,6 +142,18 @@ In collaboration with Lokey Lab.
 
 ## Change Log
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/).
+
+## 1.0.1 - 2022-08-5
+### Added
+- Ala-d4 and variants
+
+### Changed
+
+### Fixed
+- Val and Bip
+
+### Removed
+- input and output folder
 
 ## 1.0.0 - 2022-08-1
 ### Added
