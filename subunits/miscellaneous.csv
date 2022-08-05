@@ -2,6 +2,18 @@ Name,Multiple Letter,SMILES String
 Bromoacetic Acid,BrOAc,BrCC(=O)O
 Acetic Acid,OAc,OC(=O)C
 Acytl,Ac,C(=O)C
+alanine-d4,Ala-d4,N[C@@]([2H])(C([2H])([2H])([2H]))C(=O)O
+ß-alanine-d4,ß-Ala-d4,N[C@]([2H])(C([2H])([2H])([2H]))CC(=O)O
+homo-alanine-d4,H-Ala-d4,N[C@]([2H])(CC([2H])([2H])([2H]))C(=O)O
+D-alanine-d4,D-Ala-d4,N[C@]([2H])(C([2H])([2H])([2H]))C(=O)O
+ß-D-alanine-d4,ß-D-Ala-d4,N[C@@]([2H])(C([2H])([2H])([2H]))CC(=O)O
+homo-D-alanine-d4,H-D-Ala-d4,N[C@@]([2H])(CC([2H])([2H])([2H]))C(=O)O
+(NMe)-alanine-d4,(NMe)-Ala-d4,N[C@@]([2H])(C([2H])([2H])([2H]))C(=O)O
+(NMe)-ß-alanine-d4,(NMe)-ß-Ala-d4,N(C)[C@]([2H])(C([2H])([2H])([2H]))CC(=O)O
+(NMe)-homo-alanine-d4,(NMe)-H-Ala-d4,N(C)[C@]([2H])(CC([2H])([2H])([2H]))C(=O)O
+(NMe)-D-alanine-d4,(NMe)-D-Ala-d4,N(C)[C@]([2H])(C([2H])([2H])([2H]))C(=O)O
+(NMe)-ß-D-alanine-d4,(NMe)-ß-D-Ala-d4,N(C)[C@@]([2H])(C([2H])([2H])([2H]))CC(=O)O
+(NMe)-homo-D-alanine-d4,(NMe)-H-D-Ala-d4,N(C)[C@@]([2H])(CC([2H])([2H])([2H]))C(=O)O
 Grant Koch Tripeptide 1,GKTP01,N[C@@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%89CCC[C@H]%89C(=O)O
 Grant Koch Tripeptide 2,GKTP02,N[C@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%88CCC[C@H]%88C(=O)O
 Grant Koch Tripeptide 3,GKTP03,N(C)[C@@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%87CCC[C@H]%87C(=O)O
@@ -44,3 +56,4 @@ Grant Koch Tripeptide 39,GKTP39,N(C)[C@@H](CC(C)C)C(=O)N(CC(C)C)CC(=O)N%51CCC[C@
 Grant Koch Tripeptide 40,GKTP40,N(C)[C@H](CC(C)C)C(=O)N(CC(C)C)CC(=O)N%50CCC[C@@H]%50C(=O)O
 N-Methylamine,N-Me,NC
 Cereblon Linker,CRBN1-5,C(=O)CCCCOc%89ccc(C%88C(=O)NC(=O)CC%88)cc%89
+Ethyl,Et,OC

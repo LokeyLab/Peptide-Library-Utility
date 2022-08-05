@@ -11,17 +11,17 @@ class AminoAcid:
     try:
 
         def __init__(self, name, multiple_letter, amino_group, side_chain,
-                     stereocenter, alpha_carbon, carboxyl_group):
+                     stereocenter, c_terminus, carboxyl_group):
 
             self.name = name
             self.multiple_letter = multiple_letter
             self.amino_group = amino_group
             self.side_chain = side_chain
             self.stereocenter = stereocenter
-            self.alpha_carbon = alpha_carbon
+            self.c_terminus = c_terminus
             self.carboxyl_group = carboxyl_group
             self.smiles_string = (amino_group + stereocenter +
-                                  side_chain + alpha_carbon + carboxyl_group).rstrip()
+                                  side_chain + c_terminus + carboxyl_group).rstrip()
 
     except:
 

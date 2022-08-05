@@ -1,4 +1,4 @@
-Name,Multiple Letter,Amino Group,Side Chain,Side Chain Parentheses? y/n,Alpha Carbon,Carboxyl Group,L- and D-? y/n,ß-Homo-? y/n,NMe? y/n
+Name,Multiple Letter,Amino Group,Side Chain,Side Chain Parentheses? y/n,C Terminus,Carboxyl Group,L- and D-? y/n,ß-Homo-? y/n,NMe? y/n
 alanine,Ala,N,C,y,C,(=O)O,y,y,y
 arginine,Arg,N,CCCNC(=N)N,y,C,(=O)O,y,y,y
 asparagine,Asn,N,CC(=O)N,y,C,(=O)O,y,y,y
