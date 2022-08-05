@@ -1,7 +1,7 @@
 Name,Multiple Letter,Amino Group,Side Chain,Side Chain Parentheses? y/n,Alpha Carbon,Carboxyl Group,L- and D-? y/n,ß-Homo-? y/n,NMe? y/n
 2-aminobutyric acid,Abu,N,C(CC),n,C,(=O)O,n,n,y
 4-aminobenzoic acid,Abz,N,c1ccc(cc1),n,C,(=O)O,n,n,y
-biphenylalanine,Bip,N,Cc1ccc(cc1)c2ccc(cc2),n,C,(=O)O,n,n,y
+biphenylalanine,Bip,N,Cc1ccc(cc1)c2ccc(cc2),y,C,(=O)O,y,n,y
 cyclohexylalanine,Cha,N,CC1CCCCC1,y,C,(=O)O,y,y,y
 norleucine,Nle,N,CCCC,y,C,(=O)O,y,y,y
 norvaline,Nva,N,CCC,y,C,(=O)O,y,y,y
@@ -11,3 +11,4 @@ phenylglycine,Phg,N,c1ccccc1,y,C,(=O)O,y,y,y
 popargylglycine,Prg,N,CC#C,y,C,(=O)O,y,y,y
 leucine-d3,Leu-d3,N,CC(C([2H])([2H])[2H])C,y,C,(=O)O,y,y,y
 leucine-d7,Leu-d7,N,CC([2H])(C([2H])([2H])[2H])C([2H])([2H])[2H],y,C,(=O)O,y,y,y
+alanine,Ala-d4,N,([2H])C([2H])([2H])([2H]),y,([2H])C,(=O)O,y,y,y

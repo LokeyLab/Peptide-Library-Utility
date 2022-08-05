@@ -29,4 +29,4 @@ serine,Ser,N,C(O),y,C,(=O)O,y,y,y
 threonine,Thr,N,[C@H](O)C,y,C,(=O)O,y,y,y
 tryptophan,Trp,N,Cc4=c[NH]c5c4cccc5,y,C,(=O)O,y,y,y
 tyrosine,Tyr,N,Cc1ccc(O)cc1,y,C,(=O)O,y,y,y
-valine,Val,N,C(O)C,y,C,(=O)O,y,y,y
+valine,Val,N,C(C)C,y,C,(=O)O,y,y,y
