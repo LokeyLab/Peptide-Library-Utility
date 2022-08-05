@@ -127,11 +127,9 @@ In collaboration with Lokey Lab.
 [MIT License](https://github.com/LokeyLab/Peptide-Library-Utility/blob/main/license)
 
 ## Funding
-[National Institutes of Health](https://www.nih.gov/)
+Simpson PSB Fund
 
 [Bridges to the Baccalaureate Program](https://access.ucsc.edu/)
-
-- Grant #R25GM51765
 
 ## References
 ### Formating of amino acids and peptides:
