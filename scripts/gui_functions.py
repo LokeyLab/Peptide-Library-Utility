@@ -238,8 +238,9 @@ def peptide_library_creation(console_list, output_list, subunit_list,
 
         name = ""
 
+        subunits.reverse()
+
         for j in range(0, len(subunits)):
-            subunits.reverse()
 
             name += subunits[j].multiple_letter + " "
 
