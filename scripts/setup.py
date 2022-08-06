@@ -30,7 +30,7 @@ def run_shortcut_creator():
     elif platform == "win32" or "win64":
         icon = os.path.relpath('logo.ico')
 
-    main_script = os.path.relpath("scripts/peptide_library_utility.py")
+    main_script = os.path.abspath("scripts/peptide_library_utility.py")
 
     make_shortcut(main_script, name='Peptide Library Utility',
                   icon=icon, desktop=True)
