@@ -179,7 +179,7 @@ def peptide_library_creation(console_list, output_list, subunit_list,
 
             peptide = h.bonding.cyclize_depsipeptide(peptide, subunit_library)
 
-            if h.CAP_AMINE and not amine_cap_subunit == '':
+            if not amine_cap_subunit == '':
                 subunits.append(h.SUBUNIT_LIBRARY[amine_cap_subunit])
 
                 tempPeptide = str(peptide[0]) + "(" + \
@@ -192,7 +192,7 @@ def peptide_library_creation(console_list, output_list, subunit_list,
 
             peptide = h.bonding.cyclize_thioether(peptide, subunit_library)
 
-            if h.CAP_C_TERMINUS and not c_terminus_cap_subunit == '':
+            if not c_terminus_cap_subunit == '':
                 subunits.append(h.SUBUNIT_LIBRARY[c_terminus_cap_subunit])
 
                 tempPeptide = str(peptide[0:-1]) + \
@@ -204,7 +204,7 @@ def peptide_library_creation(console_list, output_list, subunit_list,
 
             peptide = h.bonding.cyclize_triazole(peptide, subunit_library)
 
-            if h.CAP_C_TERMINUS and not c_terminus_cap_subunit == '':
+            if not c_terminus_cap_subunit == '':
                 subunits.append(h.SUBUNIT_LIBRARY[c_terminus_cap_subunit])
 
                 tempPeptide = str(peptide[0:-1]) + \
@@ -214,7 +214,7 @@ def peptide_library_creation(console_list, output_list, subunit_list,
 
         elif cyclization_type == "Linear":
 
-            if h.CAP_AMINE and not amine_cap_subunit == '':
+            if not amine_cap_subunit == '':
                 subunits.append(h.SUBUNIT_LIBRARY[amine_cap_subunit])
 
                 tempPeptide = str(peptide[0]) + "(" + \
@@ -223,7 +223,7 @@ def peptide_library_creation(console_list, output_list, subunit_list,
 
                 peptide = tempPeptide
 
-            if h.CAP_C_TERMINUS and not c_terminus_cap_subunit == '':
+            if not c_terminus_cap_subunit == '':
                 subunits.append(h.SUBUNIT_LIBRARY[c_terminus_cap_subunit])
 
                 tempPeptide = str(peptide[0:-1]) + \
