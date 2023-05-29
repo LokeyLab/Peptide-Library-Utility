@@ -19,32 +19,46 @@ from tkinter import font
 import webbrowser
 
 # External Libraries
+
+import pathlib2
+
+import platform
+
+import matplotlib
+platform = platform.system().lower()
+if platform == 'darwin':
+    matplotlib.use("TkAgg")
+
 import matplotlib.pyplot as plt
+
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 import numpy as np
 
 import pandas as pd
 
-import rdkit
-from rdkit.Chem import Descriptors, rdMolDescriptors, AllChem, AddHs, Crippen, MolFromSmiles, \
-    PandasTools, rdFreeSASA
 
+import rdkit
+from rdkit.Chem import Descriptors, Draw, rdMolDescriptors, AllChem, RemoveHs, AddHs, Crippen, \
+    MolFromSmiles, PandasTools, rdFreeSASA
 
 import tqdm
 
+from scipy import stats
+
 # Internal Libraries
-import bonding
-import cheminformatics
-import classes
-import combinatronics
-import gui
-import gui_functions
-import setup
-import subunit_builder
-import tbui
-import utilities
-
-
+from scripts.a_log_p import a_log_p_86
+from scripts import bonding
+from scripts import cheminformatics
+from scripts import classes
+from scripts import combinatronics
+from scripts import gui
+from scripts.gui import gui1, gui_root, gui_functions
+from scripts.mcgowan_volume import mcgowan_volume
+from scripts import setup
+from scripts import subunit_builder
+from scripts import tbui
+from scripts import utilities
 
 # Global Variables
 global SUBUNIT_LIBRARY_POPULATED
@@ -60,7 +74,7 @@ global SUBUNIT_LIST
 SUBUNIT_LIST = []
 
 global SUBUNIT_COUNT
-SUBUNIT_COUNT = ""
+SUBUNIT_COUNT = 0
 
 global INPUT_FILE
 INPUT_FILE = ''

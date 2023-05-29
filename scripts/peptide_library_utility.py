@@ -22,7 +22,9 @@ __maintainer__ = 'Developer'
 __email__ = 'admmurra@ucsc.edu, a.murray0413@gmail.com'
 __status__ = 'Development'
 
-
 if __name__ == '__main__':
+
+    # h.cheminformatics.get_a_log_p_86()
     # h.tbui.ui_loop({})
-    h.gui.ui_loop()
+    h.gui1.ui_loop()
+    # h.gui_root.main()

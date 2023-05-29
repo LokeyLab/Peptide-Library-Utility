@@ -5,7 +5,7 @@
 This script contains functions for evaluating cheminformatic values using RDKits suite.
 """
 
-import header as h
+from scripts import header as h
 
 # "Exact MW", "ALogP", "SLogP", "SASA", "TPSA", "# Atoms", "# Heteroatoms", "# Amide Bonds",
 # "# Rings", "# Aromatic Rings", "# Rotatable Bonds", "# HBA", "# HBD", "Largest Ring Size"
@@ -27,13 +27,36 @@ def get_exact_mass(molecule):
 
     return exact_mass
 
+def get_a_log_p_86(smiles):
+    # h.os.environ['CLASSPATH'] = 'cdk-2.7.1.jar'
+    # h.os.environ['JPYPE_JVM'] = h.jpype.getDefaultJVMPath()
 
-def get_a_log_p(molecule):
+    molecule = h.readstring(smiles)
+
+    a_log_p = 0
+    return a_log_p
+
+
+def get_a_log_p_89(smiles):
+
+    a_log_p = 0
+    return a_log_p
+
+def get_a_log_p_99(molecule):
     """Returns Crippen's ALogP using RDKit's MolLogP function."""
 
     a_log_p = h.Crippen.MolLogP(molecule)
 
+    # molecule = h.indigo.loadMolecule(smiles)
+    # a_log_p = molecule.logP()
+
     return a_log_p
+
+def get_mcgowan_volume(molecule):
+    """Returns McGowan Volume."""
+
+    mcgowan_volume = h.mcgowan_volume.get_mcgowan_volume(molecule)
+    return mcgowan_volume
 
 
 def get_s_log_p(molecule):

@@ -7,7 +7,7 @@ functions and most of the function calls that are
 related to the creation of peptide libraries.
 """
 
-import header as h
+from scripts import header as h
 
 
 def cyclic_peptide_in_terminal(subunit_library):

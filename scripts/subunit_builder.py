@@ -13,7 +13,7 @@ subunits.
 """
 import os.path
 
-import header as h
+from scripts import header as h
 
 
 def generate_base_amino_acid(parentheses, name, multiple_letter, amino_group,
@@ -83,15 +83,45 @@ def generate_d_variants(base_amino_acid):
 def generate_beta_variants(base_amino_acid):
 
     side_chain = base_amino_acid.side_chain
-    beta_side_chain = base_amino_acid.side_chain[0] + base_amino_acid.side_chain[2:]
 
-    beta_variant = h.classes.AminoAcid("ß-" + base_amino_acid.name,
-                                      "ß-" + base_amino_acid.multiple_letter,
-                                      base_amino_acid.amino_group,
-                                      beta_side_chain,
-                                      base_amino_acid.stereocenter,
-                                      base_amino_acid.c_terminus + "C",
-                                      base_amino_acid.carboxyl_group)
+    if len(side_chain) > 1:
+        if side_chain[1] == "C":
+            beta_side_chain = side_chain[0] + side_chain[2:]
+
+        else:
+            beta_side_chain = side_chain
+
+    if base_amino_acid.name.startswith("D-"):
+
+        if beta_side_chain == "()":
+            stereocenter = "C"
+            beta_side_chain = ""
+        else:
+            stereocenter = "[C@@H]"
+
+        beta_variant = h.classes.AminoAcid("ß-" + base_amino_acid.name,
+                                          "ß-" + base_amino_acid.multiple_letter,
+                                          base_amino_acid.amino_group,
+                                          beta_side_chain,
+                                          stereocenter,
+                                          base_amino_acid.c_terminus + "C",
+                                          base_amino_acid.carboxyl_group)
+
+    else:
+
+        if beta_side_chain == "()":
+            stereocenter = "C"
+            beta_side_chain = ""
+        else:
+            stereocenter = "[C@H]"
+
+        beta_variant = h.classes.AminoAcid("ß-" + base_amino_acid.name,
+                                          "ß-" + base_amino_acid.multiple_letter,
+                                          base_amino_acid.amino_group,
+                                          beta_side_chain,
+                                          stereocenter,
+                                          base_amino_acid.c_terminus + "C",
+                                          base_amino_acid.carboxyl_group)
 
     print(beta_variant.name + "      " + beta_variant.smiles_string)
 
@@ -118,14 +148,17 @@ def generate_homo_variants(base_amino_acid):
 def generate_beta_homo_variants(base_amino_acid):
     """Generates the beta- homo- variants."""
 
+    homoside_chain = base_amino_acid.side_chain[0] \
+                     + base_amino_acid.side_chain[1:]
+
     if base_amino_acid.name.startswith("D-"):
 
         beta_homo_variant = h.classes.AminoAcid("ß-homo-" + base_amino_acid.name,
                                                 "ß-H-" + base_amino_acid.multiple_letter,
                                                 base_amino_acid.amino_group,
-                                                "CC" + base_amino_acid.side_chain,
+                                                homoside_chain,
                                                 "[C@H]",
-                                                base_amino_acid.c_terminus,
+                                                "C" + base_amino_acid.c_terminus,
                                                 base_amino_acid.carboxyl_group)
 
     else:
@@ -133,8 +166,9 @@ def generate_beta_homo_variants(base_amino_acid):
         beta_homo_variant = h.classes.AminoAcid("ß-homo-" + base_amino_acid.name,
                                                 "ß-H-" + base_amino_acid.multiple_letter,
                                                 base_amino_acid.amino_group,
-                                                "CC" + base_amino_acid.side_chain,
+                                                homoside_chain,
                                                 "[C@@H]",
+                                                "C" +
                                                 base_amino_acid.c_terminus,
                                                 base_amino_acid.carboxyl_group)
 
@@ -380,12 +414,13 @@ def generate_amino_acids(df):
 
                 for amino_acid in temp_amino_acid_list:
                     beta_amino_acid_list.append(generate_beta_variants(amino_acid))
-                    homo_amino_acid_list.append(generate_homo_variants(amino_acid))
-                    # beta_homo_amino_acid_list.append(generate_beta_homo_variants(amino_acid))
+                    # homo_amino_acid_list.append(generate_homo_variants(
+                    # amino_acid))
+                    beta_homo_amino_acid_list.append(generate_beta_homo_variants(amino_acid))
                     
                 temp_amino_acid_list += beta_amino_acid_list
-                temp_amino_acid_list += homo_amino_acid_list
-                # temp_amino_acid_list += beta_homo_amino_acid_list
+                # temp_amino_acid_list += homo_amino_acid_list
+                temp_amino_acid_list += beta_homo_amino_acid_list
 
             if nme == "y":
 
@@ -486,21 +521,36 @@ def generate_subunit_library():
     from the parameters defined in their respective
     .csv files."""
 
-    subunits = {}
+    path = os.getcwd().replace("scripts", "")
+    print(path)
 
-    path = f'{h.os.path.curdir}/../subunits'
+    canonical_amino_acid_dataframe_file = h.pathlib2.Path(path, "subunits",
+                                                          "canonical_amino_acids.csv")
+    print(canonical_amino_acid_dataframe_file)
 
     canonical_amino_acid_dataframe = \
-        h.utilities.csv_to_dataframe(os.path.join(path, "canonical_amino_acids.csv"))
+        h.utilities.csv_to_dataframe(canonical_amino_acid_dataframe_file)
+
+    noncanonical_amino_acid_file = h.pathlib2.Path(path, "subunits",
+                                                   "noncanonical_amino_acids.csv")
+    print(noncanonical_amino_acid_file)
 
     noncanonical_amino_acid_dataframe = \
-        h.utilities.csv_to_dataframe(os.path.join(path, "noncanonical_amino_acids.csv"))
+        h.utilities.csv_to_dataframe(noncanonical_amino_acid_file)
+
+    amines_file = h.pathlib2.Path(path, "subunits", "amines.csv")
+    print(amines_file)
 
     amine_dataframe = \
-        h.utilities.csv_to_dataframe(os.path.join(path, "amines.csv"))
+        h.utilities.csv_to_dataframe(amines_file)
+
+    miscellaneous_file = h.pathlib2.Path(path, "subunits", "miscellaneous.csv")
+    print(miscellaneous_file)
 
     miscellaneous_dataframe = \
-        h.utilities.csv_to_dataframe(os.path.join(path, "miscellaneous.csv"))
+        h.utilities.csv_to_dataframe(miscellaneous_file)
+
+    subunits = {}
 
     print("\nCanonical Amino Acids")
     print("----------------------------------------------------------")

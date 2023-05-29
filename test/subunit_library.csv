@@ -1,0 +1,472 @@
+,Name,Multiple Letter,SMILES String
+0,alanine,Ala,N[C@@H](C)C(=O)O
+1,D-alanine,D-Ala,N[C@H](C)C(=O)O
+2,ß-alanine,ß-Ala,N[C@H]()CC(=O)O
+3,ß-D-alanine,ß-D-Ala,N[C@@H]()CC(=O)O
+4,ß-homo-alanine,ß-H-Ala,N[C@@H](C)CC(=O)O
+5,ß-homo-D-alanine,ß-H-D-Ala,N[C@H](C)CC(=O)O
+6,NMe-alanine,(NMe)-Ala,N(C)[C@@H](C)C(=O)O
+7,NMe-D-alanine,(NMe)-D-Ala,N(C)[C@H](C)C(=O)O
+8,NMe-ß-alanine,(NMe)-ß-Ala,N(C)[C@H]()CC(=O)O
+9,NMe-ß-D-alanine,(NMe)-ß-D-Ala,N(C)[C@@H]()CC(=O)O
+10,NMe-ß-homo-alanine,(NMe)-ß-H-Ala,N(C)[C@@H](C)CC(=O)O
+11,NMe-ß-homo-D-alanine,(NMe)-ß-H-D-Ala,N(C)[C@H](C)CC(=O)O
+12,arginine,Arg,N[C@@H](CCCNC(=N)N)C(=O)O
+13,D-arginine,D-Arg,N[C@H](CCCNC(=N)N)C(=O)O
+14,ß-arginine,ß-Arg,N[C@H](CCNC(=N)N)CC(=O)O
+15,ß-D-arginine,ß-D-Arg,N[C@@H](CCNC(=N)N)CC(=O)O
+16,ß-homo-arginine,ß-H-Arg,N[C@@H](CCCNC(=N)N)CC(=O)O
+17,ß-homo-D-arginine,ß-H-D-Arg,N[C@H](CCCNC(=N)N)CC(=O)O
+18,NMe-arginine,(NMe)-Arg,N(C)[C@@H](CCCNC(=N)N)C(=O)O
+19,NMe-D-arginine,(NMe)-D-Arg,N(C)[C@H](CCCNC(=N)N)C(=O)O
+20,NMe-ß-arginine,(NMe)-ß-Arg,N(C)[C@H](CCNC(=N)N)CC(=O)O
+21,NMe-ß-D-arginine,(NMe)-ß-D-Arg,N(C)[C@@H](CCNC(=N)N)CC(=O)O
+22,NMe-ß-homo-arginine,(NMe)-ß-H-Arg,N(C)[C@@H](CCCNC(=N)N)CC(=O)O
+23,NMe-ß-homo-D-arginine,(NMe)-ß-H-D-Arg,N(C)[C@H](CCCNC(=N)N)CC(=O)O
+24,asparagine,Asn,N[C@@H](CC(=O)N)C(=O)O
+25,D-asparagine,D-Asn,N[C@H](CC(=O)N)C(=O)O
+26,ß-asparagine,ß-Asn,N[C@H](C(=O)N)CC(=O)O
+27,ß-D-asparagine,ß-D-Asn,N[C@@H](C(=O)N)CC(=O)O
+28,ß-homo-asparagine,ß-H-Asn,N[C@@H](CC(=O)N)CC(=O)O
+29,ß-homo-D-asparagine,ß-H-D-Asn,N[C@H](CC(=O)N)CC(=O)O
+30,NMe-asparagine,(NMe)-Asn,N(C)[C@@H](CC(=O)N)C(=O)O
+31,NMe-D-asparagine,(NMe)-D-Asn,N(C)[C@H](CC(=O)N)C(=O)O
+32,NMe-ß-asparagine,(NMe)-ß-Asn,N(C)[C@H](C(=O)N)CC(=O)O
+33,NMe-ß-D-asparagine,(NMe)-ß-D-Asn,N(C)[C@@H](C(=O)N)CC(=O)O
+34,NMe-ß-homo-asparagine,(NMe)-ß-H-Asn,N(C)[C@@H](CC(=O)N)CC(=O)O
+35,NMe-ß-homo-D-asparagine,(NMe)-ß-H-D-Asn,N(C)[C@H](CC(=O)N)CC(=O)O
+36,aspartic acid,Asp,N[C@@H](CC(=O)O)C(=O)O
+37,D-aspartic acid,D-Asp,N[C@H](CC(=O)O)C(=O)O
+38,ß-aspartic acid,ß-Asp,N[C@H](C(=O)O)CC(=O)O
+39,ß-D-aspartic acid,ß-D-Asp,N[C@@H](C(=O)O)CC(=O)O
+40,ß-homo-aspartic acid,ß-H-Asp,N[C@@H](CC(=O)O)CC(=O)O
+41,ß-homo-D-aspartic acid,ß-H-D-Asp,N[C@H](CC(=O)O)CC(=O)O
+42,NMe-aspartic acid,(NMe)-Asp,N(C)[C@@H](CC(=O)O)C(=O)O
+43,NMe-D-aspartic acid,(NMe)-D-Asp,N(C)[C@H](CC(=O)O)C(=O)O
+44,NMe-ß-aspartic acid,(NMe)-ß-Asp,N(C)[C@H](C(=O)O)CC(=O)O
+45,NMe-ß-D-aspartic acid,(NMe)-ß-D-Asp,N(C)[C@@H](C(=O)O)CC(=O)O
+46,NMe-ß-homo-aspartic acid,(NMe)-ß-H-Asp,N(C)[C@@H](CC(=O)O)CC(=O)O
+47,NMe-ß-homo-D-aspartic acid,(NMe)-ß-H-D-Asp,N(C)[C@H](CC(=O)O)CC(=O)O
+48,cysteine,Cys,N[C@@H](CS)C(=O)O
+49,D-cysteine,D-Cys,N[C@H](CS)C(=O)O
+50,ß-cysteine,ß-Cys,N[C@H](S)CC(=O)O
+51,ß-D-cysteine,ß-D-Cys,N[C@@H](S)CC(=O)O
+52,ß-homo-cysteine,ß-H-Cys,N[C@@H](CS)CC(=O)O
+53,ß-homo-D-cysteine,ß-H-D-Cys,N[C@H](CS)CC(=O)O
+54,NMe-cysteine,(NMe)-Cys,N(C)[C@@H](CS)C(=O)O
+55,NMe-D-cysteine,(NMe)-D-Cys,N(C)[C@H](CS)C(=O)O
+56,NMe-ß-cysteine,(NMe)-ß-Cys,N(C)[C@H](S)CC(=O)O
+57,NMe-ß-D-cysteine,(NMe)-ß-D-Cys,N(C)[C@@H](S)CC(=O)O
+58,NMe-ß-homo-cysteine,(NMe)-ß-H-Cys,N(C)[C@@H](CS)CC(=O)O
+59,NMe-ß-homo-D-cysteine,(NMe)-ß-H-D-Cys,N(C)[C@H](CS)CC(=O)O
+60,glutamine,Gln,N[C@@H](CCC(=O)C)C(=O)O
+61,D-glutamine,D-Gln,N[C@H](CCC(=O)C)C(=O)O
+62,ß-glutamine,ß-Gln,N[C@H](CC(=O)C)CC(=O)O
+63,ß-D-glutamine,ß-D-Gln,N[C@@H](CC(=O)C)CC(=O)O
+64,ß-homo-glutamine,ß-H-Gln,N[C@@H](CCC(=O)C)CC(=O)O
+65,ß-homo-D-glutamine,ß-H-D-Gln,N[C@H](CCC(=O)C)CC(=O)O
+66,NMe-glutamine,(NMe)-Gln,N(C)[C@@H](CCC(=O)C)C(=O)O
+67,NMe-D-glutamine,(NMe)-D-Gln,N(C)[C@H](CCC(=O)C)C(=O)O
+68,NMe-ß-glutamine,(NMe)-ß-Gln,N(C)[C@H](CC(=O)C)CC(=O)O
+69,NMe-ß-D-glutamine,(NMe)-ß-D-Gln,N(C)[C@@H](CC(=O)C)CC(=O)O
+70,NMe-ß-homo-glutamine,(NMe)-ß-H-Gln,N(C)[C@@H](CCC(=O)C)CC(=O)O
+71,NMe-ß-homo-D-glutamine,(NMe)-ß-H-D-Gln,N(C)[C@H](CCC(=O)C)CC(=O)O
+72,glutamic acid,Glu,N[C@@H](C(CC(=O)O))C(=O)O
+73,D-glutamic acid,D-Glu,N[C@H](C(CC(=O)O))C(=O)O
+74,ß-glutamic acid,ß-Glu,N[C@H]((CC(=O)O))CC(=O)O
+75,ß-D-glutamic acid,ß-D-Glu,N[C@@H]((CC(=O)O))CC(=O)O
+76,ß-homo-glutamic acid,ß-H-Glu,N[C@@H](C(CC(=O)O))CC(=O)O
+77,ß-homo-D-glutamic acid,ß-H-D-Glu,N[C@H](C(CC(=O)O))CC(=O)O
+78,NMe-glutamic acid,(NMe)-Glu,N(C)[C@@H](C(CC(=O)O))C(=O)O
+79,NMe-D-glutamic acid,(NMe)-D-Glu,N(C)[C@H](C(CC(=O)O))C(=O)O
+80,NMe-ß-glutamic acid,(NMe)-ß-Glu,N(C)[C@H]((CC(=O)O))CC(=O)O
+81,NMe-ß-D-glutamic acid,(NMe)-ß-D-Glu,N(C)[C@@H]((CC(=O)O))CC(=O)O
+82,NMe-ß-homo-glutamic acid,(NMe)-ß-H-Glu,N(C)[C@@H](C(CC(=O)O))CC(=O)O
+83,NMe-ß-homo-D-glutamic acid,(NMe)-ß-H-D-Glu,N(C)[C@H](C(CC(=O)O))CC(=O)O
+84,glycine,Gly,N-C(=O)O
+85,NMe-glycine,(NMe)-Gly,N(C)-C(=O)O
+86,histidine,His,N[C@@H](CC1=C(NC=N1))C(=O)O
+87,D-histidine,D-His,N[C@H](CC1=C(NC=N1))C(=O)O
+88,ß-histidine,ß-His,N[C@H](C1=C(NC=N1))CC(=O)O
+89,ß-D-histidine,ß-D-His,N[C@@H](C1=C(NC=N1))CC(=O)O
+90,ß-homo-histidine,ß-H-His,N[C@@H](CC1=C(NC=N1))CC(=O)O
+91,ß-homo-D-histidine,ß-H-D-His,N[C@H](CC1=C(NC=N1))CC(=O)O
+92,NMe-histidine,(NMe)-His,N(C)[C@@H](CC1=C(NC=N1))C(=O)O
+93,NMe-D-histidine,(NMe)-D-His,N(C)[C@H](CC1=C(NC=N1))C(=O)O
+94,NMe-ß-histidine,(NMe)-ß-His,N(C)[C@H](C1=C(NC=N1))CC(=O)O
+95,NMe-ß-D-histidine,(NMe)-ß-D-His,N(C)[C@@H](C1=C(NC=N1))CC(=O)O
+96,NMe-ß-homo-histidine,(NMe)-ß-H-His,N(C)[C@@H](CC1=C(NC=N1))CC(=O)O
+97,NMe-ß-homo-D-histidine,(NMe)-ß-H-D-His,N(C)[C@H](CC1=C(NC=N1))CC(=O)O
+98,isoleucine,Ile,N[C@@H]([C@@H](C)CC)C(=O)O
+99,D-isoleucine,D-Ile,N[C@H]([C@@H](C)CC)C(=O)O
+100,ß-isoleucine,ß-Ile,N[C@H]([C@@H](C)CC)CC(=O)O
+101,ß-D-isoleucine,ß-D-Ile,N[C@@H]([C@@H](C)CC)CC(=O)O
+102,ß-homo-isoleucine,ß-H-Ile,N[C@@H]([C@@H](C)CC)CC(=O)O
+103,ß-homo-D-isoleucine,ß-H-D-Ile,N[C@H]([C@@H](C)CC)CC(=O)O
+104,NMe-isoleucine,(NMe)-Ile,N(C)[C@@H]([C@@H](C)CC)C(=O)O
+105,NMe-D-isoleucine,(NMe)-D-Ile,N(C)[C@H]([C@@H](C)CC)C(=O)O
+106,NMe-ß-isoleucine,(NMe)-ß-Ile,N(C)[C@H]([C@@H](C)CC)CC(=O)O
+107,NMe-ß-D-isoleucine,(NMe)-ß-D-Ile,N(C)[C@@H]([C@@H](C)CC)CC(=O)O
+108,NMe-ß-homo-isoleucine,(NMe)-ß-H-Ile,N(C)[C@@H]([C@@H](C)CC)CC(=O)O
+109,NMe-ß-homo-D-isoleucine,(NMe)-ß-H-D-Ile,N(C)[C@H]([C@@H](C)CC)CC(=O)O
+110,leucine,Leu,N[C@@H](CC(C)C)C(=O)O
+111,D-leucine,D-Leu,N[C@H](CC(C)C)C(=O)O
+112,ß-leucine,ß-Leu,N[C@H](C(C)C)CC(=O)O
+113,ß-D-leucine,ß-D-Leu,N[C@@H](C(C)C)CC(=O)O
+114,ß-homo-leucine,ß-H-Leu,N[C@@H](CC(C)C)CC(=O)O
+115,ß-homo-D-leucine,ß-H-D-Leu,N[C@H](CC(C)C)CC(=O)O
+116,NMe-leucine,(NMe)-Leu,N(C)[C@@H](CC(C)C)C(=O)O
+117,NMe-D-leucine,(NMe)-D-Leu,N(C)[C@H](CC(C)C)C(=O)O
+118,NMe-ß-leucine,(NMe)-ß-Leu,N(C)[C@H](C(C)C)CC(=O)O
+119,NMe-ß-D-leucine,(NMe)-ß-D-Leu,N(C)[C@@H](C(C)C)CC(=O)O
+120,NMe-ß-homo-leucine,(NMe)-ß-H-Leu,N(C)[C@@H](CC(C)C)CC(=O)O
+121,NMe-ß-homo-D-leucine,(NMe)-ß-H-D-Leu,N(C)[C@H](CC(C)C)CC(=O)O
+122,lysine,Lys,N[C@@H](CCCCN)C(=O)O
+123,D-lysine,D-Lys,N[C@H](CCCCN)C(=O)O
+124,ß-lysine,ß-Lys,N[C@H](CCCN)CC(=O)O
+125,ß-D-lysine,ß-D-Lys,N[C@@H](CCCN)CC(=O)O
+126,ß-homo-lysine,ß-H-Lys,N[C@@H](CCCCN)CC(=O)O
+127,ß-homo-D-lysine,ß-H-D-Lys,N[C@H](CCCCN)CC(=O)O
+128,NMe-lysine,(NMe)-Lys,N(C)[C@@H](CCCCN)C(=O)O
+129,NMe-D-lysine,(NMe)-D-Lys,N(C)[C@H](CCCCN)C(=O)O
+130,NMe-ß-lysine,(NMe)-ß-Lys,N(C)[C@H](CCCN)CC(=O)O
+131,NMe-ß-D-lysine,(NMe)-ß-D-Lys,N(C)[C@@H](CCCN)CC(=O)O
+132,NMe-ß-homo-lysine,(NMe)-ß-H-Lys,N(C)[C@@H](CCCCN)CC(=O)O
+133,NMe-ß-homo-D-lysine,(NMe)-ß-H-D-Lys,N(C)[C@H](CCCCN)CC(=O)O
+134,methionine,Met,N[C@@H](CCSC)C(=O)O
+135,D-methionine,D-Met,N[C@H](CCSC)C(=O)O
+136,ß-methionine,ß-Met,N[C@H](CSC)CC(=O)O
+137,ß-D-methionine,ß-D-Met,N[C@@H](CSC)CC(=O)O
+138,ß-homo-methionine,ß-H-Met,N[C@@H](CCSC)CC(=O)O
+139,ß-homo-D-methionine,ß-H-D-Met,N[C@H](CCSC)CC(=O)O
+140,NMe-methionine,(NMe)-Met,N(C)[C@@H](CCSC)C(=O)O
+141,NMe-D-methionine,(NMe)-D-Met,N(C)[C@H](CCSC)C(=O)O
+142,NMe-ß-methionine,(NMe)-ß-Met,N(C)[C@H](CSC)CC(=O)O
+143,NMe-ß-D-methionine,(NMe)-ß-D-Met,N(C)[C@@H](CSC)CC(=O)O
+144,NMe-ß-homo-methionine,(NMe)-ß-H-Met,N(C)[C@@H](CCSC)CC(=O)O
+145,NMe-ß-homo-D-methionine,(NMe)-ß-H-D-Met,N(C)[C@H](CCSC)CC(=O)O
+146,phenylalanine,Phe,N[C@@H](Cc2ccccc2)C(=O)O
+147,D-phenylalanine,D-Phe,N[C@H](Cc2ccccc2)C(=O)O
+148,ß-phenylalanine,ß-Phe,N[C@H](c2ccccc2)CC(=O)O
+149,ß-D-phenylalanine,ß-D-Phe,N[C@@H](c2ccccc2)CC(=O)O
+150,ß-homo-phenylalanine,ß-H-Phe,N[C@@H](Cc2ccccc2)CC(=O)O
+151,ß-homo-D-phenylalanine,ß-H-D-Phe,N[C@H](Cc2ccccc2)CC(=O)O
+152,NMe-phenylalanine,(NMe)-Phe,N(C)[C@@H](Cc2ccccc2)C(=O)O
+153,NMe-D-phenylalanine,(NMe)-D-Phe,N(C)[C@H](Cc2ccccc2)C(=O)O
+154,NMe-ß-phenylalanine,(NMe)-ß-Phe,N(C)[C@H](c2ccccc2)CC(=O)O
+155,NMe-ß-D-phenylalanine,(NMe)-ß-D-Phe,N(C)[C@@H](c2ccccc2)CC(=O)O
+156,NMe-ß-homo-phenylalanine,(NMe)-ß-H-Phe,N(C)[C@@H](Cc2ccccc2)CC(=O)O
+157,NMe-ß-homo-D-phenylalanine,(NMe)-ß-H-D-Phe,N(C)[C@H](Cc2ccccc2)CC(=O)O
+158,proline,Pro,N3CCC[C@H]3C(=O)O
+159,ß-proline,ß-Pro,N3CCC[C@@H]3CC(=O)O
+160,homo-proline,H-Pro,N3CCCC[C@@H]3C(=O)O
+161,D-proline,D-Pro,N3CCC[C@@H]3C(=O)O
+162,ß-D-proline,ß-D-Pro,N3CCC[C@H]3CC(=O)O
+163,homo-D-proline,H-D-Pro,N3CCCC[C@H]3C(=O)O
+164,NMe-proline,(NMe)-Pro,N(C)3CCC[C@H]3C(=O)O
+165,NMe-ß-proline,(NMe)-ß-Pro,N(C)3CCC[C@@H]3CC(=O)O
+166,NMe-homo-proline,(NMe)-H-Pro,N(C)3CCCC[C@@H]3C(=O)O
+167,NMe-D-proline,(NMe)-D-Pro,N(C)3CCC[C@@H]3C(=O)O
+168,NMe-ß-D-proline,(NMe)-ß-D-Pro,N(C)3CCC[C@H]3CC(=O)O
+169,NMe-homo-D-proline,(NMe)-H-D-Pro,N(C)3CCCC[C@H]3C(=O)O
+170,serine,Ser,N[C@@H](C(O))C(=O)O
+171,D-serine,D-Ser,N[C@H](C(O))C(=O)O
+172,ß-serine,ß-Ser,N[C@H]((O))CC(=O)O
+173,ß-D-serine,ß-D-Ser,N[C@@H]((O))CC(=O)O
+174,ß-homo-serine,ß-H-Ser,N[C@@H](C(O))CC(=O)O
+175,ß-homo-D-serine,ß-H-D-Ser,N[C@H](C(O))CC(=O)O
+176,NMe-serine,(NMe)-Ser,N(C)[C@@H](C(O))C(=O)O
+177,NMe-D-serine,(NMe)-D-Ser,N(C)[C@H](C(O))C(=O)O
+178,NMe-ß-serine,(NMe)-ß-Ser,N(C)[C@H]((O))CC(=O)O
+179,NMe-ß-D-serine,(NMe)-ß-D-Ser,N(C)[C@@H]((O))CC(=O)O
+180,NMe-ß-homo-serine,(NMe)-ß-H-Ser,N(C)[C@@H](C(O))CC(=O)O
+181,NMe-ß-homo-D-serine,(NMe)-ß-H-D-Ser,N(C)[C@H](C(O))CC(=O)O
+182,threonine,Thr,N[C@@H]([C@H](O)C)C(=O)O
+183,D-threonine,D-Thr,N[C@H]([C@H](O)C)C(=O)O
+184,ß-threonine,ß-Thr,N[C@H]([C@H](O)C)CC(=O)O
+185,ß-D-threonine,ß-D-Thr,N[C@@H]([C@H](O)C)CC(=O)O
+186,ß-homo-threonine,ß-H-Thr,N[C@@H]([C@H](O)C)CC(=O)O
+187,ß-homo-D-threonine,ß-H-D-Thr,N[C@H]([C@H](O)C)CC(=O)O
+188,NMe-threonine,(NMe)-Thr,N(C)[C@@H]([C@H](O)C)C(=O)O
+189,NMe-D-threonine,(NMe)-D-Thr,N(C)[C@H]([C@H](O)C)C(=O)O
+190,NMe-ß-threonine,(NMe)-ß-Thr,N(C)[C@H]([C@H](O)C)CC(=O)O
+191,NMe-ß-D-threonine,(NMe)-ß-D-Thr,N(C)[C@@H]([C@H](O)C)CC(=O)O
+192,NMe-ß-homo-threonine,(NMe)-ß-H-Thr,N(C)[C@@H]([C@H](O)C)CC(=O)O
+193,NMe-ß-homo-D-threonine,(NMe)-ß-H-D-Thr,N(C)[C@H]([C@H](O)C)CC(=O)O
+194,tryptophan,Trp,N[C@@H](Cc4=c[NH]c5c4cccc5)C(=O)O
+195,D-tryptophan,D-Trp,N[C@H](Cc4=c[NH]c5c4cccc5)C(=O)O
+196,ß-tryptophan,ß-Trp,N[C@H](c4=c[NH]c5c4cccc5)CC(=O)O
+197,ß-D-tryptophan,ß-D-Trp,N[C@@H](c4=c[NH]c5c4cccc5)CC(=O)O
+198,ß-homo-tryptophan,ß-H-Trp,N[C@@H](Cc4=c[NH]c5c4cccc5)CC(=O)O
+199,ß-homo-D-tryptophan,ß-H-D-Trp,N[C@H](Cc4=c[NH]c5c4cccc5)CC(=O)O
+200,NMe-tryptophan,(NMe)-Trp,N(C)[C@@H](Cc4=c[NH]c5c4cccc5)C(=O)O
+201,NMe-D-tryptophan,(NMe)-D-Trp,N(C)[C@H](Cc4=c[NH]c5c4cccc5)C(=O)O
+202,NMe-ß-tryptophan,(NMe)-ß-Trp,N(C)[C@H](c4=c[NH]c5c4cccc5)CC(=O)O
+203,NMe-ß-D-tryptophan,(NMe)-ß-D-Trp,N(C)[C@@H](c4=c[NH]c5c4cccc5)CC(=O)O
+204,NMe-ß-homo-tryptophan,(NMe)-ß-H-Trp,N(C)[C@@H](Cc4=c[NH]c5c4cccc5)CC(=O)O
+205,NMe-ß-homo-D-tryptophan,(NMe)-ß-H-D-Trp,N(C)[C@H](Cc4=c[NH]c5c4cccc5)CC(=O)O
+206,tyrosine,Tyr,N[C@@H](Cc1ccc(O)cc1)C(=O)O
+207,D-tyrosine,D-Tyr,N[C@H](Cc1ccc(O)cc1)C(=O)O
+208,ß-tyrosine,ß-Tyr,N[C@H](c1ccc(O)cc1)CC(=O)O
+209,ß-D-tyrosine,ß-D-Tyr,N[C@@H](c1ccc(O)cc1)CC(=O)O
+210,ß-homo-tyrosine,ß-H-Tyr,N[C@@H](Cc1ccc(O)cc1)CC(=O)O
+211,ß-homo-D-tyrosine,ß-H-D-Tyr,N[C@H](Cc1ccc(O)cc1)CC(=O)O
+212,NMe-tyrosine,(NMe)-Tyr,N(C)[C@@H](Cc1ccc(O)cc1)C(=O)O
+213,NMe-D-tyrosine,(NMe)-D-Tyr,N(C)[C@H](Cc1ccc(O)cc1)C(=O)O
+214,NMe-ß-tyrosine,(NMe)-ß-Tyr,N(C)[C@H](c1ccc(O)cc1)CC(=O)O
+215,NMe-ß-D-tyrosine,(NMe)-ß-D-Tyr,N(C)[C@@H](c1ccc(O)cc1)CC(=O)O
+216,NMe-ß-homo-tyrosine,(NMe)-ß-H-Tyr,N(C)[C@@H](Cc1ccc(O)cc1)CC(=O)O
+217,NMe-ß-homo-D-tyrosine,(NMe)-ß-H-D-Tyr,N(C)[C@H](Cc1ccc(O)cc1)CC(=O)O
+218,valine,Val,N[C@@H](C(C)C)C(=O)O
+219,D-valine,D-Val,N[C@H](C(C)C)C(=O)O
+220,ß-valine,ß-Val,N[C@H]((C)C)CC(=O)O
+221,ß-D-valine,ß-D-Val,N[C@@H]((C)C)CC(=O)O
+222,ß-homo-valine,ß-H-Val,N[C@@H](C(C)C)CC(=O)O
+223,ß-homo-D-valine,ß-H-D-Val,N[C@H](C(C)C)CC(=O)O
+224,NMe-valine,(NMe)-Val,N(C)[C@@H](C(C)C)C(=O)O
+225,NMe-D-valine,(NMe)-D-Val,N(C)[C@H](C(C)C)C(=O)O
+226,NMe-ß-valine,(NMe)-ß-Val,N(C)[C@H]((C)C)CC(=O)O
+227,NMe-ß-D-valine,(NMe)-ß-D-Val,N(C)[C@@H]((C)C)CC(=O)O
+228,NMe-ß-homo-valine,(NMe)-ß-H-Val,N(C)[C@@H](C(C)C)CC(=O)O
+229,NMe-ß-homo-D-valine,(NMe)-ß-H-D-Val,N(C)[C@H](C(C)C)CC(=O)O
+230,2-aminobutyric acid,Abu,NC(CC)C(=O)O
+231,NMe-2-aminobutyric acid,(NMe)-Abu,N(C)C(CC)C(=O)O
+232,4-aminobenzoic acid,Abz,Nc1ccc(cc1)C(=O)O
+233,NMe-4-aminobenzoic acid,(NMe)-Abz,N(C)c1ccc(cc1)C(=O)O
+234,biphenylalanine,Bip,N[C@@H](Cc1ccc(cc1)c2ccc(cc2))C(=O)O
+235,D-biphenylalanine,D-Bip,N[C@H](Cc1ccc(cc1)c2ccc(cc2))C(=O)O
+236,NMe-biphenylalanine,(NMe)-Bip,N(C)[C@@H](Cc1ccc(cc1)c2ccc(cc2))C(=O)O
+237,NMe-D-biphenylalanine,(NMe)-D-Bip,N(C)[C@H](Cc1ccc(cc1)c2ccc(cc2))C(=O)O
+238,cyclohexylalanine,Cha,N[C@@H](CC1CCCCC1)C(=O)O
+239,D-cyclohexylalanine,D-Cha,N[C@H](CC1CCCCC1)C(=O)O
+240,ß-cyclohexylalanine,ß-Cha,N[C@H](C1CCCCC1)CC(=O)O
+241,ß-D-cyclohexylalanine,ß-D-Cha,N[C@@H](C1CCCCC1)CC(=O)O
+242,ß-homo-cyclohexylalanine,ß-H-Cha,N[C@@H](CC1CCCCC1)CC(=O)O
+243,ß-homo-D-cyclohexylalanine,ß-H-D-Cha,N[C@H](CC1CCCCC1)CC(=O)O
+244,NMe-cyclohexylalanine,(NMe)-Cha,N(C)[C@@H](CC1CCCCC1)C(=O)O
+245,NMe-D-cyclohexylalanine,(NMe)-D-Cha,N(C)[C@H](CC1CCCCC1)C(=O)O
+246,NMe-ß-cyclohexylalanine,(NMe)-ß-Cha,N(C)[C@H](C1CCCCC1)CC(=O)O
+247,NMe-ß-D-cyclohexylalanine,(NMe)-ß-D-Cha,N(C)[C@@H](C1CCCCC1)CC(=O)O
+248,NMe-ß-homo-cyclohexylalanine,(NMe)-ß-H-Cha,N(C)[C@@H](CC1CCCCC1)CC(=O)O
+249,NMe-ß-homo-D-cyclohexylalanine,(NMe)-ß-H-D-Cha,N(C)[C@H](CC1CCCCC1)CC(=O)O
+250,norleucine,Nle,N[C@@H](CCCC)C(=O)O
+251,D-norleucine,D-Nle,N[C@H](CCCC)C(=O)O
+252,ß-norleucine,ß-Nle,N[C@H](CCC)CC(=O)O
+253,ß-D-norleucine,ß-D-Nle,N[C@@H](CCC)CC(=O)O
+254,ß-homo-norleucine,ß-H-Nle,N[C@@H](CCCC)CC(=O)O
+255,ß-homo-D-norleucine,ß-H-D-Nle,N[C@H](CCCC)CC(=O)O
+256,NMe-norleucine,(NMe)-Nle,N(C)[C@@H](CCCC)C(=O)O
+257,NMe-D-norleucine,(NMe)-D-Nle,N(C)[C@H](CCCC)C(=O)O
+258,NMe-ß-norleucine,(NMe)-ß-Nle,N(C)[C@H](CCC)CC(=O)O
+259,NMe-ß-D-norleucine,(NMe)-ß-D-Nle,N(C)[C@@H](CCC)CC(=O)O
+260,NMe-ß-homo-norleucine,(NMe)-ß-H-Nle,N(C)[C@@H](CCCC)CC(=O)O
+261,NMe-ß-homo-D-norleucine,(NMe)-ß-H-D-Nle,N(C)[C@H](CCCC)CC(=O)O
+262,norvaline,Nva,N[C@@H](CCC)C(=O)O
+263,D-norvaline,D-Nva,N[C@H](CCC)C(=O)O
+264,ß-norvaline,ß-Nva,N[C@H](CC)CC(=O)O
+265,ß-D-norvaline,ß-D-Nva,N[C@@H](CC)CC(=O)O
+266,ß-homo-norvaline,ß-H-Nva,N[C@@H](CCC)CC(=O)O
+267,ß-homo-D-norvaline,ß-H-D-Nva,N[C@H](CCC)CC(=O)O
+268,NMe-norvaline,(NMe)-Nva,N(C)[C@@H](CCC)C(=O)O
+269,NMe-D-norvaline,(NMe)-D-Nva,N(C)[C@H](CCC)C(=O)O
+270,NMe-ß-norvaline,(NMe)-ß-Nva,N(C)[C@H](CC)CC(=O)O
+271,NMe-ß-D-norvaline,(NMe)-ß-D-Nva,N(C)[C@@H](CC)CC(=O)O
+272,NMe-ß-homo-norvaline,(NMe)-ß-H-Nva,N(C)[C@@H](CCC)CC(=O)O
+273,NMe-ß-homo-D-norvaline,(NMe)-ß-H-D-Nva,N(C)[C@H](CCC)CC(=O)O
+274,ornithine,Orn,N[C@@H](CCCN)C(=O)O
+275,D-ornithine,D-Orn,N[C@H](CCCN)C(=O)O
+276,ß-ornithine,ß-Orn,N[C@H](CCN)CC(=O)O
+277,ß-D-ornithine,ß-D-Orn,N[C@@H](CCN)CC(=O)O
+278,ß-homo-ornithine,ß-H-Orn,N[C@@H](CCCN)CC(=O)O
+279,ß-homo-D-ornithine,ß-H-D-Orn,N[C@H](CCCN)CC(=O)O
+280,NMe-ornithine,(NMe)-Orn,N(C)[C@@H](CCCN)C(=O)O
+281,NMe-D-ornithine,(NMe)-D-Orn,N(C)[C@H](CCCN)C(=O)O
+282,NMe-ß-ornithine,(NMe)-ß-Orn,N(C)[C@H](CCN)CC(=O)O
+283,NMe-ß-D-ornithine,(NMe)-ß-D-Orn,N(C)[C@@H](CCN)CC(=O)O
+284,NMe-ß-homo-ornithine,(NMe)-ß-H-Orn,N(C)[C@@H](CCCN)CC(=O)O
+285,NMe-ß-homo-D-ornithine,(NMe)-ß-H-D-Orn,N(C)[C@H](CCCN)CC(=O)O
+286,phenylglycine,Phg,N[C@@H](c1ccccc1)C(=O)O
+287,D-phenylglycine,D-Phg,N[C@H](c1ccccc1)C(=O)O
+288,ß-phenylglycine,ß-Phg,N[C@H](c1ccccc1)CC(=O)O
+289,ß-D-phenylglycine,ß-D-Phg,N[C@@H](c1ccccc1)CC(=O)O
+290,ß-homo-phenylglycine,ß-H-Phg,N[C@@H](c1ccccc1)CC(=O)O
+291,ß-homo-D-phenylglycine,ß-H-D-Phg,N[C@H](c1ccccc1)CC(=O)O
+292,NMe-phenylglycine,(NMe)-Phg,N(C)[C@@H](c1ccccc1)C(=O)O
+293,NMe-D-phenylglycine,(NMe)-D-Phg,N(C)[C@H](c1ccccc1)C(=O)O
+294,NMe-ß-phenylglycine,(NMe)-ß-Phg,N(C)[C@H](c1ccccc1)CC(=O)O
+295,NMe-ß-D-phenylglycine,(NMe)-ß-D-Phg,N(C)[C@@H](c1ccccc1)CC(=O)O
+296,NMe-ß-homo-phenylglycine,(NMe)-ß-H-Phg,N(C)[C@@H](c1ccccc1)CC(=O)O
+297,NMe-ß-homo-D-phenylglycine,(NMe)-ß-H-D-Phg,N(C)[C@H](c1ccccc1)CC(=O)O
+298,4-fluorophenylalanine,Phe-F,N[C@@H](Cc%97ccc(F)cc%97)C(=O)O
+299,D-4-fluorophenylalanine,D-Phe-F,N[C@H](Cc%97ccc(F)cc%97)C(=O)O
+300,ß-4-fluorophenylalanine,ß-Phe-F,N[C@H](c%97ccc(F)cc%97)CC(=O)O
+301,ß-D-4-fluorophenylalanine,ß-D-Phe-F,N[C@@H](c%97ccc(F)cc%97)CC(=O)O
+302,ß-homo-4-fluorophenylalanine,ß-H-Phe-F,N[C@@H](Cc%97ccc(F)cc%97)CC(=O)O
+303,ß-homo-D-4-fluorophenylalanine,ß-H-D-Phe-F,N[C@H](Cc%97ccc(F)cc%97)CC(=O)O
+304,NMe-4-fluorophenylalanine,(NMe)-Phe-F,N(C)[C@@H](Cc%97ccc(F)cc%97)C(=O)O
+305,NMe-D-4-fluorophenylalanine,(NMe)-D-Phe-F,N(C)[C@H](Cc%97ccc(F)cc%97)C(=O)O
+306,NMe-ß-4-fluorophenylalanine,(NMe)-ß-Phe-F,N(C)[C@H](c%97ccc(F)cc%97)CC(=O)O
+307,NMe-ß-D-4-fluorophenylalanine,(NMe)-ß-D-Phe-F,N(C)[C@@H](c%97ccc(F)cc%97)CC(=O)O
+308,NMe-ß-homo-4-fluorophenylalanine,(NMe)-ß-H-Phe-F,N(C)[C@@H](Cc%97ccc(F)cc%97)CC(=O)O
+309,NMe-ß-homo-D-4-fluorophenylalanine,(NMe)-ß-H-D-Phe-F,N(C)[C@H](Cc%97ccc(F)cc%97)CC(=O)O
+310,popargylglycine,Prg,N[C@@H](CC#C)C(=O)O
+311,D-popargylglycine,D-Prg,N[C@H](CC#C)C(=O)O
+312,ß-popargylglycine,ß-Prg,N[C@H](C#C)CC(=O)O
+313,ß-D-popargylglycine,ß-D-Prg,N[C@@H](C#C)CC(=O)O
+314,ß-homo-popargylglycine,ß-H-Prg,N[C@@H](CC#C)CC(=O)O
+315,ß-homo-D-popargylglycine,ß-H-D-Prg,N[C@H](CC#C)CC(=O)O
+316,NMe-popargylglycine,(NMe)-Prg,N(C)[C@@H](CC#C)C(=O)O
+317,NMe-D-popargylglycine,(NMe)-D-Prg,N(C)[C@H](CC#C)C(=O)O
+318,NMe-ß-popargylglycine,(NMe)-ß-Prg,N(C)[C@H](C#C)CC(=O)O
+319,NMe-ß-D-popargylglycine,(NMe)-ß-D-Prg,N(C)[C@@H](C#C)CC(=O)O
+320,NMe-ß-homo-popargylglycine,(NMe)-ß-H-Prg,N(C)[C@@H](CC#C)CC(=O)O
+321,NMe-ß-homo-D-popargylglycine,(NMe)-ß-H-D-Prg,N(C)[C@H](CC#C)CC(=O)O
+322,leucine-d3,Leu-d3,N[C@@H](CC(C([2H])([2H])[2H])C)C(=O)O
+323,D-leucine-d3,D-Leu-d3,N[C@H](CC(C([2H])([2H])[2H])C)C(=O)O
+324,ß-leucine-d3,ß-Leu-d3,N[C@H](C(C([2H])([2H])[2H])C)CC(=O)O
+325,ß-D-leucine-d3,ß-D-Leu-d3,N[C@@H](C(C([2H])([2H])[2H])C)CC(=O)O
+326,ß-homo-leucine-d3,ß-H-Leu-d3,N[C@@H](CC(C([2H])([2H])[2H])C)CC(=O)O
+327,ß-homo-D-leucine-d3,ß-H-D-Leu-d3,N[C@H](CC(C([2H])([2H])[2H])C)CC(=O)O
+328,NMe-leucine-d3,(NMe)-Leu-d3,N(C)[C@@H](CC(C([2H])([2H])[2H])C)C(=O)O
+329,NMe-D-leucine-d3,(NMe)-D-Leu-d3,N(C)[C@H](CC(C([2H])([2H])[2H])C)C(=O)O
+330,NMe-ß-leucine-d3,(NMe)-ß-Leu-d3,N(C)[C@H](C(C([2H])([2H])[2H])C)CC(=O)O
+331,NMe-ß-D-leucine-d3,(NMe)-ß-D-Leu-d3,N(C)[C@@H](C(C([2H])([2H])[2H])C)CC(=O)O
+332,NMe-ß-homo-leucine-d3,(NMe)-ß-H-Leu-d3,N(C)[C@@H](CC(C([2H])([2H])[2H])C)CC(=O)O
+333,NMe-ß-homo-D-leucine-d3,(NMe)-ß-H-D-Leu-d3,N(C)[C@H](CC(C([2H])([2H])[2H])C)CC(=O)O
+334,leucine-d7,Leu-d7,N[C@@H](CC([2H])(C([2H])([2H])[2H])C([2H])([2H])[2H])C(=O)O
+335,D-leucine-d7,D-Leu-d7,N[C@H](CC([2H])(C([2H])([2H])[2H])C([2H])([2H])[2H])C(=O)O
+336,ß-leucine-d7,ß-Leu-d7,N[C@H](C([2H])(C([2H])([2H])[2H])C([2H])([2H])[2H])CC(=O)O
+337,ß-D-leucine-d7,ß-D-Leu-d7,N[C@@H](C([2H])(C([2H])([2H])[2H])C([2H])([2H])[2H])CC(=O)O
+338,ß-homo-leucine-d7,ß-H-Leu-d7,N[C@@H](CC([2H])(C([2H])([2H])[2H])C([2H])([2H])[2H])CC(=O)O
+339,ß-homo-D-leucine-d7,ß-H-D-Leu-d7,N[C@H](CC([2H])(C([2H])([2H])[2H])C([2H])([2H])[2H])CC(=O)O
+340,NMe-leucine-d7,(NMe)-Leu-d7,N(C)[C@@H](CC([2H])(C([2H])([2H])[2H])C([2H])([2H])[2H])C(=O)O
+341,NMe-D-leucine-d7,(NMe)-D-Leu-d7,N(C)[C@H](CC([2H])(C([2H])([2H])[2H])C([2H])([2H])[2H])C(=O)O
+342,NMe-ß-leucine-d7,(NMe)-ß-Leu-d7,N(C)[C@H](C([2H])(C([2H])([2H])[2H])C([2H])([2H])[2H])CC(=O)O
+343,NMe-ß-D-leucine-d7,(NMe)-ß-D-Leu-d7,N(C)[C@@H](C([2H])(C([2H])([2H])[2H])C([2H])([2H])[2H])CC(=O)O
+344,NMe-ß-homo-leucine-d7,(NMe)-ß-H-Leu-d7,N(C)[C@@H](CC([2H])(C([2H])([2H])[2H])C([2H])([2H])[2H])CC(=O)O
+345,NMe-ß-homo-D-leucine-d7,(NMe)-ß-H-D-Leu-d7,N(C)[C@H](CC([2H])(C([2H])([2H])[2H])C([2H])([2H])[2H])CC(=O)O
+346,butylamine,Bu,N(CCCC)CC(=O)O
+347,Ethyl,Et,OC
+348,isoamylamine,       ,N(CCC(C)C)CC(=O)O
+349,isobutylamine,N-Ib,N(CC(C)C)CC(=O)O
+350,2-methoxyethylamine,OME,N(CCOC)CC(=O)O
+351,pentylamine (amylamine),Pnt,N(CCCCC)CC(=O)O
+352,furfurylamine,Ffl,N(CC1=CC=CO1)CC(=O)O
+353,hexylamine,Hex,N(CCCCCC)CC(=O)O
+354,benzylamine,N-Bn,N(CC1=CC=CC=C1)CC(=O)O
+355,3-picolylamine,P3M,N(CC1=CC=CN=C1)CC(=O)O
+356,2-(1H-imidazol-1-yl)ethanamine,ImEt,N(CCN1C=CN=C1)CC(=O)O
+357,cyclohexylmethylamine,CyMe,N(CC1CCCCC1)CC(=O)O
+358,4-aminomethyltetrahydropyran,THPM,N(CC1CCOCC1)CC(=O)O
+359,3-isopropoxypropylamine,IOP,N(CCCOC(C)C)CC(=O)O
+360,3-(2-aminoethyl)-pyridine,P3E,N(CCC1=CC=CN=C1)CC(=O)O
+361,4-fluorobenzylamine,4FBn,N(CC1=CC=C(F)C=C1)CC(=O)O
+362,4-(2-aminoethyl)morpholine,MorphE,N(CCN1CCOCC1)CC(=O)O
+363,3-phenylpropylamine,PhPr,N(CCCC1=CC=CC=C1)CC(=O)O
+364,2-phenoxyethylamine,PhOE,N(CCOC1=CC=CC=C1)CC(=O)O
+365,"3-(3,4,5-Trimethyl-1H-pyrazol-1-yl)-1-propanamine",MPzP,N(CCCN1N=C(C)C(C)=C1C)CC(=O)O
+366,4-Chlorobenzylamine,4ClBn,N(CC1=CC=C(Cl)C=C1)CC(=O)O
+367,N-(3'-aminopropyl)-2-pyrrolidinone,PyrE,N(CCCN1CCCC1(=O))CC(=O)O
+368,2-(4-methylpiperazine-1-yl)ethylamine,MPzE,N(CCN1CCN(C)CC1)CC(=O)O
+369,4-phenylbutylamine,PhBu,N(CCCCC1=CC=CC=C1)CC(=O)O
+370,"3,4-methylenedioxybenzylamine",ADPM,N(CC1=CC(OCO2)=C2C=C1)CC(=O)O
+371,"2-amino-N,N-dimethylethanesulfonamide hydrochloride",DASE,N(CCS(=O)(N(C)C)=O.[H]Cl)CC(=O)O
+372,[(1-isobutyl-1H-imidazol-5-yl)methyl]amine dihydrochloride,IBIM,N(CC1=CN=CN1CC(C)C.[H]Cl.[H]Cl)CC(=O)O
+373,1-(5-isobutyl-3-isoxazolyl)methanamine,ISxM,N(CC1=NOC(CC(C)C)=C1)CC(=O)O
+374,"1-(4-ethyl-2-methyl-1,3-thiazol-5-yl)methanamine",EMTM,N(CC1=C(CC)N=C(C)S1)CC(=O)O
+375,[3-(4-methyl-1-piperidinyl)-3-oxopropyl]amine hydrochloride,MPAE,N(CCC(N1CCC(C)CC1)=O.[H]Cl)CC(=O)O
+376,"2-(2-isopropyl-1,3-thiazol-4-yl)ethanamine hydrochloride",ITzE,N(CC(C1=CSC(C(C)C)=N1).[H]Cl)CC(=O)O
+377,"[(3-phenyl-1,2,4-oxadiazol-5-yl)methyl]amine",POxM,N(CC1=NC(C2=CC=CC=C2)=NO1)CC(=O)O
+378,[(6-pyrrolidin-1-ylpyridin-3-yl)methyl]amine,PdPM,N(CC1=CC=C(N2CCCC2)N=C1)CC(=O)O
+379,[2-(1H-pyrazol-1-ylmethyl)benzyl]amine,MPzB,N(CC1=CC=CC=C1CN2N=CC=C2)CC(=O)O
+380,1-[5-(4-methylphenyl)-3-isoxazolyl]methanamine,MPxM,N(CC1=NOC(C2=CC=C(C)C=C2)=C1)CC(=O)O
+381,3-(1-methyl-1H-benzo[d]imidazol-2-yl)propan-1-amine dihydrochloride,MBIP,N(CCCC1=NC2=CC=CC=C2N1C.[H]Cl.[H]Cl)CC(=O)O
+382,tert-butyl 4-(2-aminoethyl)piperazine-1-carboxylate,PpzE,N(CCN1CCN(C(=O)OC(C)(C)C)CC1)CC(=O)O
+383,3-[(1-isopropylpiperidin-4-yl)oxy]propan-1-amine,IPPOP,N(CCCOC1CCN(C(C)C)CC1)CC(=O)O
+384,2-(4-isopropylpiperazin-1-yl)ethanamine,IPPzE,N(CCN1CCN(C(C)C)CC1)CC(=O)O
+385,1-(2-methyltetrahydrofuran-2-yl)methanamine,MThM,N(CC1(C)OCCC1)CC(=O)O
+386,2-(6-methylpyridin-2-yl)ethanamine,PEM,N(CCc1cccc(C)n1)CC(=O)O
+387,({1-[(5-methyl-2-furyl)methyl]-4-piperidinyl}methyl)amine,MFMPM,N(CC1CCN(CC2=CC=C(C)O2)CC1)CC(=O)O
+388,(2-ethylbutyl)amine,2EtB,N(CC(CC)CC)CC(=O)O
+389,1-(1-propylcyclobutyl)methanamine,1CypB,N(CC1(CCC)CCC1)CC(=O)O
+390,2-(3-methoxy-4-propoxyphenyl)ethanamine,OOPE,N(CCc1cc(OC)c(OCCC)cc1)CC(=O)O
+391,"3-(3,4-diethoxyphenyl)-1-propanamine",OOPP,N(CCCC1=CC=C(OCC)C(OCC)=C1)CC(=O)O
+392,(2-methoxybutyl)amine hydrochloride,OMB,N(CC(OC)CC.[H]Cl)CC(=O)O
+393,"2-(3-propoxyphenyl)ethyl]amine, salt form: HCl",OPE,N(CCC1=CC=CC(OCCC)=C1.[H]Cl)CC(=O)O
+394,"[3-(4,5-dimethyl-1,3-thiazol-2-yl)propyl]amine dihydrochloride",MTzP,N(CCCC1=NC(C)=C(C)S1.[H]Cl.[H]Cl)CC(=O)O
+395,"2-[4-(1,3-benzoxazol-2-yl)morpholin-2-yl]ethanamine, salt form: 2HCl",BMpE,N(CCC1CN(C2=NC3=CC=CC=C3O2)CCO1.[H]Cl.[H]Cl)CC(=O)O
+396,[5-(4-morpholinyl)pentyl]amine dihydrochloride,MpP,N(CCCCCN1CCOCC1.[H]Cl.[H]Cl)CC(=O)O
+397,(3-methoxybutyl)amine hydrochloride,OmB,N(CCC(OC)C.[H]Cl)CC(=O)O
+398,"(3-methoxy-2,2-dimethylpropyl)amine hydrochloride",MOmP,N(CC(C)(C)COC.[H]Cl)CC(=O)O
+399,(cyclobutylmethyl)amine hydrochloride,CyBM,N(CC1CCC1.[H]Cl)CC(=O)O
+400,(tetrahydro-2H-pyran-2-ylmethyl)amine hydrochloride,2ThM,N(CC1CCCCO1.[H]Cl)CC(=O)O
+401,[4-(tetrahydro-2-furanyl)butyl]amine hydrochloride,2FuB,N(CCCCC1OCCC1.[H]Cl)CC(=O)O
+402,(2-fluoroethyl)amine hydrochloride,Fet,N(CCF.[H]Cl)CC(=O)O
+403,"1-[3-(3,4-dimethoxyphenyl)-1,2,4-oxadiazol-5-yl]methanamine",DPOM,N(CC1=NC(C2=CC=C(OC)C(OC)=C2)=NO1)CC(=O)O
+404,1-[1-(cyclopropylcarbonyl)piperidin-3-yl]methanamine,ACPM,N(CC1CN(C(C2CC2)=O)CCC1)CC(=O)O
+405,(3-pyrrolidin-1-ylpropyl)amine,PyrP,N(CCCN1CCCC1)CC(=O)O
+406,3-(cyclopentyloxy)-1-propanamine,OCyE,N(CCCOC1CCCC1)CC(=O)O
+407,[2-(isopropylthio)ethyl]amine hydrochloride hydrate,SpE,N(CCSC(C)C.[H]Cl.[H]O[H])CC(=O)O
+408,"[3-(3,5-dimethyl-4-isoxazolyl)propyl]amine hydrochloride",DIXPA,N(CCCC1=C(C)ON=C1C.[H]Cl)CC(=O)O
+409,isopropylamine,N-iPr,N(C(C)(C))CC(=O)O
+410,"2,4-Difluorobenzonitrile",N-dFBn,N(Cc1c(F)cc(F)cc1)CC(=O)O
+411,(3-isopropoxypropyl)glycine,N-Ipop-Gly,N(CCCOC(C)C)CC(=O)O
+412,(2-phenoxyethyl)glycine,N-Poe-Gly,N(CCOC%80=CC=CC=C%80)CC(=O)O
+413,"(3,4-dimethoxyphenethyl)glycine",N-Dmope-Gly,N(CCC%79=CC=C(C(OC)=C%79)OC)CC(=O)O
+414,Bromoacetic Acid,BrOAc,BrCC(=O)O
+415,Acetic Acid,OAc,OC(=O)C
+416,Acytl,Ac,C(=O)C
+417,alanine-d4,Ala-d4,N[C@@]([2H])(C([2H])([2H])([2H]))C(=O)O
+418,ß-alanine-d4,ß-Ala-d4,N[C@]([2H])(C([2H])([2H])([2H]))CC(=O)O
+419,homo-alanine-d4,H-Ala-d4,N[C@]([2H])(CC([2H])([2H])([2H]))C(=O)O
+420,D-alanine-d4,D-Ala-d4,N[C@]([2H])(C([2H])([2H])([2H]))C(=O)O
+421,ß-D-alanine-d4,ß-D-Ala-d4,N[C@@]([2H])(C([2H])([2H])([2H]))CC(=O)O
+422,homo-D-alanine-d4,H-D-Ala-d4,N[C@@]([2H])(CC([2H])([2H])([2H]))C(=O)O
+423,(NMe)-alanine-d4,(NMe)-Ala-d4,N[C@@]([2H])(C([2H])([2H])([2H]))C(=O)O
+424,(NMe)-ß-alanine-d4,(NMe)-ß-Ala-d4,N(C)[C@]([2H])(C([2H])([2H])([2H]))CC(=O)O
+425,(NMe)-homo-alanine-d4,(NMe)-H-Ala-d4,N(C)[C@]([2H])(CC([2H])([2H])([2H]))C(=O)O
+426,(NMe)-D-alanine-d4,(NMe)-D-Ala-d4,N(C)[C@]([2H])(C([2H])([2H])([2H]))C(=O)O
+427,(NMe)-ß-D-alanine-d4,(NMe)-ß-D-Ala-d4,N(C)[C@@]([2H])(C([2H])([2H])([2H]))CC(=O)O
+428,(NMe)-homo-D-alanine-d4,(NMe)-H-D-Ala-d4,N(C)[C@@]([2H])(CC([2H])([2H])([2H]))C(=O)O
+429,Grant Koch Tripeptide 1,GKTP01,N[C@@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%89CCC[C@H]%89C(=O)O
+430,Grant Koch Tripeptide 2,GKTP02,N[C@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%88CCC[C@H]%88C(=O)O
+431,Grant Koch Tripeptide 3,GKTP03,N(C)[C@@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%87CCC[C@H]%87C(=O)O
+432,Grant Koch Tripeptide 4,GKTP04,N(C)[C@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%86CCC[C@H]%86C(=O)O
+433,Grant Koch Tripeptide 5,GKTP05,N[C@@H](CC(C)C)C(=O)N[C@H](CC(C)C)C(=O)N%85CCC[C@H]%85C(=O)O
+434,Grant Koch Tripeptide 6,GKTP06,N[C@H](CC(C)C)C(=O)N[C@H](CC(C)C)C(=O)N%84CCC[C@H]%84C(=O)O
+435,Grant Koch Tripeptide 7,GKTP07,N(C)[C@@H](CC(C)C)C(=O)N[C@H](CC(C)C)C(=O)N%83CCC[C@H]%83C(=O)O
+436,Grant Koch Tripeptide 8,GKTP08,N(C)[C@H](CC(C)C)C(=O)N[C@H](CC(C)C)C(=O)N%82CCC[C@H]%82C(=O)O
+437,Grant Koch Tripeptide 9,GKTP09,N[C@@H](CC(C)C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N%81CCC[C@H]%81C(=O)O
+438,Grant Koch Tripeptide 10,GKTP10,N[C@H](CC(C)C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N%80CCC[C@H]%80C(=O)O
+439,Grant Koch Tripeptide 11,GKTP11,N(C)[C@@H](CC(C)C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N%79CCC[C@H]%79C(=O)O
+440,Grant Koch Tripeptide 12,GKTP12,N(C)[C@H](CC(C)C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N%78CCC[C@H]%78C(=O)O
+441,Grant Koch Tripeptide 13,GKTP13,N[C@@H](CC(C)C)C(=O)N(C)[C@H](CC(C)C)C(=O)N%77CCC[C@H]%77C(=O)O
+442,Grant Koch Tripeptide 14,GKTP14,N[C@H](CC(C)C)C(=O)N(C)[C@H](CC(C)C)C(=O)N%76CCC[C@H]%76C(=O)O
+443,Grant Koch Tripeptide 15,GKTP15,N(C)[C@@H](CC(C)C)C(=O)N(C)[C@H](CC(C)C)C(=O)N%75CCC[C@H]%75C(=O)O
+444,Grant Koch Tripeptide 16,GKTP16,N(C)[C@H](CC(C)C)C(=O)N(C)[C@H](CC(C)C)C(=O)N%74CCC[C@H]%74C(=O)O
+445,Grant Koch Tripeptide 17,GKTP17,N[C@@H](CC(C)C)C(=O)N(CC(C)C)CC(=O)N%73CCC[C@H]%73C(=O)O
+446,Grant Koch Tripeptide 18,GKTP18,N[C@H](CC(C)C)C(=O)N(CC(C)C)CC(=O)N%72CCC[C@H]%72C(=O)O
+447,Grant Koch Tripeptide 19,GKTP19,N(C)[C@@H](CC(C)C)C(=O)N(CC(C)C)CC(=O)N%71CCC[C@H]%71C(=O)O
+448,Grant Koch Tripeptide 20,GKTP20,N(C)[C@H](CC(C)C)C(=O)N(CC(C)C)CC(=O)N%70CCC[C@H]%70C(=O)O
+449,Grant Koch Tripeptide 21,GKTP21,N[C@@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%69CCC[C@@H]%69C(=O)O
+450,Grant Koch Tripeptide 22,GKTP22,N[C@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%68CCC[C@@H]%68C(=O)O
+451,Grant Koch Tripeptide 23,GKTP23,N(C)[C@@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%67CCC[C@@H]%67C(=O)O
+452,Grant Koch Tripeptide 24,GKTP24,N(C)[C@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N%66CCC[C@@H]%66C(=O)O
+453,Grant Koch Tripeptide 25,GKTP25,N[C@@H](CC(C)C)C(=O)N[C@H](CC(C)C)C(=O)N%65CCC[C@@H]%65C(=O)O
+454,Grant Koch Tripeptide 26,GKTP26,N[C@H](CC(C)C)C(=O)N[C@H](CC(C)C)C(=O)N%64CCC[C@@H]%64C(=O)O
+455,Grant Koch Tripeptide 27,GKTP27,N(C)[C@@H](CC(C)C)C(=O)N[C@H](CC(C)C)C(=O)N%63CCC[C@@H]%63C(=O)O
+456,Grant Koch Tripeptide 28,GKTP28,N(C)[C@H](CC(C)C)C(=O)N[C@H](CC(C)C)C(=O)N%62CCC[C@@H]%62C(=O)O
+457,Grant Koch Tripeptide 29,GKTP29,N[C@@H](CC(C)C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N%61CCC[C@@H]%61C(=O)O
+458,Grant Koch Tripeptide 30,GKTP30,N[C@H](CC(C)C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N%60CCC[C@@H]%60C(=O)O
+459,Grant Koch Tripeptide 31,GKTP31,N(C)[C@@H](CC(C)C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N%59CCC[C@@H]%59C(=O)O
+460,Grant Koch Tripeptide 32,GKTP32,N(C)[C@H](CC(C)C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N%58CCC[C@@H]%58C(=O)O
+461,Grant Koch Tripeptide 33,GKTP33,N[C@@H](CC(C)C)C(=O)N(C)[C@H](CC(C)C)C(=O)N%57CCC[C@@H]%57C(=O)O
+462,Grant Koch Tripeptide 34,GKTP34,N[C@H](CC(C)C)C(=O)N(C)[C@H](CC(C)C)C(=O)N%56CCC[C@@H]%56C(=O)O
+463,Grant Koch Tripeptide 35,GKTP35,N(C)[C@@H](CC(C)C)C(=O)N(C)[C@H](CC(C)C)C(=O)N%55CCC[C@@H]%55C(=O)O
+464,Grant Koch Tripeptide 36,GKTP36,N(C)[C@H](CC(C)C)C(=O)N(C)[C@H](CC(C)C)C(=O)N%54CCC[C@@H]%54C(=O)O
+465,Grant Koch Tripeptide 37,GKTP37,N[C@@H](CC(C)C)C(=O)N(CC(C)C)CC(=O)N%53CCC[C@@H]%53C(=O)O
+466,Grant Koch Tripeptide 38,GKTP38,N[C@H](CC(C)C)C(=O)N(CC(C)C)CC(=O)N%52CCC[C@@H]%52C(=O)O
+467,Grant Koch Tripeptide 39,GKTP39,N(C)[C@@H](CC(C)C)C(=O)N(CC(C)C)CC(=O)N%51CCC[C@@H]%51C(=O)O
+468,Grant Koch Tripeptide 40,GKTP40,N(C)[C@H](CC(C)C)C(=O)N(CC(C)C)CC(=O)N%50CCC[C@@H]%50C(=O)O
+469,N-Methylamine,N-Me,NC
+470,Cereblon Linker,CRBN1-5,C(=O)CCCCOc%89ccc(C%88C(=O)NC(=O)CC%88)cc%89

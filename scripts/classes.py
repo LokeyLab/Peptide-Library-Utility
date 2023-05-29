@@ -64,11 +64,12 @@ class Miscellaneous:
 
 class Peptide:
     """The peptide class."""
-    # "Exact MW", "ALogP", "SLogP", "SASA", "TPSA", "# Atoms", "# Heteroatoms", "# Amide Bonds",
+    # "Exact MW", "ALogP", "SLogP", "SASA", "TPSA", "McGowan Volume", "# Atoms", "# Heteroatoms",
+    # "# Amide Bonds",
     #                   "# Rings", "# Aromatic Rings", "# Rotatable Bonds", "# HBA", "# HBD"
 
     def __init__(self, name, smiles_string, exact_mass=None,
-                 a_log_p=None, s_log_p=None, sasa=None, tpsa=None,
+                 a_log_p=None, s_log_p=None, sasa=None, tpsa=None, mcgowan_volume=None,
                  num_atoms=None, num_heteroatoms=None, num_amide_bonds=None, num_rings=None,
                  num_aromatic_rings=None, num_rotatable_bonds=None, num_hba=None,
                  num_hbd=None, largest_ring_size=None):
@@ -80,6 +81,7 @@ class Peptide:
         self.s_log_p = s_log_p
         self.sasa = sasa
         self.tpsa = tpsa
+        self.mcgowan_volume = mcgowan_volume
         self.num_atoms = num_atoms
         self.num_heteroatoms = num_heteroatoms
         self.num_amide_bonds = num_amide_bonds

@@ -5,7 +5,7 @@
 This script contains various miscellaneous utility functions.
 """
 
-import header as h
+from scripts import header as h
 
 
 def csv_to_dataframe(f):
@@ -23,7 +23,7 @@ def peptides_to_dataframe(peptides):
 
     for i in range(0, len(peptides)):
 
-        # "Exact MW", "ALogP", "SLogP", "SASA", "TPSA",
+        # "Exact MW", "ALogP", "SLogP", "SASA", "TPSA", "McGowan Volume",
         # "# Atoms", "# Heteroatoms", "# Amide Bonds",
         # "# Rings", "# Aromatic Rings", "# Rotatable Bonds",
         # "# Stereocenters", "# HBA", "# HBD", "Largest Ring Size"
@@ -42,6 +42,8 @@ def peptides_to_dataframe(peptides):
             row_dict.update({"SASA": peptides[i].sasa})
         if "TPSA" in h.CHEMINFORMATICS_OPTIONS:
             row_dict.update({"TPSA": peptides[i].tpsa})
+        if "McGowan Volume" in h.CHEMINFORMATICS_OPTIONS:
+            row_dict.update({"McGowan Volume": peptides[i].mcgowan_volume})
         if "# Atoms" in h.CHEMINFORMATICS_OPTIONS:
             row_dict.update({"# Atoms": peptides[i].num_atoms})
         if "# Heteroatoms" in h.CHEMINFORMATICS_OPTIONS:
@@ -67,6 +69,23 @@ def peptides_to_dataframe(peptides):
 
     return df
 
+def subunits_to_dataframe():
+    """Writes the subunit library to a Pandas dataframe."""
+
+    df = h.pd.DataFrame(
+        columns=["Name", "Multiple Letter", "SMILES String"])
+
+    for i in range(len(h.SUBUNIT_LIBRARY)):
+        key = list(h.SUBUNIT_LIBRARY)[i]
+        row_dict = {}
+
+        row_dict.update({"Name": h.SUBUNIT_LIBRARY[key].name})
+        row_dict.update({"Multiple Letter": h.SUBUNIT_LIBRARY[key].multiple_letter})
+        row_dict.update({"SMILES String": h.SUBUNIT_LIBRARY[key].smiles_string})
+
+        df.loc[len(df.index)] = row_dict
+
+    return df
 
 def molecules_to_dataframe(molecules_list):
 
@@ -93,6 +112,14 @@ def dataframe_to_csv(df):
     """Writes a Pandas dataframe to a .CSV file in the output folder"""
 
     file_name = "output_data.csv"
+    path = h.os.path.join(h.OUTPUT_DIR, file_name)
+
+    df.to_csv(path)
+
+def subunits_to_csv(df):
+    """Writes a Pandas dataframe to a .CSV file in the output folder"""
+
+    file_name = "subunit_library.csv"
     path = h.os.path.join(h.OUTPUT_DIR, file_name)
 
     df.to_csv(path)

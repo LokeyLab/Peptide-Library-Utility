@@ -6,7 +6,7 @@ aspartic acid,Asp,N,CC(=O)O,y,C,(=O)O,y,y,y
 cysteine,Cys,N,CS,y,C,(=O)O,y,y,y
 glutamine,Gln,N,CCC(=O)C,y,C,(=O)O,y,y,y
 glutamic acid,Glu,N,C(CC(=O)O),y,C,(=O)O,y,y,y
-glycine,Gly,N,-,n,C,(=O)O,n,y,y
+glycine,Gly,N,-,n,C,(=O)O,n,n,y
 histidine,His,N,CC1=C(NC=N1),y,C,(=O)O,y,y,y
 isoleucine,Ile,N,[C@@H](C)CC,y,C,(=O)O,y,y,y
 leucine,Leu,N,CC(C)C,y,C,(=O)O,y,y,y

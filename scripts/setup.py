@@ -3,8 +3,9 @@ import sys
 
 
 def run_module_check():
-    modules = ['datetime', 'importlib', 'itertools', 'matplotlib', 'numpy', 'os', 'pandas', 'PIL',
-               'pyshortcuts', 'random', 'rdkit', 'sys', 'tkinter', 'tqdm', 'webbrowser']
+    modules = ['datetime', 'importlib', 'itertools', 'matplotlib', 'numpy', 'os',
+               'pandas', 'PIL', 'pathlib2', 'pyshortcuts', 'random', 'rdkit', 'sys', 'tkinter',
+               'tqdm', 'webbrowser']
 
     for mod in modules:
         if mod in sys.modules:
@@ -21,20 +22,25 @@ def run_module_check():
 def run_shortcut_creator():
     import os
     import platform
+    import pathlib2
     from pyshortcuts import make_shortcut
 
+    platform = platform.system().lower()
+    print(f"\nPlatform is {platform}")
+
     if platform == "linux" or platform == "linux2":
-        icon = os.path.relpath('logo.icns')
+        icon = pathlib2.Path(os.path.abspath("logo.ico"))
+
     elif platform == "darwin":
-        icon = os.path.relpath('logo.icns')
+        icon = pathlib2.Path(os.path.abspath("logo.icns"))
+
     elif platform == "win32" or "win64":
-        icon = os.path.relpath('logo.ico')
+        icon = pathlib2.Path(os.path.abspath("logo.ico"))
 
-    main_script = os.path.abspath("scripts/peptide_library_utility.py")
+    main_script = pathlib2.Path(os.path.abspath("peptide_library_utility.py"))
+    print(f"\n{main_script}")
 
-    make_shortcut(main_script, name='Peptide Library Utility',
-                  icon=icon, desktop=True)
-
+    make_shortcut(str(main_script), name='Peptide Library Utility', icon=str(icon), desktop=True)
 
 run_module_check()
-run_shortcut_creator()
+# run_shortcut_creator()
